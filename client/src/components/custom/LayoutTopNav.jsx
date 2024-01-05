@@ -5,7 +5,6 @@ import CartIcon from "../custom/icons/CartIcon";
 
 import styled from "styled-components";
 const LayoutTopNavWrapper = styled.nav`
-  /* background-color: lightblue; */
   color: var(--color-primary);
 
   display: flex;
@@ -17,7 +16,7 @@ const LayoutTopNavWrapper = styled.nav`
   font-size: var(--font-text-lg);
   font-weight: 500;
 
-  padding: 0 4rem;
+  padding: 0 var(--padding-side);
 
   .layout-top-nav--logo {
     position: relative;
