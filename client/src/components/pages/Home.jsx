@@ -1,3 +1,5 @@
+import HomeShowcase from "../custom/HomeShowcase";
+
 import { styled } from "styled-components";
 const HomeWrapper = styled.main`
   .home--hero {
@@ -43,8 +45,6 @@ const HomeWrapper = styled.main`
     height: 4rem;
     width: 22rem;
   }
-
-  /*  */
 `;
 
 const Home = () => {
@@ -60,11 +60,7 @@ const Home = () => {
           <button>See our community picks</button>
         </div>
       </section>
-      <section className="home--showcase">
-        <section className="home--showcase-popular-community-picks">
-          <header className="home--showcase-title">Popular Community Picks</header>
-        </section>
-      </section>
+      <HomeShowcase />
     </HomeWrapper>
   );
 };

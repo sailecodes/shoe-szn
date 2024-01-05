@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import HeartIcon from "../custom/icons/HeartIcon";
 import ProfileIcon from "../custom/icons/ProfileIcon";
 import CartIcon from "../custom/icons/CartIcon";
@@ -24,9 +24,12 @@ const LayoutTopNavWrapper = styled.nav`
     display: flex;
     flex-direction: column;
 
+    color: var(--color-primary);
+
+    width: 22rem;
+
+    font-family: "Rubik Glitch", system-ui;
     font-size: var(--font-logo-lg);
-    font-weight: 600;
-    letter-spacing: -2px;
   }
 
   .layout-top-nav--links {
@@ -51,7 +54,10 @@ const LayoutTopNavWrapper = styled.nav`
   .layout-top-nav--other {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 1.8rem;
+
+    width: 22rem;
   }
 
   .layout-top-nav--other svg {
@@ -62,7 +68,11 @@ const LayoutTopNavWrapper = styled.nav`
 const LayoutTopNav = () => {
   return (
     <LayoutTopNavWrapper>
-      <p className="layout-top-nav--logo">Shoe Szn</p>
+      <Link
+        to="/"
+        className="layout-top-nav--logo">
+        Shoe Szn
+      </Link>
       <div className="layout-top-nav--links">
         <NavLink className="layout-top-nav--link">
           Casual <div className="link-underline"></div>

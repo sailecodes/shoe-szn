@@ -13,41 +13,17 @@
   /*  */
 
   --font-logo-lg: 4rem;
+  --font-logo-lg: 4.5rem; /* Custom */
 
   --font-hero-lg: 5rem;
+
+  --font-section-lg: 2.3rem;
 
   --font-text-lg: 1.6rem;
 
   --font-btn-lg: 1.4rem;
 
   --padding-side: 4rem;
-
-  /*  */
-
-  /* GENERAL */
-
-  /* --font-logo-lg: 3rem;
-  --font-logo-sm: 2.5rem;
-
-  --font-nav-lg: 1.8rem;
-  --font-nav-sm: 1.6rem;
-
-  --font-hero-tagline-lg: 5rem;
-  --font-hero-tagline-md: 4rem;
-  --font-hero-tagline-sm: 3rem;
-
-  --font-hero-description-lg: 2rem;
-  --font-hero-description-md: 1.5rem;
-  --font-hero-description-sm: 1.3rem;
-
-  --font-text-lg: 1.6rem;
-  --font-text-sm: 1.3rem;
-
-  --svg-height: 3rem;
-  --svg-height-sm: 2.5rem;
-
-  --input-height-lg: 4rem;
-  --input-height-sm: 3.5rem; */
 
   /* DEFAULT */
 
