@@ -7,7 +7,11 @@ const LayoutFooterWrapper = styled.footer`
 `;
 
 const LayoutFooter = () => {
-  return <LayoutFooterWrapper>Footer</LayoutFooterWrapper>;
+  return (
+    <LayoutFooterWrapper>
+      <p>Like what you see? Check me out!</p>
+    </LayoutFooterWrapper>
+  );
 };
 
 export default LayoutFooter;

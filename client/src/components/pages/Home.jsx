@@ -1,3 +1,8 @@
+import { SiKik, SiJbl, SiSony } from "react-icons/si";
+import { SiNewyorktimes } from "react-icons/si";
+import { SiNotion } from "react-icons/si";
+import { SiAmazon } from "react-icons/si";
+
 import HomeShowcase from "../custom/HomeShowcase";
 import HomeTestimony from "../custom/HomeTestimony";
 
@@ -46,6 +51,15 @@ const HomeWrapper = styled.main`
     height: 4rem;
     width: 22rem;
   }
+
+  .home--sponsors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+
+    margin-bottom: 10rem;
+  }
 `;
 
 const Home = () => {
@@ -61,6 +75,32 @@ const Home = () => {
           <button>See our community picks</button>
         </div>
       </section>
+      <div className="home--sponsors">
+        <SiAmazon
+          size={100}
+          color="gray"
+        />
+        <SiKik
+          size={140}
+          color="gray"
+        />
+        <SiJbl
+          size={130}
+          color="gray"
+        />
+        <SiSony
+          size={180}
+          color="gray"
+        />
+        <SiNewyorktimes
+          size={100}
+          color="gray"
+        />
+        <SiNotion
+          size={100}
+          color="gray"
+        />
+      </div>
       <HomeShowcase />
       <HomeTestimony />
     </HomeWrapper>

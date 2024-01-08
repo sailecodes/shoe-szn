@@ -6,7 +6,9 @@ import LayoutSubscribe from "../custom/LayoutSubscribe";
 import LayoutAnnouncement from "../custom/LayoutAnnouncement";
 
 import styled from "styled-components";
-const LayoutWrapper = styled.main``;
+const LayoutWrapper = styled.main`
+  overflow-x: hidden;
+`;
 
 const Layout = () => {
   return (

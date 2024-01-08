@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import HeartIcon from "../custom/icons/HeartIcon";
 import ProfileIcon from "../custom/icons/ProfileIcon";
 import CartIcon from "../custom/icons/CartIcon";
 
@@ -88,9 +87,6 @@ const LayoutTopNav = () => {
         </NavLink>
       </div>
       <div className="layout-top-nav--other">
-        <NavLink>
-          <HeartIcon stroke={"var(--color-primary)"} />
-        </NavLink>
         <NavLink>
           <ProfileIcon stroke={"var(--color-primary)"} />
         </NavLink>
