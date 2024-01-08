@@ -103,7 +103,7 @@ input:focus {
 
 a {
   font-family: inherit;
-  color: var(--color-black);
+  color: var(--color-primary);
   text-decoration: none;
 }
 

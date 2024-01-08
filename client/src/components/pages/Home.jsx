@@ -1,4 +1,5 @@
 import HomeShowcase from "../custom/HomeShowcase";
+import HomeTestimony from "../custom/HomeTestimony";
 
 import { styled } from "styled-components";
 const HomeWrapper = styled.main`
@@ -61,6 +62,7 @@ const Home = () => {
         </div>
       </section>
       <HomeShowcase />
+      <HomeTestimony />
     </HomeWrapper>
   );
 };

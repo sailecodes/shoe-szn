@@ -34,10 +34,7 @@ const HomeShowcase = () => {
         header="Popular Community Picks"
         data={data}
       />
-      <HomeShowcaseSection
-        header="Trending Casual"
-        data={data}
-      />
+
       <HomeShowcaseSection
         header="Best Streetwear"
         data={data}
