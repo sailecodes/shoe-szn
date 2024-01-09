@@ -25,7 +25,7 @@ const HomeHeroWrapper = styled.section`
     background-color: var(--color-gray-300);
     color: var(--color-primary);
 
-    padding: 4rem var(--padding-side) 5rem var(--padding-side);
+    padding: 4rem 2rem 5rem 2rem;
     margin-bottom: 10rem;
   }
 
@@ -54,6 +54,12 @@ const HomeHeroWrapper = styled.section`
 
     height: 4rem;
     width: 21rem;
+  }
+
+  @media (min-width: 425px) {
+    .home-hero--solo-text {
+      padding: 4rem var(--padding-side) 5rem var(--padding-side);
+    }
   }
 
   @media (min-width: 530px) {
