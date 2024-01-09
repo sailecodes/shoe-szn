@@ -37,7 +37,7 @@ const LayoutFooterWrapper = styled.footer`
     text-decoration: underline;
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 426px) {
     padding: 0 var(--padding-side);
   }
 

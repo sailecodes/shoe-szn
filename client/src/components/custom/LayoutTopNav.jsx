@@ -21,7 +21,7 @@ const LayoutTopNavWrapper = styled.nav`
   font-size: var(--font-text-3);
   font-weight: 500;
 
-  padding: 0 var(--padding-side);
+  padding: 0 2rem;
 
   .layout-top-nav--logo {
     position: relative;
@@ -83,6 +83,10 @@ const LayoutTopNavWrapper = styled.nav`
 
   .layout-top-nav--menu.hidden {
     display: none;
+  }
+
+  @media (min-width: 426px) {
+    padding: 0 var(--padding-side);
   }
 
   @media (min-width: 530px) {
