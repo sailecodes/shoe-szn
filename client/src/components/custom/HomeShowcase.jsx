@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import toe from "../../assets/imgs/toe-temp.jpg";
+
 import styled from "styled-components";
 const HomeShowcaseWrapper = styled.section`
   color: var(--color-primary);
@@ -35,10 +37,10 @@ const HomeShowcase = () => {
         data={data}
       />
 
-      <HomeShowcaseSection
+      {/* <HomeShowcaseSection
         header="Best Streetwear"
         data={data}
-      />
+      /> */}
     </HomeShowcaseWrapper>
   );
 };
@@ -56,7 +58,6 @@ const HomeShowcaseSectionWrapper = styled.section`
   > div {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 4rem;
   }
 `;
@@ -79,7 +80,7 @@ const HomeShowcaseSection = ({ header, data }) => {
 };
 
 const HomeShowcaseSectionCardWrapper = styled.div`
-  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
 
   display: flex;
   flex-direction: column;
@@ -88,8 +89,13 @@ const HomeShowcaseSectionCardWrapper = styled.div`
   .temp {
     background-color: black;
 
-    width: 40rem;
-    height: 40rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
   .home-showcase-section-card--info {
@@ -131,11 +137,11 @@ const HomeShowcaseSectionCardWrapper = styled.div`
 const HomeShowcaseSectionCard = ({ imgUrl, name, price }) => {
   return (
     <HomeShowcaseSectionCardWrapper>
-      {/* <img
-        src={imgUrl}
+      <img
+        src={toe}
         alt=""
-      /> */}
-      <div className="temp"></div>
+      />
+      {/* <div className="temp"></div> */}
       <div className="home-showcase-section-card--info">
         <p className="home-showcase-section-card--text">{name}</p>
         <p className="home-showcase-section-card--text">{price} USD</p>

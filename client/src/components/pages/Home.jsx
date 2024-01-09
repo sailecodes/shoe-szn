@@ -1,10 +1,6 @@
-import { SiKik, SiJbl, SiSony } from "react-icons/si";
-import { SiNewyorktimes } from "react-icons/si";
-import { SiNotion } from "react-icons/si";
-import { SiAmazon } from "react-icons/si";
+import { SiNewyorktimes, SiKik, SiJbl, SiSony, SiAmazon, SiNotion } from "react-icons/si";
 
 import HomeShowcase from "../custom/HomeShowcase";
-import HomeTestimony from "../custom/HomeTestimony";
 
 import { styled } from "styled-components";
 const HomeWrapper = styled.main`
@@ -60,6 +56,33 @@ const HomeWrapper = styled.main`
 
     margin-bottom: 10rem;
   }
+
+  .home--testimony {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    margin-bottom: 10rem;
+  }
+
+  .home--testimony .temp {
+    background-color: black;
+
+    width: 60rem;
+    height: 60rem;
+  }
+
+  .home--testimony-text p {
+    width: 80rem;
+
+    font-size: 2rem;
+    font-style: italic;
+  }
+
+  .home--testimony-text p:nth-child(1) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const Home = () => {
@@ -78,31 +101,40 @@ const Home = () => {
       <div className="home--sponsors">
         <SiAmazon
           size={100}
-          color="gray"
+          color="rgb(187, 187, 187)"
         />
         <SiKik
           size={140}
-          color="gray"
+          color="rgb(187, 187, 187)"
         />
         <SiJbl
           size={130}
-          color="gray"
+          color="rgb(187, 187, 187)"
         />
         <SiSony
           size={180}
-          color="gray"
+          color="rgb(187, 187, 187)"
         />
         <SiNewyorktimes
           size={100}
-          color="gray"
+          color="rgb(187, 187, 187)"
         />
         <SiNotion
           size={100}
-          color="gray"
+          color="rgb(187, 187, 187)"
         />
       </div>
       <HomeShowcase />
-      <HomeTestimony />
+      <div className="home--testimony">
+        <div className="temp"></div>
+        <div className="home--testimony-text">
+          <p>
+            &quot;The blank is a perfect blend of comfort and style. It&apos;s a bit expensive but worthwhile for what
+            it offers. Probably my most used pair this year.&quot;
+          </p>
+          <p>- Raphael Roman</p>
+        </div>
+      </div>
     </HomeWrapper>
   );
 };
