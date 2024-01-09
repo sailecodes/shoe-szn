@@ -56,7 +56,7 @@ const HomeHeroWrapper = styled.section`
     width: 21rem;
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 426px) {
     .home-hero--solo-text {
       padding: 4rem var(--padding-side) 5rem var(--padding-side);
     }
