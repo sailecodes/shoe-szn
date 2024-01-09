@@ -80,18 +80,9 @@ const HomeShowcaseSection = ({ header, data }) => {
 };
 
 const HomeShowcaseSectionCardWrapper = styled.div`
-  /* flex-shrink: 1; */
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  .temp {
-    background-color: black;
-
-    max-width: 100%;
-    height: auto;
-  }
 
   img {
     max-width: 100%;

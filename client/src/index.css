@@ -25,6 +25,10 @@
 
   --padding-side: 4rem;
 
+  --color-gray-500: rgb(87, 87, 87);
+  --color-gray-400: rgb(187, 187, 187);
+  --color-gray-300: rgba(235, 235, 235, 0.75);
+
   /* DEFAULT */
 
   --color-popup-bg: #000000b3;

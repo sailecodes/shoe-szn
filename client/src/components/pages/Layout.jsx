@@ -7,7 +7,7 @@ import LayoutAnnouncement from "../custom/LayoutAnnouncement";
 
 import styled from "styled-components";
 const LayoutWrapper = styled.main`
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 `;
 
 const Layout = () => {

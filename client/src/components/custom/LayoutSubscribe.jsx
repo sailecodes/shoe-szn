@@ -7,7 +7,7 @@ const LayoutSubscribeWrapper = styled.section`
   justify-content: center;
   gap: 1rem;
 
-  background-color: rgba(235, 235, 235, 0.75);
+  background-color: var(--color-gray-300);
   color: var(--color-primary);
 
   height: 40rem;
@@ -19,7 +19,7 @@ const LayoutSubscribeWrapper = styled.section`
 
   p {
     width: 100rem;
-    color: #575757;
+    color: var(--color-gray-500);
 
     font-size: 2.2rem;
     text-align: center;
