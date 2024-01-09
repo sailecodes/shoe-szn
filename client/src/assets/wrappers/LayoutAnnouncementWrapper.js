@@ -10,9 +10,16 @@ const LayoutAnnouncementWrapper = styled.section`
 
   height: 5rem;
 
-  font-size: var(--font-text-3);
+  font-size: 1.3rem;
   font-weight: 600;
+  text-align: center;
   letter-spacing: 0.5px;
+
+  padding: 0 var(--padding-side);
+
+  @media (min-width: 530px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export default LayoutAnnouncementWrapper;
