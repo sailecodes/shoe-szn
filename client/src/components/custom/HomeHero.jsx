@@ -25,7 +25,7 @@ const HomeHeroWrapper = styled.section`
     background-color: var(--color-gray-300);
     color: var(--color-primary);
 
-    padding: 4rem 2rem 5rem 2rem;
+    padding: 4rem var(--padding-side) 5rem var(--padding-side);
     margin-bottom: 10rem;
   }
 
@@ -43,7 +43,7 @@ const HomeHeroWrapper = styled.section`
     text-align: center;
 
     padding: 0 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.7rem;
   }
 
   button {

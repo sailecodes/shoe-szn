@@ -123,7 +123,7 @@ const Home = () => {
   return (
     <HomeWrapper>
       <HomeHero />
-      <HomeSponsors color="var(--color-gray-400)" />
+      {/* <HomeSponsors color="var(--color-gray-400)" /> */}
       <HomeShowcase />
       <div className="home--testimony">
         <div>

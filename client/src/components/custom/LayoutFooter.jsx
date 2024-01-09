@@ -9,11 +9,14 @@ const LayoutFooterWrapper = styled.footer`
   background-color: var(--color-primary);
   color: var(--color-white);
 
-  height: 20rem;
+  height: 15rem;
+
+  padding: 0 2rem;
 
   p {
-    font-size: var(--font-text-4);
+    font-size: 1.7rem;
     font-weight: 500;
+    text-align: center;
   }
 
   > div {
@@ -21,17 +24,31 @@ const LayoutFooterWrapper = styled.footer`
     align-items: center;
     gap: 1rem;
 
-    color: gray;
+    color: var(--color-gray-400);
   }
 
   a {
     color: var(--color-gray-400);
 
-    font-size: var(--font-text-3);
+    font-size: 1.4rem;
   }
 
   a:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 425px) {
+    padding: 0 var(--padding-side);
+  }
+
+  @media (min-width: 530px) {
+    p {
+      font-size: var(--font-text-4);
+    }
+
+    a {
+      font-size: var(--font-text-3);
+    }
   }
 `;
 
