@@ -10,7 +10,7 @@ const LayoutAnnouncementWrapper = styled.section`
 
   height: 5rem;
 
-  font-size: var(--font-text-lg);
+  font-size: var(--font-text-3);
   font-weight: 600;
   letter-spacing: 0.5px;
 `;

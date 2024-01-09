@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const LayoutSubscribeWrapper = styled.section`
+  @media (min-width: 640px) {
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,16 +15,18 @@ const LayoutSubscribeWrapper = styled.section`
 
   height: 40rem;
 
+  padding: 0 var(--padding-side);
+
   header {
-    font-size: 4rem;
+    font-size: var(--font-text-7);
     font-weight: 500;
   }
 
   p {
-    width: 100rem;
+    max-width: 100rem;
     color: var(--color-gray-500);
 
-    font-size: 2.2rem;
+    font-size: var(--font-text-5);
     text-align: center;
 
     margin-bottom: 2rem;
@@ -31,7 +36,7 @@ const LayoutSubscribeWrapper = styled.section`
   button {
     height: 4rem;
 
-    font-size: 1.6rem;
+    font-size: var(--font-text-3);
 
     padding: 0 2rem;
   }

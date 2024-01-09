@@ -37,10 +37,10 @@ const HomeShowcase = () => {
         data={data}
       />
 
-      {/* <HomeShowcaseSection
+      <HomeShowcaseSection
         header="Best Streetwear"
         data={data}
-      /> */}
+      />
     </HomeShowcaseWrapper>
   );
 };
@@ -49,7 +49,7 @@ const HomeShowcaseSectionWrapper = styled.section`
   margin-bottom: 10rem;
 
   header {
-    font-size: var(--font-section-lg);
+    font-size: var(--font-text-6);
     font-weight: 500;
 
     margin-bottom: 2rem;
@@ -96,7 +96,7 @@ const HomeShowcaseSectionCardWrapper = styled.div`
   }
 
   .home-showcase-section-card--text {
-    font-size: var(--font-text-lg);
+    font-size: var(--font-text-3);
   }
 
   .home-showcase-section-card--text:nth-child(1) {
@@ -111,7 +111,7 @@ const HomeShowcaseSectionCardWrapper = styled.div`
 
     height: 4rem;
 
-    font-size: var(--font-text-lg);
+    font-size: var(--font-text-3);
     font-weight: 500;
 
     border: 1px solid var(--color-primary);

@@ -12,7 +12,7 @@ const LayoutFooterWrapper = styled.footer`
   height: 20rem;
 
   p {
-    font-size: 1.8rem;
+    font-size: var(--font-text-4);
     font-weight: 500;
   }
 
@@ -27,7 +27,7 @@ const LayoutFooterWrapper = styled.footer`
   a {
     color: var(--color-gray-400);
 
-    font-size: 1.4rem;
+    font-size: var(--font-text-3);
   }
 
   a:hover {
