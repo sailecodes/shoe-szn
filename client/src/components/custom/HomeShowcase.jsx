@@ -6,14 +6,18 @@ import styled from "styled-components";
 const HomeShowcaseWrapper = styled.section`
   color: var(--color-primary);
 
-  padding: 0 var(--padding-side);
+  padding: 0 2rem;
   margin-bottom: 10rem;
+
+  @media (min-width: 426px) {
+    padding: 0 var(--padding-side);
+  }
 `;
 
 const HomeShowcase = () => {
   const data = [
     {
-      name: "Optimus Maximum III",
+      name: "Optimus",
       price: "$99.99",
     },
     {
@@ -21,7 +25,7 @@ const HomeShowcase = () => {
       price: "$67.99",
     },
     {
-      name: "Mamba Memento",
+      name: "Mamba",
       price: "$199.99",
     },
     {
@@ -37,10 +41,10 @@ const HomeShowcase = () => {
         data={data}
       />
 
-      <HomeShowcaseSection
+      {/* <HomeShowcaseSection
         header="Best Streetwear"
         data={data}
-      />
+      /> */}
     </HomeShowcaseWrapper>
   );
 };
@@ -56,9 +60,18 @@ const HomeShowcaseSectionWrapper = styled.section`
   }
 
   > div {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem 0.5rem;
+  }
+
+  @media (min-width: 860px) {
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 `;
 
@@ -91,12 +104,12 @@ const HomeShowcaseSectionCardWrapper = styled.div`
 
   .home-showcase-section-card--info {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
   }
 
   .home-showcase-section-card--text {
-    font-size: var(--font-text-3);
+    font-size: 1.4rem;
   }
 
   .home-showcase-section-card--text:nth-child(1) {
@@ -109,9 +122,9 @@ const HomeShowcaseSectionCardWrapper = styled.div`
 
     color: var(--color-primary);
 
-    height: 4rem;
+    height: 3.6rem;
 
-    font-size: var(--font-text-3);
+    font-size: 1.4rem;
     font-weight: 500;
 
     border: 1px solid var(--color-primary);
@@ -123,6 +136,18 @@ const HomeShowcaseSectionCardWrapper = styled.div`
     background-color: var(--color-primary);
     color: var(--color-white);
   }
+
+  @media (min-width: 530px) {
+    .home-showcase-section-card--text {
+      font-size: var(--font-text-3);
+    }
+
+    a {
+      height: 4rem;
+
+      font-size: var(--font-text-3);
+    }
+  }
 `;
 
 const HomeShowcaseSectionCard = ({ imgUrl, name, price }) => {
@@ -132,7 +157,6 @@ const HomeShowcaseSectionCard = ({ imgUrl, name, price }) => {
         src={toe}
         alt=""
       />
-      {/* <div className="temp"></div> */}
       <div className="home-showcase-section-card--info">
         <p className="home-showcase-section-card--text">{name}</p>
         <p className="home-showcase-section-card--text">{price} USD</p>

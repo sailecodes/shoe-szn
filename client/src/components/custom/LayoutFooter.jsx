@@ -14,7 +14,7 @@ const LayoutFooterWrapper = styled.footer`
   padding: 0 2rem;
 
   p {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 500;
     text-align: center;
   }

@@ -33,7 +33,7 @@ const HomeHeroWrapper = styled.section`
     font-size: 3.2rem;
     font-weight: 600;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
 
     margin-bottom: 1rem;
   }
@@ -42,7 +42,7 @@ const HomeHeroWrapper = styled.section`
     font-size: 1.4rem;
     text-align: center;
 
-    padding: 0 3rem;
+    /* padding: 0 3rem; */
     margin-bottom: 1.7rem;
   }
 
@@ -65,6 +65,7 @@ const HomeHeroWrapper = styled.section`
   @media (min-width: 530px) {
     p:nth-child(1) {
       font-size: 4rem;
+      line-height: 50px;
     }
 
     p:nth-child(2) {
@@ -112,6 +113,7 @@ const HomeHeroWrapper = styled.section`
 
     p:nth-child(2) {
       font-size: var(--font-text-3);
+      text-align: left;
 
       padding: 0;
       margin-bottom: 1.3rem;

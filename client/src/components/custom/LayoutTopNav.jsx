@@ -18,9 +18,6 @@ const LayoutTopNavWrapper = styled.nav`
 
   height: 10rem;
 
-  font-size: var(--font-text-3);
-  font-weight: 500;
-
   padding: 0 2rem;
 
   .layout-top-nav--logo {
@@ -90,75 +87,22 @@ const LayoutTopNavWrapper = styled.nav`
   }
 
   @media (min-width: 530px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    position: relative;
-
-    color: var(--color-primary);
-
-    height: 10rem;
-
-    font-size: var(--font-text-3);
-    font-weight: 500;
-
-    padding: 0 var(--padding-side);
-
     .layout-top-nav--logo {
-      position: relative;
-
-      display: flex;
-      flex-direction: column;
-
-      color: var(--color-primary);
-
-      width: 22rem;
-
-      font-family: "Rubik Glitch", system-ui;
       font-size: var(--font-text-8);
     }
 
-    .layout-top-nav--links {
-      display: none;
+    .layout-top-nav--link {
+      font-size: var(--font-text-3);
+      font-weight: 500;
     }
 
     .layout-top-nav--other {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 1.8rem;
-
       width: 22rem;
     }
 
     .layout-top-nav--other a {
       display: grid;
       place-items: center;
-    }
-
-    .layout-top-nav--other svg {
-      width: 3rem;
-    }
-
-    .layout-top-nav--menu {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-
-      position: absolute;
-      z-index: 99;
-      top: 100%;
-      right: 0;
-
-      background-color: var(--color-white);
-
-      height: 100vh;
-
-      font-size: 1.8rem;
-      text-align: right;
-
-      padding: 2rem 2.5rem 2rem 15rem;
     }
 
     .layout-top-nav--menu.hidden {

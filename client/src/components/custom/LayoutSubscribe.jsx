@@ -24,7 +24,7 @@ const LayoutSubscribeWrapper = styled.section`
     max-width: 100rem;
     color: var(--color-gray-500);
 
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
 
     margin-bottom: 1.5rem;
@@ -34,20 +34,28 @@ const LayoutSubscribeWrapper = styled.section`
   button {
     height: 3.5rem;
 
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 
     padding: 0 2rem;
+  }
+
+  input {
+    width: 20rem;
   }
 
   button {
     background-color: var(--color-primary);
     color: var(--color-white);
 
-    width: 10rem;
+    width: 11rem;
   }
 
   @media (min-width: 426px) {
     padding: 0 var(--padding-side);
+
+    input {
+      width: fit-content;
+    }
   }
 
   @media (min-width: 530px) {

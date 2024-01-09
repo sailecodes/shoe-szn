@@ -30,7 +30,7 @@ const HomeWrapper = styled.main`
   .home--testimony-text p {
     max-width: 60rem;
 
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-style: italic;
     text-align: center;
 
