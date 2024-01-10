@@ -18,6 +18,7 @@ const LayoutSubscribeWrapper = styled.section`
     font-size: 3rem;
     font-weight: 500;
     text-align: center;
+    line-height: 40px;
   }
 
   p {
@@ -61,6 +62,7 @@ const LayoutSubscribeWrapper = styled.section`
   @media (min-width: 530px) {
     header {
       font-size: 3.5rem;
+      line-height: 50px;
     }
 
     p {

@@ -114,7 +114,7 @@ const HomeShowcaseSectionCardWrapper = styled.div`
   }
 
   .home-showcase-section-card--text {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .home-showcase-section-card--text:nth-child(1) {
