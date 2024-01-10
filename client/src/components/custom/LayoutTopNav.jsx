@@ -12,13 +12,17 @@ const LayoutTopNavWrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 97;
 
+  background-color: var(--color-white);
   color: var(--color-primary);
 
   height: 10rem;
 
   padding: 0 2rem;
+  border-bottom: 1px solid var(--color-border);
 
   .layout-top-nav--logo {
     position: relative;

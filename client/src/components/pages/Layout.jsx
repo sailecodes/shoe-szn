@@ -8,8 +8,6 @@ import LayoutAnnouncement from "../custom/LayoutAnnouncement";
 import styled from "styled-components";
 import { useState } from "react";
 const LayoutWrapper = styled.main`
-  overflow-x: hidden !important;
-
   .dark-bg.visible {
     position: absolute;
     z-index: 98;
@@ -18,8 +16,6 @@ const LayoutWrapper = styled.main`
 
     width: 100vw;
     height: 100vh;
-
-    overflow: none;
   }
 
   .dark-bg.hidden {
@@ -31,7 +27,7 @@ const Layout = () => {
   const [isDarkBgVisible, setIsDarkBgVisible] = useState(false);
 
   return (
-    <LayoutWrapper>
+    <LayoutWrapper $bodyHasOverflow={!isDarkBgVisible}>
       <div className={isDarkBgVisible ? "dark-bg visible" : "dark-bg hidden"}></div>
       <LayoutAnnouncement />
       <LayoutTopNav

@@ -30,7 +30,7 @@ const HomeHeroWrapper = styled.section`
   }
 
   p:nth-child(1) {
-    font-size: 3.2rem;
+    font-size: 3.4rem;
     font-weight: 600;
     text-align: center;
     line-height: 40px;
@@ -39,10 +39,9 @@ const HomeHeroWrapper = styled.section`
   }
 
   p:nth-child(2) {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     text-align: center;
 
-    /* padding: 0 3rem; */
     margin-bottom: 1.7rem;
   }
 

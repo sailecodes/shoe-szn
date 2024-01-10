@@ -40,11 +40,10 @@ const HomeShowcase = () => {
         header="Popular Community Picks"
         data={data}
       />
-
-      {/* <HomeShowcaseSection
+      <HomeShowcaseSection
         header="Best Streetwear"
         data={data}
-      /> */}
+      />
     </HomeShowcaseWrapper>
   );
 };
@@ -53,7 +52,7 @@ const HomeShowcaseSectionWrapper = styled.section`
   margin-bottom: 10rem;
 
   header {
-    font-size: var(--font-text-6);
+    font-size: 1.9rem;
     font-weight: 500;
 
     margin-bottom: 2rem;
@@ -64,6 +63,12 @@ const HomeShowcaseSectionWrapper = styled.section`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 2rem 0.5rem;
+  }
+
+  @media (min-width: 530px) {
+    header {
+      font-size: var(--font-text-6);
+    }
   }
 
   @media (min-width: 860px) {
