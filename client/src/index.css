@@ -123,5 +123,5 @@ button:hover,
 ::-webkit-scrollbar-thumb {
   background: var(--color-gray-white);
 
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }

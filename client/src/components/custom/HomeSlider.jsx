@@ -4,13 +4,17 @@ import RightArrowIcon from "../custom/icons/RightArrowIcon";
 import toe from "../../assets/imgs/toe-temp.jpg";
 
 import styled from "styled-components";
+import { useState } from "react";
 const HomeSliderWrapper = styled.section`
   position: relative;
 
   margin-bottom: 10rem;
 
+  overflow: hidden;
+
   .home-slider--slider {
-    /* display: flex; */
+    display: flex;
+    gap: 0;
   }
 
   .home-slider--nav {
@@ -91,20 +95,32 @@ const HomeSliderWrapper = styled.section`
 `;
 
 const HomeSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const updateIndex = (newIndex) => {
+    if (newIndex < 0) newIndex = 0;
+    else if (newIndex >= 3) newIndex = 2;
+
+    setActiveIndex(newIndex);
+  };
+
   return (
     <HomeSliderWrapper>
-      <div className="home-slider--slider">
-        <HomeSliderItem />
-        {/* <HomeSliderItem /> */}
+      <div
+        className="home-slider--slider"
+        style={{ transform: `translate(-${activeIndex}%)` }}>
+        <HomeSliderItem dummy="1" />
+        <HomeSliderItem dummy="2" />
+        <HomeSliderItem dummy="3" />
       </div>
       <nav className="home-slider--nav">
-        <button>
+        <button onClick={() => updateIndex(activeIndex - 1)}>
           <LeftArrowIcon fill="var(--color-gray-500)" />
         </button>
         <div></div>
         <div></div>
         <div></div>
-        <button>
+        <button onClick={() => updateIndex(activeIndex + 1)}>
           <RightArrowIcon fill="var(--color-gray-500)" />
         </button>
       </nav>
@@ -113,8 +129,12 @@ const HomeSlider = () => {
 };
 
 const HomeSliderItemWrapper = styled.div`
+  flex-shrink: 0;
+
   display: flex;
   flex-direction: column;
+
+  width: 100%;
 
   .home-slider-item--main {
     background-image: url(${toe});
@@ -233,19 +253,19 @@ const HomeSliderItemWrapper = styled.div`
   }
 `;
 
-const HomeSliderItem = () => {
+const HomeSliderItem = ({ dummy }) => {
   return (
     <HomeSliderItemWrapper>
       <div className="home-slider-item--main">
         <div>
           <p>Lowkey. Low maintenance. Low price.</p>
-          <p>Be comfortable in style.</p>
+          <p>{dummy}</p>
           <button>Shop now</button>
         </div>
       </div>
       <div className="home-slider-item--solo-text">
         <p>Lowkey. Low maintenance. Low price.</p>
-        <p>Be comfortable in style.</p>
+        <p>{dummy}</p>
         <button>Shop now</button>
       </div>
     </HomeSliderItemWrapper>
