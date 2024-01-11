@@ -14,7 +14,8 @@ const HomeSliderWrapper = styled.section`
 
   .home-slider--slider {
     display: flex;
-    gap: 0;
+
+    transition: transform 0.6s;
   }
 
   .home-slider--nav {
@@ -41,7 +42,7 @@ const HomeSliderWrapper = styled.section`
     border-radius: 100%;
   }
 
-  .home-slider--nav > div:nth-child(2) {
+  .home-slider--nav-marker.active {
     background-color: var(--color-primary);
   }
 
@@ -108,7 +109,7 @@ const HomeSlider = () => {
     <HomeSliderWrapper>
       <div
         className="home-slider--slider"
-        style={{ transform: `translate(-${activeIndex}%)` }}>
+        style={{ transform: `translate(-${activeIndex * 100}%)` }}>
         <HomeSliderItem dummy="1" />
         <HomeSliderItem dummy="2" />
         <HomeSliderItem dummy="3" />
@@ -117,9 +118,15 @@ const HomeSlider = () => {
         <button onClick={() => updateIndex(activeIndex - 1)}>
           <LeftArrowIcon fill="var(--color-gray-500)" />
         </button>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div
+          onClick={() => updateIndex(0)}
+          className={`home-slider--nav-marker ${activeIndex == 0 ? "active" : ""}`}></div>
+        <div
+          onClick={() => updateIndex(1)}
+          className={`home-slider--nav-marker ${activeIndex == 1 ? "active" : ""}`}></div>
+        <div
+          onClick={() => updateIndex(2)}
+          className={`home-slider--nav-marker ${activeIndex == 2 ? "active" : ""}`}></div>
         <button onClick={() => updateIndex(activeIndex + 1)}>
           <RightArrowIcon fill="var(--color-gray-500)" />
         </button>
