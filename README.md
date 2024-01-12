@@ -1,3 +1,3 @@
 # Shoe Szn
 
-## An ecommerce shoe store for your "shoe needs"
+## An ecommerce shoe store by the community, for the community.

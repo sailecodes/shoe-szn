@@ -2,6 +2,7 @@ import HomeHero from "../custom/HomeHero";
 import HomeSponsors from "../custom/HomeSponsors";
 import HomeShowcase from "../custom/HomeShowcase";
 import HomeSlider from "../custom/HomeSlider";
+import HomeCategories from "../custom/HomeCategories";
 
 import testimonyshoes from "../../assets/imgs/testimony-shoes.jpg";
 
@@ -147,6 +148,7 @@ const Home = () => {
       {/* <HomeSponsors color="var(--color-gray-400)" /> */}
       <HomeShowcase />
       <HomeSlider />
+      <HomeCategories />
       <div className="home--testimony">
         <div>
           <div>

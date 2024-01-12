@@ -266,13 +266,13 @@ const HomeSliderItem = ({ dummy }) => {
       <div className="home-slider-item--main">
         <div>
           <p>Lowkey. Low maintenance. Low price.</p>
-          <p>{dummy}</p>
+          <p>Be comfortable in style.</p>
           <button>Shop now</button>
         </div>
       </div>
       <div className="home-slider-item--solo-text">
         <p>Lowkey. Low maintenance. Low price.</p>
-        <p>{dummy}</p>
+        <p>Be comfortable in style.</p>
         <button>Shop now</button>
       </div>
     </HomeSliderItemWrapper>
