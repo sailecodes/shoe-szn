@@ -1,7 +1,6 @@
 import LeftArrowIcon from "../custom/icons/LeftArrowIcon";
 import RightArrowIcon from "../custom/icons/RightArrowIcon";
 
-import toe from "../../assets/imgs/toe-temp.jpg";
 import yellow from "../../assets/imgs/yellow.jpg";
 
 import styled from "styled-components";
@@ -185,13 +184,13 @@ const HomeSliderItemWrapper = styled.div`
     background-color: var(--color-primary);
     color: var(--color-white);
 
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 
     height: 4rem;
-    width: 10rem;
+    width: 11rem;
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 426px) {
     .home-slider-item--solo-text {
       padding-left: 4rem;
       padding-right: 4rem;
@@ -213,9 +212,9 @@ const HomeSliderItemWrapper = styled.div`
     }
 
     .home-slider-item--solo-text button {
-      font-size: 1.4rem;
+      width: 13rem;
 
-      width: 11rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -249,10 +248,10 @@ const HomeSliderItemWrapper = styled.div`
       background-color: var(--color-primary);
       color: var(--color-white);
 
-      font-size: 1.6rem;
-
       height: 4rem;
       width: 13rem;
+
+      font-size: 1.6rem;
     }
 
     .home-slider-item--solo-text {

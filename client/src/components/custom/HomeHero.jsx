@@ -1,4 +1,3 @@
-import kobe from "../../assets/imgs/kobe.jpg";
 import yellow from "../../assets/imgs/yellow.jpg";
 
 import styled from "styled-components";
@@ -40,7 +39,7 @@ const HomeHeroWrapper = styled.section`
   }
 
   p:nth-child(2) {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
 
     margin-bottom: 1.7rem;
@@ -50,10 +49,10 @@ const HomeHeroWrapper = styled.section`
     background-color: var(--color-primary);
     color: var(--color-white);
 
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 
     height: 4rem;
-    width: 21rem;
+    width: 22rem;
   }
 
   @media (min-width: 426px) {
@@ -69,35 +68,37 @@ const HomeHeroWrapper = styled.section`
     }
 
     p:nth-child(2) {
-      font-size: 1.6rem;
-
-      padding: 0 5rem;
+      font-size: 2.2rem;
     }
 
     button {
-      font-size: 1.4rem;
+      width: 25rem;
+
+      font-size: 1.6rem;
     }
   }
 
   @media (min-width: 860px) {
     .home-hero--main {
+      display: grid;
+      place-content: center;
+
       color: var(--color-primary);
 
-      height: 80rem;
+      height: 72rem;
 
       padding: 0 var(--padding-side);
       margin-bottom: 10rem;
     }
 
     .home-hero--main div {
-      display: unset;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
 
-      position: absolute;
-      left: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-
-      width: 70rem;
+      max-width: 110rem;
     }
 
     .home-hero--solo-text {
@@ -105,24 +106,17 @@ const HomeHeroWrapper = styled.section`
     }
 
     p:nth-child(1) {
-      font-size: var(--font-text-9);
-      text-align: left;
-
-      padding: 0;
+      font-size: 5rem;
     }
 
     p:nth-child(2) {
-      font-size: var(--font-text-3);
-      text-align: left;
+      font-size: 2.5rem;
 
-      padding: 0;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.7rem;
     }
 
     button {
-      font-size: var(--font-btn-lg);
-
-      width: 22rem;
+      width: 26rem;
     }
   }
 `;

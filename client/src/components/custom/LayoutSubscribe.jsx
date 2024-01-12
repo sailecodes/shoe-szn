@@ -78,7 +78,7 @@ const LayoutSubscribeWrapper = styled.section`
     }
 
     button {
-      width: 12rem;
+      width: 13rem;
     }
   }
 

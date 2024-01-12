@@ -16,7 +16,7 @@ const HomeCategoriesWrapper = styled.section`
   margin: 0 auto;
   margin-bottom: 10rem;
 
-  @media (min-width: 425px) {
+  @media (min-width: 426px) {
     padding: 0 var(--padding-side);
   }
 
