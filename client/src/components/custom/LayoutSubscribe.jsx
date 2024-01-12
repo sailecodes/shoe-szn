@@ -12,6 +12,7 @@ const LayoutSubscribeWrapper = styled.section`
 
   height: 40rem;
 
+  /* padding: 12rem 2rem; */
   padding: 0 2rem;
 
   header {
@@ -28,7 +29,7 @@ const LayoutSubscribeWrapper = styled.section`
     font-size: 1.6rem;
     text-align: center;
 
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   input,
@@ -95,10 +96,10 @@ const LayoutSubscribeWrapper = styled.section`
 const LayoutSubscribe = () => {
   return (
     <LayoutSubscribeWrapper>
-      <header>Interested in new releases?</header>
+      <header>Let's stay in touch</header>
       <p>
         Subscribe to our newsletter. Get 50% off your first purchase, exclusive offers, and a sneak peak into future
-        releases.{" "}
+        releases.
       </p>
       <div>
         <input

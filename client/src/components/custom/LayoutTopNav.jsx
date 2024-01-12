@@ -96,7 +96,7 @@ const LayoutTopNavWrapper = styled.nav`
     }
 
     .layout-top-nav--link {
-      font-size: var(--font-text-3);
+      font-size: 1.6rem;
       font-weight: 500;
     }
 

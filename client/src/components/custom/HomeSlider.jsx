@@ -2,6 +2,7 @@ import LeftArrowIcon from "../custom/icons/LeftArrowIcon";
 import RightArrowIcon from "../custom/icons/RightArrowIcon";
 
 import toe from "../../assets/imgs/toe-temp.jpg";
+import yellow from "../../assets/imgs/yellow.jpg";
 
 import styled from "styled-components";
 import { useState } from "react";
@@ -144,7 +145,7 @@ const HomeSliderItemWrapper = styled.div`
   width: 100%;
 
   .home-slider-item--main {
-    background-image: url(${toe});
+    background-image: url(${yellow});
     background-size: cover;
 
     height: 39rem;
@@ -187,7 +188,7 @@ const HomeSliderItemWrapper = styled.div`
     font-size: 1.3rem;
 
     height: 4rem;
-    width: 12rem;
+    width: 10rem;
   }
 
   @media (min-width: 425px) {
@@ -214,7 +215,7 @@ const HomeSliderItemWrapper = styled.div`
     .home-slider-item--solo-text button {
       font-size: 1.4rem;
 
-      width: 13rem;
+      width: 11rem;
     }
   }
 
@@ -248,10 +249,10 @@ const HomeSliderItemWrapper = styled.div`
       background-color: var(--color-primary);
       color: var(--color-white);
 
-      font-size: 1.4rem;
+      font-size: 1.6rem;
 
       height: 4rem;
-      width: 12rem;
+      width: 13rem;
     }
 
     .home-slider-item--solo-text {

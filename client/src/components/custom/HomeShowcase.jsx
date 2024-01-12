@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import toe from "../../assets/imgs/toe-temp.jpg";
+import yellow from "../../assets/imgs/yellow.jpg";
 
 import styled from "styled-components";
 const HomeShowcaseWrapper = styled.section`
@@ -159,7 +160,7 @@ const HomeShowcaseSectionCard = ({ imgUrl, name, price }) => {
   return (
     <HomeShowcaseSectionCardWrapper>
       <img
-        src={toe}
+        src={yellow}
         alt=""
       />
       <div className="home-showcase-section-card--info">

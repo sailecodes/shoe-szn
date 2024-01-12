@@ -1,4 +1,5 @@
 import kobe from "../../assets/imgs/kobe.jpg";
+import yellow from "../../assets/imgs/yellow.jpg";
 
 import styled from "styled-components";
 
@@ -6,7 +7,7 @@ const HomeHeroWrapper = styled.section`
   .home-hero--main {
     position: relative;
 
-    background-image: url(${kobe});
+    background-image: url(${yellow});
     background-size: cover;
 
     height: 50rem;

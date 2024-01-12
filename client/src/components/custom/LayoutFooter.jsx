@@ -30,7 +30,7 @@ const LayoutFooterWrapper = styled.footer`
   a {
     color: var(--color-gray-400);
 
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   a:hover {
@@ -43,11 +43,21 @@ const LayoutFooterWrapper = styled.footer`
 
   @media (min-width: 530px) {
     p {
-      font-size: var(--font-text-4);
+      font-size: 1.8rem;
     }
 
     a {
-      font-size: var(--font-text-3);
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 860px) {
+    p {
+      font-size: 2rem;
+    }
+
+    a {
+      font-size: 1.6rem;
     }
   }
 `;
@@ -55,7 +65,7 @@ const LayoutFooterWrapper = styled.footer`
 const LayoutFooter = () => {
   return (
     <LayoutFooterWrapper>
-      <p>Like what you see? Check me out!</p>
+      <p>Check out my other projects</p>
       <div>
         <a
           href="https://github.com/sailecodes"

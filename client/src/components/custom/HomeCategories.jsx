@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+
 import toe from "../../assets/imgs/toe-temp.jpg";
+import yellow from "../../assets/imgs/yellow.jpg";
 
 import styled from "styled-components";
 const HomeCategoriesWrapper = styled.section`
@@ -29,19 +31,19 @@ const HomeCategories = () => {
   return (
     <HomeCategoriesWrapper>
       <HomeCategoriesItem
-        imgSrc={toe}
+        imgSrc={yellow}
         title="Casual"
       />
       <HomeCategoriesItem
-        imgSrc={toe}
+        imgSrc={yellow}
         title="Streetwear"
       />
       <HomeCategoriesItem
-        imgSrc={toe}
+        imgSrc={yellow}
         title="Comfy"
       />
       <HomeCategoriesItem
-        imgSrc={toe}
+        imgSrc={yellow}
         title="Community Picks"
       />
     </HomeCategoriesWrapper>
@@ -65,7 +67,7 @@ const HomeCategoriesItemWrapper = styled.div`
 
   @media (min-width: 530px) {
     a {
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
   }
 `;
