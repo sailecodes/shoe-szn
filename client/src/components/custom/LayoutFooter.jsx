@@ -57,7 +57,7 @@ const LayoutFooterWrapper = styled.footer`
     }
 
     a {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 `;

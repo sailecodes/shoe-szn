@@ -65,6 +65,10 @@ const HomeCategoriesItemWrapper = styled.div`
     font-weight: 500;
   }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
   @media (min-width: 530px) {
     a {
       font-size: 2rem;

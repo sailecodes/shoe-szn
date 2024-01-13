@@ -5,7 +5,6 @@ import HomeEmail from "../custom/HomeEmail";
 import HomeSlider from "../custom/HomeSlider";
 import HomeCategories from "../custom/HomeCategories";
 
-import testimonyshoes from "../../assets/imgs/testimony-shoes.jpg";
 import yellow from "../../assets/imgs/yellow.jpg";
 
 import { styled } from "styled-components";
@@ -97,8 +96,8 @@ const Home = () => {
       <HomeEmail />
       <HomeCategories />
       <HomeSlider />
-      {/* <HomeSponsors color="var(--color-gray-400)" /> */}
-      <div className="home--testimony">
+      <HomeSponsors color="var(--color-gray-400)" />
+      {/* <div className="home--testimony">
         <div>
           <div>
             <img
@@ -114,7 +113,7 @@ const Home = () => {
             <p>- Raphael Roman (5 stars)</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </HomeWrapper>
   );
 };

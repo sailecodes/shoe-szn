@@ -126,17 +126,9 @@ const LayoutTopNavWrapper = styled.nav`
       gap: 2rem;
     }
 
-    .link-underline {
-      background-color: var(--color-primary);
-
-      height: 1px;
-      width: 0;
-
-      transition: width 0.3s;
-    }
-
-    .layout-top-nav--link:hover .link-underline {
-      width: 100%;
+    .layout-top-nav--links a:hover,
+    .layout-top-nav--links a.active {
+      text-decoration: underline;
     }
 
     .layout-top-nav--other button {
@@ -156,17 +148,25 @@ const LayoutTopNav = ({ isDarkBgVisible, setIsDarkBgVisible }) => {
         Shoe Szn
       </Link>
       <div className="layout-top-nav--links">
-        <NavLink className="layout-top-nav--link">
-          Casual <div className="link-underline"></div>
+        <NavLink
+          to="/casual"
+          className="layout-top-nav--link">
+          Casual
         </NavLink>
-        <NavLink className="layout-top-nav--link">
-          Streetwear <div className="link-underline"></div>
+        <NavLink
+          to="/streetwear"
+          className="layout-top-nav--link">
+          Streetwear
         </NavLink>
-        <NavLink className="layout-top-nav--link">
-          Comfy <div className="link-underline"></div>
+        <NavLink
+          to="/comfy"
+          className="layout-top-nav--link">
+          Comfy
         </NavLink>
-        <NavLink className="layout-top-nav--link">
-          Community Picks <div className="link-underline"></div>
+        <NavLink
+          to="/community-picks"
+          className="layout-top-nav--link">
+          Community Picks
         </NavLink>
       </div>
       <div className="layout-top-nav--other">
