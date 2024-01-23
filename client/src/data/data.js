@@ -77,22 +77,122 @@ export const data = {
     casual: {
       heroTitle: "Casual.",
       heroImg: graybg,
-      shoes: [],
+      shoes: [
+        {
+          name: "A",
+          price: "$1.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+        {
+          name: "B",
+          price: "$2.00",
+          img: graybg,
+          options: [8, 9, 11, 12],
+        },
+        {
+          name: "C",
+          price: "$3.00",
+          img: graybg,
+          options: [10, 11, 12],
+        },
+        {
+          name: "D",
+          price: "$4.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+      ],
     },
     streetwear: {
       heroTitle: "Streetwear.",
       heroImg: graybg,
-      shoes: [],
+      shoes: [
+        {
+          name: "E",
+          price: "$1.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+        {
+          name: "F",
+          price: "$2.00",
+          img: graybg,
+          options: [8, 9, 11, 12],
+        },
+        {
+          name: "G",
+          price: "$3.00",
+          img: graybg,
+          options: [10, 11, 12],
+        },
+        {
+          name: "H",
+          price: "$4.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+      ],
     },
     comfy: {
       heroTitle: "Comfy.",
       heroImg: graybg,
-      shoes: [],
+      shoes: [
+        {
+          name: "I",
+          price: "$1.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+        {
+          name: "J",
+          price: "$2.00",
+          img: graybg,
+          options: [8, 9, 11, 12],
+        },
+        {
+          name: "K",
+          price: "$3.00",
+          img: graybg,
+          options: [10, 11, 12],
+        },
+        {
+          name: "L",
+          price: "$4.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+      ],
     },
     communityPicks: {
       heroTitle: "Community Picks.",
       heroImg: graybg,
-      shoes: [],
+      shoes: [
+        {
+          name: "M",
+          price: "$1.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+        {
+          name: "N",
+          price: "$2.00",
+          img: graybg,
+          options: [8, 9, 11, 12],
+        },
+        {
+          name: "O",
+          price: "$3.00",
+          img: graybg,
+          options: [10, 11, 12],
+        },
+        {
+          name: "P",
+          price: "$4.00",
+          img: graybg,
+          options: [8, 9, 10, 11, 12],
+        },
+      ],
     },
   },
 };

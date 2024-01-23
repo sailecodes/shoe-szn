@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-
+import ItemCard from "./ItemCard";
 import { data } from "../../data/data";
 
 import styled from "styled-components";
@@ -26,11 +25,11 @@ const HomeShowcase = () => {
     <HomeShowcaseWrapper>
       <HomeShowcaseSection
         header={data.home.showcase.sectionOne.header}
-        data={data.home.showcase.sectionOne.shoes}
+        shoes={data.home.showcase.sectionOne.shoes}
       />
       <HomeShowcaseSection
         header={data.home.showcase.sectionTwo.header}
-        data={data.home.showcase.sectionTwo.shoes}
+        shoes={data.home.showcase.sectionTwo.shoes}
       />
     </HomeShowcaseWrapper>
   );
@@ -66,95 +65,22 @@ const HomeShowcaseSectionWrapper = styled.section`
   }
 `;
 
-const HomeShowcaseSection = ({ header, data }) => {
+const HomeShowcaseSection = ({ header, shoes }) => {
   return (
     <HomeShowcaseSectionWrapper>
       <header>{header}</header>
       <div>
-        {data.map((shoeInfo) => (
-          <HomeShowcaseSectionCard
-            key={shoeInfo.name}
-            img={shoeInfo.img}
-            name={shoeInfo.name}
-            price={shoeInfo.price}
+        {shoes.map((shoe) => (
+          <ItemCard
+            isHomeCard={true}
+            key={shoe.name}
+            name={shoe.name}
+            price={shoe.price}
+            img={shoe.img}
           />
         ))}
       </div>
     </HomeShowcaseSectionWrapper>
-  );
-};
-
-const HomeShowcaseSectionCardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .home-showcase-section-card--info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .home-showcase-section-card--text {
-    font-size: 1.5rem;
-  }
-
-  .home-showcase-section-card--text:nth-child(1) {
-    font-weight: 500;
-  }
-
-  a {
-    display: grid;
-    place-items: center;
-
-    color: var(--color-primary);
-
-    height: 3.6rem;
-
-    font-size: 1.4rem;
-    font-weight: 500;
-
-    border: 1px solid var(--color-primary);
-
-    transition: color 0.3s, background-color 0.3s;
-  }
-
-  a:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-  }
-
-  @media (min-width: 530px) {
-    .home-showcase-section-card--text {
-      font-size: var(--font-text-3);
-    }
-
-    a {
-      height: 4rem;
-
-      font-size: var(--font-text-3);
-    }
-  }
-`;
-
-const HomeShowcaseSectionCard = ({ img, name, price }) => {
-  return (
-    <HomeShowcaseSectionCardWrapper>
-      <img
-        src={img}
-        alt={name}
-      />
-      <div className="home-showcase-section-card--info">
-        <p className="home-showcase-section-card--text">{name}</p>
-        <p className="home-showcase-section-card--text">{price} USD</p>
-      </div>
-      <Link>See item</Link>
-    </HomeShowcaseSectionCardWrapper>
   );
 };
 
