@@ -1,4 +1,5 @@
-import yellow from "../../assets/imgs/yellow.jpg";
+import { Link } from "react-router-dom";
+import graybg from "../../assets/imgs/gray-bg.jpg";
 
 import styled from "styled-components";
 
@@ -6,7 +7,7 @@ const HomeHeroWrapper = styled.section`
   .home-hero--main {
     position: relative;
 
-    background-image: url(${yellow});
+    background-image: url(${graybg});
     background-size: cover;
 
     height: 50rem;
@@ -45,7 +46,10 @@ const HomeHeroWrapper = styled.section`
     margin-bottom: 1.7rem;
   }
 
-  button {
+  a {
+    display: grid;
+    place-items: center;
+
     background-color: var(--color-primary);
     color: var(--color-white);
 
@@ -71,7 +75,7 @@ const HomeHeroWrapper = styled.section`
       font-size: 2.2rem;
     }
 
-    button {
+    a {
       width: 25rem;
 
       font-size: 1.6rem;
@@ -115,7 +119,7 @@ const HomeHeroWrapper = styled.section`
       margin-bottom: 1.7rem;
     }
 
-    button {
+    a {
       width: 26rem;
     }
   }
@@ -131,7 +135,7 @@ const HomeHero = () => {
             Every pair is chosen by a community of individuals who love and are passionate about shoes. Not a big shoe
             lover? No worries. You&apos;ve still come to the right place.
           </p>
-          <button>See our community picks</button>
+          <Link to="/community-picks">See our community picks</Link>
         </div>
       </div>
       <div className="home-hero--solo-text">
@@ -140,7 +144,7 @@ const HomeHero = () => {
           Every pair is chosen by a community of individuals who love and are passionate about shoes. Not a big shoe
           lover? No worries. You&apos;ve still come to the right place.
         </p>
-        <button>See our community picks</button>
+        <Link to="/community-picks">See our community picks</Link>
       </div>
     </HomeHeroWrapper>
   );

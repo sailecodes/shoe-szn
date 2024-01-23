@@ -1,7 +1,7 @@
 import LeftArrowIcon from "../custom/icons/LeftArrowIcon";
 import RightArrowIcon from "../custom/icons/RightArrowIcon";
 
-import yellow from "../../assets/imgs/yellow.jpg";
+import gray from "../../assets/imgs/gray-bg.jpg";
 
 import styled from "styled-components";
 import { useState } from "react";
@@ -144,7 +144,7 @@ const HomeSliderItemWrapper = styled.div`
   width: 100%;
 
   .home-slider-item--main {
-    background-image: url(${yellow});
+    background-image: url(${gray});
     background-size: cover;
 
     height: 39rem;

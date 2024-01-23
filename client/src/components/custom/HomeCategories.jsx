@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-import toe from "../../assets/imgs/toe-temp.jpg";
-import yellow from "../../assets/imgs/yellow.jpg";
+import { data } from "../../data/data";
 
 import styled from "styled-components";
 const HomeCategoriesWrapper = styled.section`
@@ -10,7 +9,7 @@ const HomeCategoriesWrapper = styled.section`
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem 0.5rem;
 
-  max-width: 142.5rem;
+  max-width: 150rem;
 
   padding: 0 2rem;
   margin: 0 auto;
@@ -31,20 +30,20 @@ const HomeCategories = () => {
   return (
     <HomeCategoriesWrapper>
       <HomeCategoriesItem
-        imgSrc={yellow}
-        title="Casual"
+        img={data.home.categories.casual.img}
+        title={data.home.categories.casual.title}
       />
       <HomeCategoriesItem
-        imgSrc={yellow}
-        title="Streetwear"
+        img={data.home.categories.streetwear.img}
+        title={data.home.categories.streetwear.title}
       />
       <HomeCategoriesItem
-        imgSrc={yellow}
-        title="Comfy"
+        img={data.home.categories.comfy.img}
+        title={data.home.categories.comfy.title}
       />
       <HomeCategoriesItem
-        imgSrc={yellow}
-        title="Community Picks"
+        img={data.home.categories.communityPicks.img}
+        title={data.home.categories.communityPicks.title}
       />
     </HomeCategoriesWrapper>
   );
@@ -76,13 +75,13 @@ const HomeCategoriesItemWrapper = styled.div`
   }
 `;
 
-const HomeCategoriesItem = ({ imgSrc, title }) => {
+const HomeCategoriesItem = ({ img, title }) => {
   return (
     <HomeCategoriesItemWrapper>
-      <Link>
+      <Link to={"/" + (title === "Community Picks" ? "community-picks" : title)}>
         <img
-          src={imgSrc}
-          alt=""
+          src={img}
+          alt="Category image"
         />
         {title}
       </Link>

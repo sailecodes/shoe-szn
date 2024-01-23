@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
-import yellow from "../../assets/imgs/yellow.jpg";
+import gray from "../../assets/imgs/gray-bg.jpg";
 
 import styled from "styled-components";
 
 const CategoryWrapper = styled.main`
   .category--hero {
-    background-image: url(${yellow});
+    display: grid;
+    place-items: center;
+
     background-size: cover;
 
     height: 30rem;
+  }
+
+  .category--hero p {
+    color: var(--color-primary);
+
+    font-size: 3.4rem;
+    font-weight: 600;
   }
 
   .category--filter {
@@ -17,9 +26,9 @@ const CategoryWrapper = styled.main`
     justify-content: center;
     gap: 5rem;
 
-    max-width: 140rem;
+    max-width: 150rem;
 
-    padding: 4rem 4rem;
+    padding: 4rem 2rem;
     margin: 0 auto;
   }
 
@@ -39,16 +48,30 @@ const CategoryWrapper = styled.main`
     grid-template-rows: repeat(2, 1fr);
     gap: 2rem 0.5rem;
 
-    max-width: 140rem;
+    max-width: 150rem;
 
-    padding: 0 4rem;
+    padding: 0 2rem;
     margin: 0 auto;
     margin-bottom: 4rem;
+  }
+
+  @media (min-width: 425px) {
+    .category--filter {
+      padding: 4rem 4rem;
+    }
+
+    .category--content {
+      padding: 0 4rem;
+    }
   }
 
   @media (min-width: 530px) {
     .category--hero {
       height: 40rem;
+    }
+
+    .category--hero p {
+      font-size: 4rem;
     }
 
     .category--filter p {
@@ -57,6 +80,10 @@ const CategoryWrapper = styled.main`
   }
 
   @media (min-width: 860px) {
+    .category--hero p {
+      font-size: 5rem;
+    }
+
     .category--content {
       display: flex;
       align-items: center;
@@ -65,10 +92,14 @@ const CategoryWrapper = styled.main`
   }
 `;
 
-const Category = ({ data }) => {
+const Category = ({ heroImg, heroTitle }) => {
   return (
     <CategoryWrapper>
-      <div className="category--hero"></div>
+      <div
+        className="category--hero"
+        style={{ backgroundImage: `url(${heroImg})` }}>
+        <p>{heroTitle}</p>
+      </div>
       <nav className="category--filter">
         <div>
           <p>Filter: Size</p>
@@ -99,6 +130,8 @@ const ItemCardWrapper = styled.div`
   }
 
   p {
+    color: var(--color-primary);
+
     font-size: 1.5rem;
   }
 
@@ -106,7 +139,8 @@ const ItemCardWrapper = styled.div`
     font-weight: 500;
   }
 
-  a {
+  a,
+  button {
     display: grid;
     place-items: center;
 
@@ -122,35 +156,58 @@ const ItemCardWrapper = styled.div`
     transition: color 0.3s, background-color 0.3s;
   }
 
-  a:hover {
+  a:hover,
+  button:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
   }
 
+  select {
+    color: var(--color-primary);
+
+    font-family: inherit;
+
+    border: 1px solid var(--color-primary);
+  }
+
   @media (min-width: 530px) {
-    p {
+    p,
+    a,
+    button {
       font-size: 1.6rem;
     }
 
-    a {
-      font-size: 1.6rem;
+    select {
+      font-size: 1.4rem;
     }
   }
 `;
 
-const ItemCard = ({ isHomeCard }) => {
+const ItemCard = ({ isHomeCard, img, name, price, options }) => {
   return (
     <ItemCardWrapper>
       <img
-        src={yellow}
+        src={gray}
         alt=""
       />
       <div>
         <p>Mamba</p>
         <p>$89.99 USD</p>
       </div>
-      {!isHomeCard && <div>Input</div>}
-      <Link>Add to cart</Link>
+      {!isHomeCard && (
+        <select
+          id="size"
+          name="size">
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+      )}
+      {!isHomeCard && <button>Add to cart</button>}
+      {isHomeCard && <Link>See item</Link>}
+      <div className="overlay"></div>
     </ItemCardWrapper>
   );
 };

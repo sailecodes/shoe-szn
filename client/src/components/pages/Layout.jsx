@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
 
 import LayoutTopNav from "../custom/LayoutTopNav";
 import LayoutFooter from "../custom/LayoutFooter";
@@ -6,7 +7,6 @@ import LayoutSubscribe from "../custom/LayoutSubscribe";
 import LayoutAnnouncement from "../custom/LayoutAnnouncement";
 
 import styled from "styled-components";
-import { useState } from "react";
 const LayoutWrapper = styled.main`
   .dark-bg.visible {
     position: absolute;

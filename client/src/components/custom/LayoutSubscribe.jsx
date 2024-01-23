@@ -43,6 +43,8 @@ const LayoutSubscribeWrapper = styled.section`
 
   input {
     width: 20rem;
+
+    border: 1px solid var(--color-primary);
   }
 
   button {

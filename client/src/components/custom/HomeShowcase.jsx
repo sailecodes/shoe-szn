@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 
-import toe from "../../assets/imgs/toe-temp.jpg";
-import yellow from "../../assets/imgs/yellow.jpg";
+import { data } from "../../data/data";
 
 import styled from "styled-components";
 const HomeShowcaseWrapper = styled.section`
   color: var(--color-primary);
 
+  max-width: 150rem;
+
   padding: 0 2rem;
+  margin: 0 auto;
   margin-bottom: 10rem;
+
+  > section:first-child {
+    margin-bottom: 8rem;
+  }
 
   @media (min-width: 426px) {
     padding: 0 var(--padding-side);
@@ -16,42 +22,21 @@ const HomeShowcaseWrapper = styled.section`
 `;
 
 const HomeShowcase = () => {
-  const data = [
-    {
-      name: "Optimus",
-      price: "$99.99",
-    },
-    {
-      name: "Yizis",
-      price: "$67.99",
-    },
-    {
-      name: "Mamba",
-      price: "$199.99",
-    },
-    {
-      name: "Babibas 3s",
-      price: "$89.99",
-    },
-  ];
-
   return (
     <HomeShowcaseWrapper>
       <HomeShowcaseSection
-        header="Popular Community Picks"
-        data={data}
+        header={data.home.showcase.sectionOne.header}
+        data={data.home.showcase.sectionOne.shoes}
       />
       <HomeShowcaseSection
-        header="Best Streetwear"
-        data={data}
+        header={data.home.showcase.sectionTwo.header}
+        data={data.home.showcase.sectionTwo.shoes}
       />
     </HomeShowcaseWrapper>
   );
 };
 
 const HomeShowcaseSectionWrapper = styled.section`
-  margin-bottom: 10rem;
-
   header {
     font-size: 1.9rem;
     font-weight: 500;
@@ -86,11 +71,12 @@ const HomeShowcaseSection = ({ header, data }) => {
     <HomeShowcaseSectionWrapper>
       <header>{header}</header>
       <div>
-        {data.map((info) => (
+        {data.map((shoeInfo) => (
           <HomeShowcaseSectionCard
-            key={info.name + "home-showcase-section"}
-            name={info.name}
-            price={info.price}
+            key={shoeInfo.name}
+            img={shoeInfo.img}
+            name={shoeInfo.name}
+            price={shoeInfo.price}
           />
         ))}
       </div>
@@ -156,12 +142,12 @@ const HomeShowcaseSectionCardWrapper = styled.div`
   }
 `;
 
-const HomeShowcaseSectionCard = ({ imgUrl, name, price }) => {
+const HomeShowcaseSectionCard = ({ img, name, price }) => {
   return (
     <HomeShowcaseSectionCardWrapper>
       <img
-        src={yellow}
-        alt=""
+        src={img}
+        alt={name}
       />
       <div className="home-showcase-section-card--info">
         <p className="home-showcase-section-card--text">{name}</p>

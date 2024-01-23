@@ -65,7 +65,7 @@ const LayoutFooterWrapper = styled.footer`
 const LayoutFooter = () => {
   return (
     <LayoutFooterWrapper>
-      <p>Check out my other projects</p>
+      <p>Check me out</p>
       <div>
         <a
           href="https://github.com/sailecodes"

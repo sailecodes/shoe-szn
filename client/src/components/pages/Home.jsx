@@ -5,8 +5,6 @@ import HomeEmail from "../custom/HomeEmail";
 import HomeSlider from "../custom/HomeSlider";
 import HomeCategories from "../custom/HomeCategories";
 
-import yellow from "../../assets/imgs/yellow.jpg";
-
 import { styled } from "styled-components";
 const HomeWrapper = styled.main`
   .home--testimony {
@@ -97,23 +95,6 @@ const Home = () => {
       <HomeCategories />
       <HomeSlider />
       <HomeSponsors color="var(--color-gray-400)" />
-      {/* <div className="home--testimony">
-        <div>
-          <div>
-            <img
-              src={yellow}
-              alt=""
-            />
-          </div>
-          <div className="home--testimony-text">
-            <p>
-              &quot;The blank is a perfect blend of comfort and style. It&apos;s a bit expensive but worthwhile for what
-              it offers. Probably my most used pair this year.&quot;
-            </p>
-            <p>- Raphael Roman (5 stars)</p>
-          </div>
-        </div>
-      </div> */}
     </HomeWrapper>
   );
 };
