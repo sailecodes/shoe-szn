@@ -9,6 +9,7 @@ import Comfy from "./components/pages/Comfy";
 import CommunityPicks from "./components/pages/CommunityPicks";
 import Profile from "./components/pages/Profile";
 import Cart from "./components/pages/Cart";
+import Item from "./components/pages/Item";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/item",
+        element: <Item />,
       },
     ],
   },

@@ -244,6 +244,10 @@ const SidebarWrapper = styled.div`
     text-decoration: underline;
   }
 
+  nav a.active {
+    text-decoration: underline;
+  }
+
   @media (min-width: 530px) {
     a:nth-child(5),
     a:nth-child(6) {
@@ -258,7 +262,7 @@ const Sidebar = ({ linksInfo, isSidebarVisible, setIsSidebarVisible }) => {
 
   return (
     <SidebarWrapper
-      className={isSidebarVisible ? "sidebar--overlay visible" : "sidebar-overlay"}
+      className={isSidebarVisible ? "visible" : ""}
       isSidebarVisible={isSidebarVisible}>
       <nav>
         <button
