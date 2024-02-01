@@ -108,6 +108,33 @@ const LayoutTopNavWrapper = styled.nav`
 const LayoutTopNav = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
+  const data = [
+    {
+      name: "Casual",
+      linkName: "casual",
+    },
+    {
+      name: "Streetwear",
+      linkName: "streetwear",
+    },
+    {
+      name: "Comfy",
+      linkName: "comfy",
+    },
+    {
+      name: "Community Picks",
+      linkName: "community-picks",
+    },
+    {
+      name: "Profile",
+      linkName: "Profile",
+    },
+    {
+      name: "Cart",
+      linkName: "cart",
+    },
+  ];
+
   return (
     <LayoutTopNavWrapper>
       <Link
@@ -152,6 +179,7 @@ const LayoutTopNav = () => {
         </button>
       </div>
       <Sidebar
+        linksInfo={data}
         isSidebarVisible={isSidebarVisible}
         setIsSidebarVisible={setIsSidebarVisible}
       />
@@ -224,7 +252,7 @@ const SidebarWrapper = styled.div`
   }
 `;
 
-const Sidebar = ({ linkNames, isSidebarVisible, setIsSidebarVisible }) => {
+const Sidebar = ({ linksInfo, isSidebarVisible, setIsSidebarVisible }) => {
   if (isSidebarVisible) document.body.classList.add("no-scroll");
   else document.body.classList.remove("no-scroll");
 
@@ -239,12 +267,14 @@ const Sidebar = ({ linkNames, isSidebarVisible, setIsSidebarVisible }) => {
           }}>
           <LeftArrowIcon fill={"var(--color-primary)"} />
         </button>
-        <NavLink>Casual</NavLink>
-        <NavLink>Streetwear</NavLink>
-        <NavLink>Comfy</NavLink>
-        <NavLink>Community Picks</NavLink>
-        <NavLink>Cart</NavLink>
-        <NavLink>Profile</NavLink>
+        {linksInfo.map((linkInfo) => (
+          <NavLink
+            key={"sidebar-" + linkInfo.name}
+            to={linkInfo.linkName}
+            onClick={() => setIsSidebarVisible(!isSidebarVisible)}>
+            {linkInfo.name}
+          </NavLink>
+        ))}
       </nav>
     </SidebarWrapper>
   );
