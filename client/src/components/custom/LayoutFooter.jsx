@@ -68,17 +68,17 @@ const LayoutFooter = () => {
       <p>Check me out</p>
       <div>
         <a
-          href="https://github.com/sailecodes"
-          target="_blank"
-          rel="noopener noreferrer">
-          Github
-        </a>
-        <div>&middot;</div>
-        <a
           href="https://www.linkedin.com/in/elias-roman-38440028b/"
           target="_blank"
           rel="noopener noreferrer">
           LinkedIn
+        </a>
+        <div>&middot;</div>
+        <a
+          href="https://github.com/sailecodes"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub
         </a>
         <div>&middot;</div>
         <a

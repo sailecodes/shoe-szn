@@ -7,6 +7,8 @@ import Casual from "./components/pages/Casual";
 import Streetwear from "./components/pages/Streetwear";
 import Comfy from "./components/pages/Comfy";
 import CommunityPicks from "./components/pages/CommunityPicks";
+import Profile from "./components/pages/Profile";
+import Cart from "./components/pages/Cart";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: "/community-picks",
         element: <CommunityPicks />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

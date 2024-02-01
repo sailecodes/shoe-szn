@@ -6,6 +6,7 @@ import CartIcon from "../custom/icons/CartIcon";
 import CategoriesIcon from "../custom/icons/CategoriesIcon";
 
 import styled from "styled-components";
+import LeftArrowIcon from "./icons/LeftArrowIcon";
 
 const LayoutTopNavWrapper = styled.nav`
   display: flex;
@@ -38,52 +39,28 @@ const LayoutTopNavWrapper = styled.nav`
     font-size: 3.8rem;
   }
 
-  .layout-top-nav--links {
+  .layout-top-nav--category-links {
     display: none;
   }
 
-  .layout-top-nav--other {
+  .layout-top-nav--user-links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1.8rem;
   }
 
-  .layout-top-nav--other a {
+  .layout-top-nav--user-links a {
     display: none;
   }
 
-  .layout-top-nav--other button {
+  .layout-top-nav--user-links button {
     display: grid;
     place-items: center;
   }
 
-  .layout-top-nav--other svg {
+  .layout-top-nav--user-links svg {
     width: 3rem;
-  }
-
-  .layout-top-nav--menu {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    position: absolute;
-    z-index: 99;
-    top: 100%;
-    right: 0;
-
-    background-color: var(--color-white);
-
-    height: 100vh;
-
-    font-size: 1.8rem;
-    text-align: right;
-
-    padding: 2rem 2.5rem 2rem 15rem;
-  }
-
-  .layout-top-nav--menu.hidden {
-    display: none;
   }
 
   @media (min-width: 426px) {
@@ -100,45 +77,36 @@ const LayoutTopNavWrapper = styled.nav`
       font-weight: 500;
     }
 
-    .layout-top-nav--other {
+    .layout-top-nav--user-links {
       width: 22rem;
     }
 
-    .layout-top-nav--other a {
+    .layout-top-nav--user-links a {
       display: grid;
       place-items: center;
-    }
-
-    .layout-top-nav--menu.hidden {
-      display: none;
-    }
-
-    .layout-top-nav--menu a:nth-child(5),
-    .layout-top-nav--menu a:nth-child(6) {
-      display: none;
     }
   }
 
   @media (min-width: 1000px) {
-    .layout-top-nav--links {
+    .layout-top-nav--category-links {
       display: flex;
       align-items: center;
       gap: 2rem;
     }
 
-    .layout-top-nav--links a:hover,
-    .layout-top-nav--links a.active {
+    .layout-top-nav--category-links a:hover,
+    .layout-top-nav--category-links a.active {
       text-decoration: underline;
     }
 
-    .layout-top-nav--other button {
+    .layout-top-nav--user-links button {
       display: none;
     }
   }
 `;
 
-const LayoutTopNav = ({ isDarkBgVisible, setIsDarkBgVisible }) => {
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
+const LayoutTopNav = () => {
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   return (
     <LayoutTopNavWrapper>
@@ -147,7 +115,7 @@ const LayoutTopNav = ({ isDarkBgVisible, setIsDarkBgVisible }) => {
         className="layout-top-nav--logo">
         Shoe Szn
       </Link>
-      <div className="layout-top-nav--links">
+      <div className="layout-top-nav--category-links">
         <NavLink
           to="/casual"
           className="layout-top-nav--link">
@@ -169,22 +137,108 @@ const LayoutTopNav = ({ isDarkBgVisible, setIsDarkBgVisible }) => {
           Community Picks
         </NavLink>
       </div>
-      <div className="layout-top-nav--other">
-        <NavLink>
+      <div className="layout-top-nav--user-links">
+        <NavLink to="/profile">
           <ProfileIcon stroke={"var(--color-primary)"} />
         </NavLink>
-        <NavLink>
+        <NavLink to="/cart">
           <CartIcon stroke={"var(--color-primary)"} />
         </NavLink>
         <button
           onClick={() => {
-            setIsMenuOpened(!isMenuOpened);
-            setIsDarkBgVisible(!isDarkBgVisible);
+            setIsSidebarVisible(!isSidebarVisible);
           }}>
           <CategoriesIcon stroke={"var(--color-primary)"} />
         </button>
       </div>
-      <nav className={isMenuOpened ? "layout-top-nav--menu visible" : "layout-top-nav--menu hidden"}>
+      <Sidebar
+        isSidebarVisible={isSidebarVisible}
+        setIsSidebarVisible={setIsSidebarVisible}
+      />
+    </LayoutTopNavWrapper>
+  );
+};
+
+const SidebarWrapper = styled.div`
+  & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 98;
+
+    background-color: var(--color-sidebar-overlay);
+
+    opacity: 0;
+  }
+
+  &.visible {
+    right: 0;
+    bottom: 0;
+
+    opacity: 1;
+  }
+
+  nav {
+    display: ${(props) => (props.isSidebarVisible ? "flex" : "none")};
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+
+    background-color: var(--color-white);
+
+    height: 100vh;
+
+    font-size: 1.8rem;
+
+    padding: 4rem 2rem 2rem 15rem;
+  }
+
+  nav button {
+    display: grid;
+    place-items: center;
+
+    position: relative;
+    left: 4.5%;
+  }
+
+  nav svg {
+    width: 3rem;
+
+    margin-bottom: 3rem;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 530px) {
+    a:nth-child(5),
+    a:nth-child(6) {
+      display: none;
+    }
+  }
+`;
+
+const Sidebar = ({ linkNames, isSidebarVisible, setIsSidebarVisible }) => {
+  if (isSidebarVisible) document.body.classList.add("no-scroll");
+  else document.body.classList.remove("no-scroll");
+
+  return (
+    <SidebarWrapper
+      className={isSidebarVisible ? "sidebar--overlay visible" : "sidebar-overlay"}
+      isSidebarVisible={isSidebarVisible}>
+      <nav>
+        <button
+          onClick={() => {
+            setIsSidebarVisible(!isSidebarVisible);
+          }}>
+          <LeftArrowIcon fill={"var(--color-primary)"} />
+        </button>
         <NavLink>Casual</NavLink>
         <NavLink>Streetwear</NavLink>
         <NavLink>Comfy</NavLink>
@@ -192,7 +246,7 @@ const LayoutTopNav = ({ isDarkBgVisible, setIsDarkBgVisible }) => {
         <NavLink>Cart</NavLink>
         <NavLink>Profile</NavLink>
       </nav>
-    </LayoutTopNavWrapper>
+    </SidebarWrapper>
   );
 };
 
