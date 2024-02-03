@@ -5,16 +5,17 @@ const ItemWrapper = styled.section`
   display: grid;
   place-items: center;
 
-  padding: 4rem 4rem 0;
+  padding-top: 4rem;
   margin-bottom: 4rem;
 
   .item--container {
     display: flex;
-    justify-content: space-between;
 
-    max-width: 150rem;
+    width: 150rem;
 
     border: 1px solid black;
+
+    padding: 0 4rem;
   }
 
   .item--images {
@@ -36,27 +37,39 @@ const ItemWrapper = styled.section`
     font-weight: 500;
     letter-spacing: 1px;
     line-height: 5dvh;
+
+    margin-bottom: 1rem;
   }
 
   .item--price {
     color: var(--color-primary);
 
-    font-size: var(--font-text-5);
+    font-size: var(--font-text-6);
+
+    margin-bottom: 1rem;
   }
 
   .item--sizes {
-    display: flex;
-    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .item--size {
-    display: grid;
-    place-items: center;
+  select {
+    color: var(--color-primary);
+    background-color: var(--color-white);
 
+    width: 10rem;
+    height: 3.6rem;
+
+    font-size: var(--font-text-3);
+
+    border: 1px solid var(--color-primary);
+  }
+
+  button {
     color: var(--color-primary);
 
-    width: 6rem;
     height: 3.6rem;
+    width: 20rem;
 
     font-size: var(--font-text-3);
 
@@ -65,11 +78,9 @@ const ItemWrapper = styled.section`
     transition: color 0.3s, background-color 0.3s;
   }
 
-  .item--size:hover {
-    cursor: pointer;
-
-    background-color: var(--color-primary);
+  button:hover {
     color: var(--color-white);
+    background-color: var(--color-primary);
   }
 `;
 
@@ -93,19 +104,25 @@ const Item = () => {
             alt=""
           />
         </div>
-        <div>
-          <p className="item--name">Nike Earths asdf asdfdas fadsf ads</p>
+        <div className="item--information">
+          <p className="item--name">Nike Earths</p>
           <div className="item--reviews"></div>
           <p className="item--price">$99.99</p>
           <div className="item--sizes">
-            {sizes.map((size) => (
-              <div
-                key={"item--sizes-" + size + "-Nike Earths"}
-                className="item--size">
-                {size}
-              </div>
-            ))}
+            <select>
+              <option selected="selected">Size</option>
+              {sizes.map((size) => (
+                <option
+                  key={"item--sizes-" + size + "-Nike Earths"}
+                  className="item--size">
+                  {size}
+                </option>
+              ))}
+            </select>
           </div>
+          <button>Add to cart</button>
+          <p className="item--description">Hoorah.</p>
+          <div className="item--features"></div>
         </div>
       </div>
     </ItemWrapper>

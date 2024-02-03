@@ -24,7 +24,6 @@ const CategoryWrapper = styled.main`
   .category--filter {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 5rem;
 
     max-width: 150rem;
@@ -37,10 +36,6 @@ const CategoryWrapper = styled.main`
     color: var(--color-gray-500);
 
     font-size: 1.3rem;
-  }
-
-  .category--filter > p {
-    margin-left: auto;
   }
 
   .category--content {
@@ -102,12 +97,6 @@ const Category = ({ heroImg, heroTitle, shoes }) => {
         <p>{heroTitle}</p>
       </div>
       <nav className="category--filter">
-        <div>
-          <p>Filter: Size</p>
-        </div>
-        <div>
-          <p>Sort by: Featured</p>
-        </div>
         <p>3 products</p>
       </nav>
       <div className="category--content">

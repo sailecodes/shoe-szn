@@ -21,6 +21,12 @@ const ItemCardWrapper = styled.div`
     font-weight: 500;
   }
 
+  .item-card--btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
   a,
   button {
     display: grid;
@@ -29,6 +35,7 @@ const ItemCardWrapper = styled.div`
     color: var(--color-primary);
 
     height: 3.6rem;
+    width: 100%;
 
     font-size: 1.4rem;
     font-weight: 500;
@@ -89,7 +96,12 @@ const ItemCard = ({ isHomeCard, name, price, img, options }) => {
           ))}
         </select>
       )}
-      {!isHomeCard && <button>Add to cart</button>}
+      {!isHomeCard && (
+        <div className="item-card--btns">
+          <Link to="/item">See item</Link>
+          <button>Add to cart</button>
+        </div>
+      )}
       {isHomeCard && <Link>See item</Link>}
     </ItemCardWrapper>
   );
