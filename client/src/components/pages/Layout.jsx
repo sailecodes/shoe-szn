@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 
 import LayoutTopNav from "../custom/LayoutTopNav";
-import LayoutFooter from "../custom/LayoutFooter";
 
 const LayoutWrapper = styled.section`
   .layout--announcement {
@@ -76,6 +75,45 @@ const LayoutWrapper = styled.section`
     width: 11rem;
   }
 
+  .layout--footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    background-color: var(--color-primary);
+    color: var(--color-white);
+
+    height: 15rem;
+
+    padding: 0 2rem;
+  }
+
+  .layout--footer p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .layout--footer > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--color-gray-400);
+  }
+
+  .layout--footer a {
+    color: var(--color-gray-400);
+
+    font-size: 1.3rem;
+  }
+
+  .layout--footer a:hover {
+    text-decoration: underline;
+  }
+
   @media (min-width: 426px) {
     .layout--subscribe {
       padding: 0 4rem;
@@ -83,6 +121,10 @@ const LayoutWrapper = styled.section`
 
     .layout--subscribe input {
       width: fit-content;
+    }
+
+    .layout--footer {
+      padding: 0 4rem;
     }
   }
 
@@ -110,6 +152,14 @@ const LayoutWrapper = styled.section`
     .layout--subscribe button {
       width: 13rem;
     }
+
+    .layout--footer p {
+      font-size: 1.8rem;
+    }
+
+    .layout--footer a {
+      font-size: 1.5rem;
+    }
   }
 
   @media (min-width: 860px) {
@@ -119,6 +169,10 @@ const LayoutWrapper = styled.section`
 
     .layout--subscribe p {
       font-size: 2.2rem;
+    }
+
+    .layout--footer p {
+      font-size: 2rem;
     }
   }
 `;
@@ -143,7 +197,7 @@ const Layout = () => {
           <button>Subscribe</button>
         </div>
       </section>
-      <footer>
+      <footer className="layout--footer">
         <p>Check me out</p>
         <div>
           <a
@@ -168,7 +222,6 @@ const Layout = () => {
           </a>
         </div>
       </footer>
-      <LayoutFooter />
     </LayoutWrapper>
   );
 };
