@@ -25,6 +25,7 @@ const CategoryWrapper = styled.main`
   .category--filter {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 5rem;
 
     max-width: 150rem;
@@ -37,6 +38,12 @@ const CategoryWrapper = styled.main`
     color: var(--color-gray-500);
 
     font-size: 1.3rem;
+  }
+
+  .category--filter select {
+    color: var(--color-gray-500);
+
+    border-color: var(--color-gray-400);
   }
 
   .category--content {
