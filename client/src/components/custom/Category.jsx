@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 
 import styled from "styled-components";
+import { useState } from "react";
 
 const CategoryWrapper = styled.main`
   .category--hero {
@@ -89,6 +90,28 @@ const CategoryWrapper = styled.main`
 `;
 
 const Category = ({ heroImg, heroTitle, shoes }) => {
+  const [sortMethod, setSortMethod] = useState("");
+
+  console.log(sortMethod);
+
+  if (sortMethod === "name-asc") {
+    shoes = Object.entries(shoes)
+      .sort((a, b) => a[1].name.localeCompare(b[1].name))
+      .map((shoe) => shoe[1]);
+  } else if (sortMethod === "name-desc") {
+    shoes = Object.entries(shoes)
+      .sort((a, b) => b[1].name.localeCompare(a[1].name))
+      .map((shoe) => shoe[1]);
+  } else if (sortMethod === "price-asc") {
+    shoes = Object.entries(shoes)
+      .sort((a, b) => Number(a[1].price.substring(1)) - Number(b[1].price.substring(1)))
+      .map((shoe) => shoe[1]);
+  } else if (sortMethod === "price-desc") {
+    shoes = Object.entries(shoes)
+      .sort((a, b) => Number(b[1].price.substring(1)) - Number(a[1].price.substring(1)))
+      .map((shoe) => shoe[1]);
+  }
+
   return (
     <CategoryWrapper>
       <div
@@ -97,7 +120,18 @@ const Category = ({ heroImg, heroTitle, shoes }) => {
         <p>{heroTitle}</p>
       </div>
       <nav className="category--filter">
-        <p>3 products</p>
+        <p>{Object.keys(shoes).length} products</p>
+        <select
+          name="sort"
+          id="sort"
+          value={sortMethod}
+          onChange={(e) => setSortMethod(e.target.value === "Sort by" ? sortMethod : e.target.value)}>
+          <option selected="selected">Sort by</option>
+          <option value="name-asc">A-Z</option>
+          <option value="name-desc">Z-A</option>
+          <option value="price-asc">Price: Low-High</option>
+          <option value="price-desc">Price: High-Low</option>
+        </select>
       </nav>
       <div className="category--content">
         {shoes.map((shoe) => (

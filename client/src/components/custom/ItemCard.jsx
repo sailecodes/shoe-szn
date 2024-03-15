@@ -1,3 +1,4 @@
+import { useMutation } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
@@ -21,14 +22,20 @@ const ItemCardWrapper = styled.div`
     font-weight: 500;
   }
 
-  .item-card--btns {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  form .item-card--btns {
     display: flex;
     align-items: center;
     gap: 1rem;
   }
 
   a,
-  button {
+  form button {
     display: grid;
     place-items: center;
 
@@ -45,16 +52,23 @@ const ItemCardWrapper = styled.div`
     transition: color 0.3s, background-color 0.3s;
   }
 
+  form button {
+    line-height: 1;
+  }
+
   a:hover,
-  button:hover {
+  form button:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
   }
 
-  select {
+  form select {
     color: var(--color-primary);
 
     font-family: inherit;
+    font-size: 1.4rem;
+
+    height: 3.6rem;
 
     border: 1px solid var(--color-primary);
   }
@@ -62,17 +76,35 @@ const ItemCardWrapper = styled.div`
   @media (min-width: 530px) {
     p,
     a,
-    button {
+    form button {
       font-size: 1.6rem;
     }
 
-    select {
-      font-size: 1.4rem;
+    form select {
+      font-size: 1.6rem;
     }
   }
 `;
 
 const ItemCard = ({ isHomeCard, name, price, img, options }) => {
+  const { mutate, isPending } = useMutation({
+    mutationFn: (data) => {
+      console.log(data); // TODO: Implement
+    },
+    onSuccess: (data) => {},
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    if (data.size === "Size") return; // TODO: Display error message
+
+    mutate({ name: name, price: price, size: data.size });
+  };
+
   return (
     <ItemCardWrapper>
       <img
@@ -84,25 +116,26 @@ const ItemCard = ({ isHomeCard, name, price, img, options }) => {
         <p>{price} USD</p>
       </div>
       {!isHomeCard && (
-        <select
-          id="size"
-          name="size">
-          {options.map((option) => (
-            <option
-              key={"option" + name}
-              value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
+        <form onSubmit={handleSubmit}>
+          <select
+            id="size"
+            name="size">
+            <option selected="selected">Size</option>
+            {options.map((option) => (
+              <option
+                key={"option" + name}
+                value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <div className="item-card--btns">
+            <Link to="/item">See item</Link>
+            <button>Add to cart</button>
+          </div>
+        </form>
       )}
-      {!isHomeCard && (
-        <div className="item-card--btns">
-          <Link to="/item">See item</Link>
-          <button>Add to cart</button>
-        </div>
-      )}
-      {isHomeCard && <Link>See item</Link>}
+      {isHomeCard && <Link to="/item">See item</Link>}
     </ItemCardWrapper>
   );
 };

@@ -1,3 +1,4 @@
+import StarIcon from "../custom/icons/StarIcon";
 import ph1000 from "../../assets/imgs/VU-Banana-1000x1000.png";
 
 import styled from "styled-components";
@@ -11,7 +12,7 @@ const ItemWrapper = styled.section`
   .item--container {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
 
     max-width: 150rem;
   }
@@ -30,6 +31,14 @@ const ItemWrapper = styled.section`
     line-height: 1.2;
 
     margin-bottom: 1rem;
+  }
+
+  .item--reviews {
+    margin-bottom: 0.5rem;
+  }
+
+  .item--reviews svg {
+    width: 1.6rem;
   }
 
   .item--price {
@@ -93,6 +102,10 @@ const ItemWrapper = styled.section`
       font-size: 3.5rem;
     }
 
+    .item--reviews svg {
+      width: 1.8rem;
+    }
+
     .item--price {
       font-size: 2.2rem;
     }
@@ -128,7 +141,15 @@ const ItemWrapper = styled.section`
     .item--name {
       font-size: var(--font-text-7);
 
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .item--reviews {
+      margin-bottom: 0.4rem;
+    }
+
+    .item--reviews svg {
+      width: 2rem;
     }
 
     .item--price {
@@ -155,7 +176,11 @@ const Item = () => {
         </div>
         <div className="item--information">
           <p className="item--name">Nike Earths</p>
-          <div className="item--reviews"></div>
+          <div className="item--reviews">
+            <StarIcon />
+            <StarIcon />
+            <StarIcon />
+          </div>
           <p className="item--price">$99.99</p>
           <p className="item--description">
             It’s our bestselling boot - but upgraded. Be anywhere and do anything, in a boot that does it all. The Z is
