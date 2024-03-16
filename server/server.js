@@ -12,6 +12,8 @@ import ExpressMongoSanitize from "express-mongo-sanitize";
 import { StatusCodes } from "http-status-codes";
 import { dirname } from "path";
 
+import errorMiddleware from "./middleware/errorMiddleware.js";
+
 // ==============================================
 // Initialization
 // ==============================================
@@ -41,6 +43,8 @@ app.get("/", (req, res) => {
 app.use("*", (req, res) => {
   res.status(StatusCodes.NOT_FOUND).json({ msg: "(Server message) Route does not exist" });
 });
+
+app.use(errorMiddleware); // Executes for any error that occurs during a route
 
 // ==============================================
 // Server initialization
