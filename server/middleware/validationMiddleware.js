@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 import { param, body, cookie, validationResult } from "express-validator";
 import userModel from "../models/userModel.js";
 import { BadRequestError, UnauthenticatedError } from "../errors/errors.js";
@@ -76,3 +77,7 @@ export const validateLoginInput = validate([
       if (!(await bcrypt.compare(password, req.user.password))) throw new UnauthenticatedError("Password is incorrect");
     }),
 ]);
+
+// ==============================================
+// Item validation
+// ==============================================

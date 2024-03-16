@@ -5,7 +5,7 @@ const itemSchema = mongoose.Schema({
     type: String,
   },
   price: {
-    type: Number,
+    type: String,
   },
   size: {
     type: Number,

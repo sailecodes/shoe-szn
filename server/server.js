@@ -14,6 +14,7 @@ import { dirname } from "path";
 
 import errorMiddleware from "./middleware/errorMiddleware.js";
 import authRouter from "./routers/authRouter.js";
+import itemRouter from "./routers/itemRouter.js";
 
 // ==============================================
 // Initialization
@@ -42,6 +43,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/item", itemRouter); // Note: Restricted route
 
 app.use("*", (req, res) => {
   res.status(StatusCodes.NOT_FOUND).json({ msg: "(Server message) Route does not exist" });
