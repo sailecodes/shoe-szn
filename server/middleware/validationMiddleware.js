@@ -14,7 +14,7 @@ const validate = (validationValues) => {
       if (!errors.isEmpty()) {
         const errorMessages = errors.array().map((error) => error.msg);
 
-        if (errorMessages[0].startsWith("Authentication")) throw new UnauthenticatedError("Authentication invalid");
+        if (errorMessages[0].startsWith("Authentication")) throw new UnauthenticatedError("Authentication is invalid");
         else throw new BadRequestError(errorMessages);
       }
 
@@ -26,6 +26,24 @@ const validate = (validationValues) => {
 // ==============================================
 // General validation
 // ==============================================
+
+export const validateUser = validate([
+  cookie("token").custom((token, { req, res }) => {
+    if (!token) throw new UnauthenticatedError("Authentication is invalid");
+
+    try {
+      const { userId } = jwt.verify(token, process.env.JWT_SECRET);
+
+      if (!mongoose.Types.ObjectId.isValid(userId)) throw new UnauthenticatedError("Authentication is invalid");
+
+      req.userInfo = { userId };
+
+      return true;
+    } catch (error) {
+      throw new UnauthenticatedError("Authentication is invalid");
+    }
+  }),
+]);
 
 // ==============================================
 // Auth validation
@@ -81,3 +99,9 @@ export const validateLoginInput = validate([
 // ==============================================
 // Item validation
 // ==============================================
+
+export const validateItemToAdd = validate([
+  body("name").notEmpty().withMessage("Name is required"),
+  body("price").notEmpty().withMessage("Price is required"),
+  body("size").notEmpty().withMessage("Size is required"),
+]);

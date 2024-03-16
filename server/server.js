@@ -15,6 +15,7 @@ import { dirname } from "path";
 import errorMiddleware from "./middleware/errorMiddleware.js";
 import authRouter from "./routers/authRouter.js";
 import itemRouter from "./routers/itemRouter.js";
+import { validateUser } from "./middleware/validationMiddleware.js";
 
 // ==============================================
 // Initialization
@@ -24,6 +25,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5100;
+const __dirname = dirname(url.fileURLToPath(import.meta.url));
 
 // ==============================================
 // Middleware
@@ -31,8 +33,12 @@ const port = process.env.PORT || 5100;
 
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
+app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
+app.use(helmet());
+app.use(ExpressMongoSanitize());
 
 // ==============================================
 // Routes
@@ -43,7 +49,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/item", itemRouter); // Note: Restricted route
+app.use("/api/v1/item", validateUser, itemRouter); // Note: Restricted route
 
 app.use("*", (req, res) => {
   res.status(StatusCodes.NOT_FOUND).json({ msg: "(Server message) Route does not exist" });

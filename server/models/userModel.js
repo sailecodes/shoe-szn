@@ -10,6 +10,10 @@ const userSchema = mongoose.Schema({
   username: {
     type: String,
   },
+  cart: {
+    type: [mongoose.Types.ObjectId],
+    ref: "Item",
+  },
 });
 
 export default mongoose.model("User", userSchema);
