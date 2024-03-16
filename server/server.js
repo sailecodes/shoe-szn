@@ -13,6 +13,7 @@ import { StatusCodes } from "http-status-codes";
 import { dirname } from "path";
 
 import errorMiddleware from "./middleware/errorMiddleware.js";
+import authRouter from "./routers/authRouter.js";
 
 // ==============================================
 // Initialization
@@ -39,6 +40,8 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
   res.status(StatusCodes.OK).json({ msg: "(Server message) Server is properly functioning" });
 });
+
+app.use("/api/v1/auth", authRouter);
 
 app.use("*", (req, res) => {
   res.status(StatusCodes.NOT_FOUND).json({ msg: "(Server message) Route does not exist" });
