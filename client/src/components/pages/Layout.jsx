@@ -4,6 +4,10 @@ import { Outlet } from "react-router-dom";
 import LayoutTopNav from "../custom/LayoutTopNav";
 
 const LayoutWrapper = styled.section`
+  height: 100vh;
+
+  overflow-y: scroll;
+
   .layout--announcement {
     display: grid;
     place-items: center;
@@ -190,34 +194,22 @@ const Layout = () => {
           releases.
         </p>
         <div>
-          <input
-            type="text"
-            placeholder="Enter email"
-          />
+          <input type="text" placeholder="Enter email" />
           <button>Subscribe</button>
         </div>
       </section>
       <footer className="layout--footer">
         <p>Check me out</p>
         <div>
-          <a
-            href="https://www.linkedin.com/in/elias-iv-roman/"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/elias-iv-roman/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
           <div>&middot;</div>
-          <a
-            href="https://github.com/sailecodes"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="https://github.com/sailecodes" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
           <div>&middot;</div>
-          <a
-            href="https://eliasiv-portfolio.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="https://eliasiv-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
             Portfolio
           </a>
         </div>

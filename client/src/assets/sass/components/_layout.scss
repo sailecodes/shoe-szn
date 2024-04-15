@@ -1,0 +1,120 @@
+@use "../base/variables" as vars;
+
+.layout {
+  height: 100vh;
+
+  overflow-y: scroll;
+}
+
+.layout--announcement {
+  display: grid;
+  place-items: center;
+
+  background-color: vars.$color-primary;
+  color: vars.$color-white;
+
+  height: 5rem;
+
+  font-size: vars.$font-regular-sm-1;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  padding: 0 2rem;
+}
+
+.layout--subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  background-color: vars.$color-gray-1;
+  color: vars.$color-primary;
+
+  height: 40rem;
+
+  padding: 0 2rem;
+}
+
+.layout--subscribe-header {
+  font-size: vars.$font-subheading-sm-2;
+  font-weight: 500;
+  text-align: center;
+  line-height: 40px;
+}
+
+.layout--subscribe-tag {
+  max-width: 100rem;
+
+  color: vars.$color-gray-3;
+
+  font-size: vars.$font-regular-sm-2;
+  text-align: center;
+
+  margin-bottom: 1rem;
+}
+
+.layout--subscribe input,
+.layout--subscribe button {
+  height: 3.3rem;
+
+  font-size: vars.$font-regular-sm-1;
+
+  padding: 0 2rem;
+}
+
+.layout--subscribe input {
+  border: 1px solid vars.$color-primary;
+}
+
+.layout--subscribe button {
+  background-color: vars.$color-primary;
+  color: vars.$color-white;
+}
+
+.layout--footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  background-color: vars.$color-primary;
+  color: vars.$color-white;
+
+  height: 15rem;
+
+  padding: 0 2rem;
+}
+
+@media (min-width: 426px) {
+  .layout--announcement,
+  .layout--subscribe,
+  .layout--footer {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 530px) {
+  .layout--announcement {
+    font-size: vars.$font-regular-md-1;
+  }
+
+  .layout--subscribe-header {
+    font-size: vars.$font-subheading-md-2;
+    line-height: 50px;
+  }
+
+  .layout--subscribe-tag {
+    font-size: vars.$font-regular-md-2;
+  }
+
+  .layout--subscribe input,
+  .layout--subscribe button {
+    height: 4rem;
+
+    font-size: vars.$font-regular-md-1;
+  }
+}
