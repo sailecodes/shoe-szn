@@ -6,20 +6,18 @@ import { CgWebsite } from "react-icons/cg";
 const _Layout = () => {
   return (
     <main className="layout">
-      <section className="layout--announcement">Free shipping for first-time buyers. That&apos;s right, free.</section>
+      <section className="layout--announcement">Free shipping for first-time buyers.</section>
       <_LayoutNav />
       <Outlet />
       <section className="layout--subscribe">
+        <p className="layout--subscribe-header">Let&apos;s stay in touch</p>
+        <p className="layout--subscribe-tag">
+          Subscribe to our newsletter. Get 50% off your first purchase, exclusive offers, and a sneak peak into future
+          releases.
+        </p>
         <div>
-          <p className="layout--subscribe-header">Let&apos;s stay in touch</p>
-          <p className="layout--subscribe-tag">
-            Subscribe to our newsletter. Get 50% off your first purchase, exclusive offers, and a sneak peak into future
-            releases.
-          </p>
-          <div>
-            <input type="text" placeholder="Enter email" />
-            <button>Subscribe</button>
-          </div>
+          <input type="text" placeholder="Enter email" />
+          <button>Subscribe</button>
         </div>
       </section>
       <footer className="layout--footer">

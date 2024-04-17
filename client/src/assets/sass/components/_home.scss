@@ -1,13 +1,19 @@
 @use "../base/variables" as vars;
 
 .home--hero {
+  background-color: vars.$color-gray-layout;
+
   margin-bottom: 10rem;
 }
 
 .home--hero > div:nth-child(1) {
-  background-color: vars.$color-gray-layout-text; // FIXME: Temporary, add picture
+  background-color: vars.$temporary-image; // FIXME: Temporary, add picture
 
-  height: 35rem;
+  height: 40rem;
+}
+
+.home--hero > div:nth-child(1) > div {
+  display: none;
 }
 
 .home--hero > div:nth-child(2) {
@@ -36,6 +42,8 @@
 }
 
 .home--hero-tag {
+  max-width: 150rem;
+
   font-size: vars.$font-subheading-sm-1;
 
   margin-bottom: 2rem;
@@ -44,8 +52,6 @@
 .home--hero a {
   background-color: vars.$color-primary;
   color: vars.$color-white;
-
-  width: 26rem;
 
   font-size: vars.$font-regular-sm-2;
   text-align: center;
@@ -119,4 +125,31 @@
 
 .home--team-email span {
   text-decoration: underline;
+}
+
+@media (min-width: 769px) {
+  .home--hero > div:nth-child(1) {
+    display: grid;
+    place-items: center;
+
+    height: 55rem;
+  }
+
+  .home--hero > div:nth-child(1) > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home--hero > div:nth-child(1) > div .home--hero-header {
+    font-size: vars.$font-heading-md-1;
+  }
+
+  .home--hero > div:nth-child(1) > div .home--hero-tag {
+    font-size: vars.$font-subheading-md-1;
+  }
+
+  .home--hero > div:nth-child(2) {
+    display: none;
+  }
 }

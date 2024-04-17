@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import ProfileIcon from "../custom/icons/ProfileIcon";
 import CartIcon from "../custom/icons/CartIcon";
-import CategoriesIcon from "../custom/icons/CategoriesIcon";
+import CategoriesIcon from "./icons/HamburgerMenuIcon";
 
 import styled from "styled-components";
 import LeftArrowIcon from "./icons/LeftArrowIcon";
@@ -137,30 +137,20 @@ const LayoutTopNav = () => {
 
   return (
     <LayoutTopNavWrapper>
-      <Link
-        to="/"
-        className="layout-top-nav--logo">
+      <Link to="/" className="layout-top-nav--logo">
         Shoe Szn
       </Link>
       <div className="layout-top-nav--category-links">
-        <NavLink
-          to="/casual"
-          className="layout-top-nav--link">
+        <NavLink to="/casual" className="layout-top-nav--link">
           Casual
         </NavLink>
-        <NavLink
-          to="/streetwear"
-          className="layout-top-nav--link">
+        <NavLink to="/streetwear" className="layout-top-nav--link">
           Streetwear
         </NavLink>
-        <NavLink
-          to="/comfy"
-          className="layout-top-nav--link">
+        <NavLink to="/comfy" className="layout-top-nav--link">
           Comfy
         </NavLink>
-        <NavLink
-          to="/community-picks"
-          className="layout-top-nav--link">
+        <NavLink to="/community-picks" className="layout-top-nav--link">
           Community Picks
         </NavLink>
       </div>
@@ -178,11 +168,7 @@ const LayoutTopNav = () => {
           <CategoriesIcon stroke={"var(--color-primary)"} />
         </button>
       </div>
-      <Sidebar
-        linksInfo={data}
-        isSidebarVisible={isSidebarVisible}
-        setIsSidebarVisible={setIsSidebarVisible}
-      />
+      <Sidebar linksInfo={data} isSidebarVisible={isSidebarVisible} setIsSidebarVisible={setIsSidebarVisible} />
     </LayoutTopNavWrapper>
   );
 };
@@ -261,9 +247,7 @@ const Sidebar = ({ linksInfo, isSidebarVisible, setIsSidebarVisible }) => {
   else document.body.classList.remove("no-scroll");
 
   return (
-    <SidebarWrapper
-      className={isSidebarVisible ? "visible" : ""}
-      isSidebarVisible={isSidebarVisible}>
+    <SidebarWrapper className={isSidebarVisible ? "visible" : ""} isSidebarVisible={isSidebarVisible}>
       <nav>
         <button
           onClick={() => {

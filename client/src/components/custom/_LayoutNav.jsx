@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
-import CategoriesIcon from "./icons/CategoriesIcon";
+import HamburgerMenuIcon from "./icons/HamburgerMenuIcon";
 import LeftArrowIcon from "./icons/LeftArrowIcon";
 
 const _LayoutNav = () => {
@@ -21,7 +21,7 @@ const _LayoutNav = () => {
       </div>
       <div className="layout-nav--sidebar-container">
         <button className="layout-nav--hamburger-menu" onClick={() => setSidebarActive(!sidebarActive)}>
-          <CategoriesIcon />
+          <HamburgerMenuIcon />
         </button>
         <div className={`layout-nav--sidebar-overlay ${sidebarActive ? "active" : ""}`}>
           <div className={`layout-nav--sidebar ${sidebarActive ? "active" : ""}`}>

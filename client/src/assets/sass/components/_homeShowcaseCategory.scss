@@ -1,0 +1,27 @@
+@use "../base/variables" as vars;
+
+.home-showcase-category {
+  margin-bottom: 5rem;
+}
+
+.home-showcase-category > header {
+  font-size: vars.$font-subheading-sm-1;
+
+  margin-bottom: 1.5rem;
+}
+
+.home-showcase-category--items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem 0.5rem;
+
+  max-width: 150rem;
+}
+
+@media (min-width: 769px) {
+  .home-showcase-category--items {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: unset;
+  }
+}
