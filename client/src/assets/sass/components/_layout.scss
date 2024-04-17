@@ -3,7 +3,7 @@
 .layout {
   height: 100vh;
 
-  overflow-y: scroll;
+  overflow: hidden scroll;
 }
 
 .layout--announcement {
@@ -37,7 +37,7 @@
   justify-content: center;
   gap: 1rem;
 
-  width: 90rem;
+  max-width: 90rem;
   height: 40rem;
 
   padding: 0 2rem;
@@ -89,16 +89,21 @@
 
   background-color: vars.$color-primary;
 
-  height: 10rem;
+  height: 9rem;
 
   padding: 0 2rem;
 }
 
 .layout--footer a {
+  display: grid;
+  place-items: center;
+}
+
+.layout--footer a svg {
   color: vars.$color-white;
 
-  font-size: vars.$font-regular-sm-1;
-  text-decoration: underline;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 @media (min-width: 426px) {
@@ -132,5 +137,10 @@
 
   .layout--footer a {
     font-size: vars.$font-regular-md-1;
+  }
+
+  .layout--footer a svg {
+    width: 2.6rem;
+    height: 2.6rem;
   }
 }

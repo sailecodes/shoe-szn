@@ -1,10 +1,13 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import _LayoutNav from "../custom/_LayoutNav";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
 
 const _Layout = () => {
   return (
     <main className="layout">
       <section className="layout--announcement">Free shipping for first-time buyers. That&apos;s right, free.</section>
-      <nav className=""></nav>
+      <_LayoutNav />
       <Outlet />
       <section className="layout--subscribe">
         <div>
@@ -20,30 +23,17 @@ const _Layout = () => {
         </div>
       </section>
       <footer className="layout--footer">
-        <a href="https://www.linkedin.com/in/elias-iv-roman/" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
         <a href="https://github.com/sailecodes" target="_blank" rel="noopener noreferrer">
-          GitHub
+          <FaGithubSquare />
+        </a>
+        <a href="https://www.linkedin.com/in/elias-iv-roman/" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin />
         </a>
         <a href="https://eliasiv-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
-          Portfolio
+          <CgWebsite />
         </a>
       </footer>
     </main>
-  );
-};
-
-const LayoutNav = () => {
-  return (
-    <nav className="layout-nav">
-      <div>
-        <NavLink to="/casual">Casual</NavLink>
-        <NavLink to="/streetwear">Streetwear</NavLink>
-        <NavLink to="/comfy">Comfy</NavLink>
-        <NavLink to="/community-picks">Community Picks</NavLink>
-      </div>
-    </nav>
   );
 };
 
