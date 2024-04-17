@@ -23,7 +23,7 @@ const HomeHeroWrapper = styled.section`
     align-items: center;
     justify-content: center;
 
-    background-color: var(--color-gray-300);
+    background-color: var(--color-gray-layout-text00);
     color: var(--color-primary);
 
     padding: 4rem 2rem 5rem 2rem;

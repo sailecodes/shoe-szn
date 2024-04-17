@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import bg from "../../assets/imgs/gray-bg.jpg";
+
 const _Home = () => {
   return (
     <section className="home">
@@ -14,8 +16,29 @@ const _Home = () => {
           <Link to="">See our community picks</Link>
         </div>
       </section>
-      <section></section>
-      <section></section>
+      <section className="home--showcase">
+        <div className="home--showcase-category">
+          <header>Popular Community Picks</header>
+          <div className="home--showcase-category-container">
+            <div className="home--showcase-category-item">
+              <img src={bg} alt="" />
+              <p className="home--showcase-category-item-name">Bee</p>
+              <p className="home--showcase-category-item-price">$99.99 USD</p>
+              <Link to="">See item</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="home--team">
+        <p className="home--team-header">Want to be a part of our team?</p>
+        <p className="home--team-tag">
+          We have members from all over the world bringing their unique, individual insights and appreciation of shoes
+          into the mix. Get in contact with us and be a part of our collaborative experience.
+        </p>
+        <p className="home--team-email">
+          Email us at <span>team@shoeszn.com</span>.
+        </p>
+      </section>
       <section></section>
       <section></section>
       <section></section>

@@ -22,7 +22,7 @@ const HomeEmailWrapper = styled.section`
   }
 
   p {
-    color: var(--color-gray-300);
+    color: var(--color-gray-layout-text00);
 
     max-width: 100rem;
 

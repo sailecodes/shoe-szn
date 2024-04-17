@@ -11,7 +11,7 @@ import CommunityPicks from "./components/pages/CommunityPicks";
 import Profile from "./components/pages/Profile";
 import Cart from "./components/pages/Cart";
 import Item from "./components/pages/Item";
-import Test from "./components/pages/_Layout";
+import _Layout from "./components/pages/_Layout";
 
 import "./assets/sass/style.scss";
 
@@ -20,7 +20,7 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Test />,
+    element: <_Layout />,
     children: [
       {
         index: true,

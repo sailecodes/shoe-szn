@@ -32,7 +32,7 @@ const LayoutWrapper = styled.section`
     justify-content: center;
     gap: 1rem;
 
-    background-color: var(--color-gray-300);
+    background-color: var(--color-gray-layout-text00);
     color: var(--color-primary);
 
     height: 40rem;

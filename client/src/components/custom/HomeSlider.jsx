@@ -107,9 +107,7 @@ const HomeSlider = () => {
 
   return (
     <HomeSliderWrapper>
-      <div
-        className="home-slider--slider"
-        style={{ transform: `translate(-${activeIndex * 100}%)` }}>
+      <div className="home-slider--slider" style={{ transform: `translate(-${activeIndex * 100}%)` }}>
         <HomeSliderItem dummy="1" />
         <HomeSliderItem dummy="2" />
         <HomeSliderItem dummy="3" />
@@ -159,7 +157,7 @@ const HomeSliderItemWrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
-    background-color: var(--color-gray-300);
+    background-color: var(--color-gray-layout-text00);
     color: var(--color-primary);
 
     padding: 4rem 2rem 5rem 2rem;
