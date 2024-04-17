@@ -13,13 +13,14 @@
   height: 8.5rem;
 
   padding: 0 2rem;
+  border-bottom: 1px solid vars.$color-gray-layout;
 }
 
 .layout-nav--logo {
   color: vars.$color-primary;
 
   font-family: "Rubik Glitch", system-ui;
-  font-size: vars.$font-heading-sm-1;
+  font-size: vars.$font-subheading-md-2;
 }
 
 .layout-nav--links {
@@ -31,6 +32,10 @@
   place-items: center;
 
   width: 3.2rem;
+}
+
+.layout-nav--hamburger-menu svg {
+  stroke: vars.$color-primary;
 }
 
 .layout-nav--sidebar-overlay {
@@ -71,10 +76,15 @@
 }
 
 .layout-nav--sidebar-back-btn {
+  display: grid;
+  place-items: center;
+
   margin-bottom: 2rem;
 }
 
 .layout-nav--sidebar-back-btn svg {
+  stroke: vars.$color-primary;
+
   width: 3.2rem;
   height: 3.2rem;
 }
@@ -100,8 +110,6 @@
   align-items: center;
   gap: 2rem;
 
-  color: vars.$color-primary;
-
   font-size: vars.$font-regular-sm-1;
 
   margin-top: auto;
@@ -113,6 +121,8 @@
 }
 
 .layout-nav--sidebar-footer a svg {
+  color: vars.$color-primary;
+
   width: 2.4rem;
   height: 2.4rem;
 }
@@ -124,6 +134,10 @@
 }
 
 @media (min-width: 769px) {
+  .layout-nav--logo {
+    font-size: vars.$font-subheading-lg-2;
+  }
+
   .layout-nav--links {
     display: flex;
     align-items: center;
@@ -142,9 +156,5 @@
 
   .layout-nav--sidebar-container {
     display: none;
-  }
-
-  .layout-nav--logo {
-    font-size: vars.$font-heading-lg-1;
   }
 }

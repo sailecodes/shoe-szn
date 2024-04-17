@@ -7,7 +7,7 @@
 .home--hero > div:nth-child(1) {
   background-color: vars.$color-gray-layout-text; // FIXME: Temporary, add picture
 
-  height: 50rem;
+  height: 35rem;
 }
 
 .home--hero > div:nth-child(2) {
@@ -112,7 +112,7 @@
 
 .home--team-tag,
 .home--team-email {
-  color: vars.$color-gray-2;
+  color: vars.$color-primary-layout-text;
 
   font-size: vars.$font-regular-sm-2;
 }

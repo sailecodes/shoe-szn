@@ -21,20 +21,34 @@ const _LayoutNav = () => {
       </div>
       <div className="layout-nav--sidebar-container">
         <button className="layout-nav--hamburger-menu" onClick={() => setSidebarActive(!sidebarActive)}>
-          <CategoriesIcon stroke="green" />
+          <CategoriesIcon />
         </button>
         <div className={`layout-nav--sidebar-overlay ${sidebarActive ? "active" : ""}`}>
           <div className={`layout-nav--sidebar ${sidebarActive ? "active" : ""}`}>
             <button className="layout-nav--sidebar-back-btn" onClick={() => setSidebarActive(!sidebarActive)}>
-              <LeftArrowIcon stroke="green" />
+              <LeftArrowIcon />
             </button>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/casual">Casual</NavLink>
-            <NavLink to="/streetwear">Streetwear</NavLink>
-            <NavLink to="/comfy">Comfy</NavLink>
-            <NavLink to="/community-picks">Community Picks</NavLink>
-            <NavLink to="/cart">Cart</NavLink>
-            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/" onClick={() => setSidebarActive(false)}>
+              Home
+            </NavLink>
+            <NavLink to="/casual" onClick={() => setSidebarActive(false)}>
+              Casual
+            </NavLink>
+            <NavLink to="/streetwear" onClick={() => setSidebarActive(false)}>
+              Streetwear
+            </NavLink>
+            <NavLink to="/comfy" onClick={() => setSidebarActive(false)}>
+              Comfy
+            </NavLink>
+            <NavLink to="/community-picks" onClick={() => setSidebarActive(false)}>
+              Community Picks
+            </NavLink>
+            <NavLink to="/cart" onClick={() => setSidebarActive(false)}>
+              Cart
+            </NavLink>
+            <NavLink to="/profile" onClick={() => setSidebarActive(false)}>
+              Profile
+            </NavLink>
             <footer className="layout-nav--sidebar-footer">
               <a href="https://github.com/sailecodes" target="_blank" rel="noopener noreferrer">
                 <FaGithubSquare />
