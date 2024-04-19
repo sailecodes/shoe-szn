@@ -1,0 +1,65 @@
+@use "../base/variables" as vars;
+
+.home-slider {
+  position: relative;
+  z-index: 98;
+
+  margin-bottom: 10rem;
+
+  overflow: hidden;
+}
+
+.home-slider--slider {
+  display: flex;
+
+  transition: transform 0.6s;
+}
+
+.home-slider--nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  height: 4rem;
+
+  border-top: 1px solid vars.$color-gray-layout;
+  border-bottom: 1px solid vars.$color-gray-layout;
+}
+
+.home-slider--nav-btn {
+  display: grid;
+  place-items: center;
+}
+
+.home-slider--nav-btn:nth-child(1) {
+  margin-right: 0.5rem;
+}
+
+.home-slider--nav-btn:last-child {
+  margin-left: 0.5rem;
+}
+
+.home-slider--nav-btn svg {
+  fill: vars.$color-primary;
+
+  height: 1.5rem;
+}
+
+.home-slider--nav-marker {
+  height: 1rem;
+  width: 1rem;
+
+  border: 1px solid vars.$color-primary-layout-text;
+  border-radius: 50%;
+
+  transition: background-color 0.3s;
+}
+
+.home-slider--nav-marker.active {
+  background-color: vars.$color-primary;
+}
+
+.home-slider--nav-marker:hover {
+  cursor: pointer;
+}

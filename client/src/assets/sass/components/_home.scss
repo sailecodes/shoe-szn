@@ -9,7 +9,7 @@
 .home--hero > div:nth-child(1) {
   background-color: vars.$temporary-image; // FIXME: Temporary, add picture
 
-  height: 40rem;
+  height: 35rem;
 }
 
 .home--hero > div:nth-child(1) > div {
@@ -101,11 +101,14 @@
   height: 40rem;
 
   padding: 0 2rem;
+  margin-bottom: 10rem;
 }
 
 .home--team-header,
 .home--team-tag,
 .home--team-email {
+  max-width: 150rem;
+
   text-align: center;
 }
 
@@ -127,12 +130,23 @@
   text-decoration: underline;
 }
 
+@media (min-width: 426px) {
+  .home--hero > div:nth-child(1),
+  .home--hero > div:nth-child(2) {
+    padding: 4.5rem 4rem;
+  }
+
+  .home--team {
+    padding: 0 4rem;
+  }
+}
+
 @media (min-width: 769px) {
   .home--hero > div:nth-child(1) {
     display: grid;
     place-items: center;
 
-    height: 55rem;
+    height: 60rem;
   }
 
   .home--hero > div:nth-child(1) > div {
@@ -151,5 +165,14 @@
 
   .home--hero > div:nth-child(2) {
     display: none;
+  }
+
+  .home--team-header {
+    font-size: vars.$font-subheading-md-2;
+  }
+
+  .home--team-tag,
+  .home--team-email {
+    font-size: vars.$font-regular-md-2;
   }
 }

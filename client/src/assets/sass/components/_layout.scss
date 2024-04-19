@@ -37,6 +37,11 @@
   padding: 0 2rem;
 }
 
+.layout--subscribe-header,
+.layout--subscribe-tag {
+  max-width: 150rem;
+}
+
 .layout--subscribe-header {
   color: vars.$color-primary;
 
@@ -47,8 +52,6 @@
 }
 
 .layout--subscribe-tag {
-  max-width: 100rem;
-
   color: vars.$color-gray-layout-text;
 
   font-size: vars.$font-regular-sm-2;
