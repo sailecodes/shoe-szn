@@ -130,13 +130,39 @@
   text-decoration: underline;
 }
 
+.home--sponsors {
+  display: grid;
+  place-items: center;
+
+  padding: 0 2rem;
+  margin-bottom: 10rem;
+}
+
+.home--sponsors > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+
+  width: 100%;
+
+  max-width: 150rem;
+}
+
+.home--sponsors > div svg {
+  color: vars.$color-primary;
+
+  font-size: 5rem;
+}
+
 @media (min-width: 426px) {
   .home--hero > div:nth-child(1),
   .home--hero > div:nth-child(2) {
     padding: 4.5rem 4rem;
   }
 
-  .home--team {
+  .home--team,
+  .home--sponsors {
     padding: 0 4rem;
   }
 }
@@ -174,5 +200,9 @@
   .home--team-tag,
   .home--team-email {
     font-size: vars.$font-regular-md-2;
+  }
+
+  .home--sponsors > div {
+    gap: 8rem;
   }
 }

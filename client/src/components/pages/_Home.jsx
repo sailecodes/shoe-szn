@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "react-icons/io5";
 import _HomeShowcase from "../custom/_HomeShowcase";
 import _HomeCategories from "../custom/_HomeCategories";
 import _HomeSlider from "../custom/_HomeSlider";
@@ -39,8 +40,14 @@ const _Home = () => {
       </section>
       <_HomeCategories />
       <_HomeSlider />
-      <section></section>
-      <section></section>
+      <section className="home--sponsors">
+        <div>
+          <IoLogoGoogle />
+          <IoLogoFirebase />
+          <IoLogoGitlab />
+          <IoLogoInstagram />
+        </div>
+      </section>
     </section>
   );
 };
