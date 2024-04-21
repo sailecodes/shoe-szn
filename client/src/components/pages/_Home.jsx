@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import _HomeShowcase from "../custom/_HomeShowcase";
+import _HomeCategories from "../custom/_HomeCategories";
 import _HomeSlider from "../custom/_HomeSlider";
 
 const _Home = () => {
@@ -36,6 +37,7 @@ const _Home = () => {
           Email us at <span>team@shoeszn.com</span>.
         </p>
       </section>
+      <_HomeCategories />
       <_HomeSlider />
       <section></section>
       <section></section>

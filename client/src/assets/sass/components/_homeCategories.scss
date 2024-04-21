@@ -1,0 +1,43 @@
+@use "../base/variables" as vars;
+
+.home-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem 0.5rem;
+
+  max-width: 150rem;
+
+  padding: 0 2rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+}
+
+.home-categories--item > img {
+  width: 100%;
+  height: auto;
+}
+
+.home-categories--item > a {
+  color: vars.$color-primary;
+
+  font-size: vars.$font-regular-sm-2;
+}
+
+.home-categories--item > a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 426px) {
+  .home-categories {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .home-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: unset;
+  }
+}

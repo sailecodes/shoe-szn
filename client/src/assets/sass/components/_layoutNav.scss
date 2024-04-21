@@ -7,14 +7,22 @@
   top: 0;
   z-index: 99;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  place-items: center;
 
   height: 8.5rem;
 
   padding: 0 2rem;
   border-bottom: 1px solid vars.$color-gray-layout;
+}
+
+.layout-nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // width: 150rem;
+  max-width: 150rem;
 }
 
 .layout-nav--logo {

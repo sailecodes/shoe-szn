@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import bg from "../../assets/imgs/gray-bg.jpg";
 
 const _HomeShowcase = () => {
