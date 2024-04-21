@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "react-icons/io5";
+import bg from "../../assets/imgs/gray-bg.jpg";
 import _HomeShowcase from "../custom/_HomeShowcase";
-import _HomeCategories from "../custom/_HomeCategories";
 import _HomeSlider from "../custom/_HomeSlider";
 
 const _Home = () => {
@@ -38,7 +38,26 @@ const _Home = () => {
           Email us at <span>team@shoeszn.com</span>.
         </p>
       </section>
-      <_HomeCategories />
+      <section className="home--categories">
+        <div>
+          <div className="home--categories-item">
+            <img src={bg} alt="" />
+            <Link to="">Casual</Link>
+          </div>
+          <div className="home--categories-item">
+            <img src={bg} alt="" />
+            <Link to="">Streetwear</Link>
+          </div>
+          <div className="home--categories-item">
+            <img src={bg} alt="" />
+            <Link to="">Comfy</Link>
+          </div>
+          <div className="home--categories-item">
+            <img src={bg} alt="" />
+            <Link to="">Community Picks</Link>
+          </div>
+        </div>
+      </section>
       <_HomeSlider />
       <section className="home--sponsors">
         <div>
