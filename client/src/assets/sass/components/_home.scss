@@ -34,7 +34,7 @@
 }
 
 .home--hero-header {
-  font-size: vars.$font-heading-sm-1;
+  font-size: vars.$font--home-header-sm;
   font-weight: 600;
   line-height: 40px;
 
@@ -44,7 +44,7 @@
 .home--hero-tag {
   max-width: 150rem;
 
-  font-size: vars.$font-subheading-sm-1;
+  font-size: vars.$font--home-header-subtext-sm;
 
   margin-bottom: 2rem;
 }
@@ -53,40 +53,10 @@
   background-color: vars.$color-primary;
   color: vars.$color-white;
 
-  font-size: vars.$font-regular-sm-2;
+  font-size: vars.$font--home-header-btn-sm;
   text-align: center;
 
   padding: 1rem 2rem;
-}
-
-.home--showcase {
-  padding: 0 2rem;
-  margin-bottom: 10rem;
-}
-
-.home--showcase-category > header {
-  font-size: vars.$font-subheading-sm-1;
-
-  margin-bottom: 2rem;
-}
-
-.home--showcase-category-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-
-.home--showcase-category-item img {
-  width: 100%;
-  height: auto;
-}
-
-.home--showcase-category-item-name {
-  font-size: vars.$font-regular-sm-2;
-}
-
-.home--showcase-category-item-price {
-  font-size: vars.$font-regular-sm-2;
 }
 
 .home--team {
@@ -115,7 +85,7 @@
 .home--team-header {
   color: vars.$color-white;
 
-  font-size: vars.$font-subheading-sm-2;
+  font-size: vars.$font--home-subheading-sm;
   font-weight: 500;
 }
 
@@ -123,7 +93,7 @@
 .home--team-email {
   color: vars.$color-primary-layout-text;
 
-  font-size: vars.$font-regular-sm-2;
+  font-size: vars.$font--home-subheading-subtext-sm;
 }
 
 .home--team-email span {
@@ -155,7 +125,7 @@
 .home--categories-item > a {
   color: vars.$color-primary;
 
-  font-size: vars.$font-regular-sm-2;
+  font-size: vars.$font--home-subheading-subtext-sm;
 }
 
 .home--categories-item > a:hover {
@@ -184,7 +154,7 @@
 .home--sponsors > div svg {
   color: vars.$color-primary;
 
-  font-size: 5rem;
+  font-size: 3.5rem;
 }
 
 @media (min-width: 426px) {
@@ -215,11 +185,11 @@
   }
 
   .home--hero > div:nth-child(1) > div .home--hero-header {
-    font-size: vars.$font-heading-md-1;
+    font-size: vars.$font--home-header-lg;
   }
 
   .home--hero > div:nth-child(1) > div .home--hero-tag {
-    font-size: vars.$font-subheading-md-1;
+    font-size: vars.$font--home-header-subtext-lg;
   }
 
   .home--hero > div:nth-child(2) {
@@ -227,12 +197,12 @@
   }
 
   .home--team-header {
-    font-size: vars.$font-subheading-md-2;
+    font-size: vars.$font--home-subheading-lg;
   }
 
   .home--team-tag,
   .home--team-email {
-    font-size: vars.$font-regular-md-2;
+    font-size: vars.$font--home-subheading-subtext-lg;
   }
 
   .home--categories > div {
@@ -240,7 +210,15 @@
     grid-template-rows: unset;
   }
 
+  .home--categories-item > a {
+    font-size: vars.$font--home-subheading-subtext-lg;
+  }
+
   .home--sponsors > div {
     gap: 8rem;
+  }
+
+  .home--sponsors > div svg {
+    font-size: 4rem;
   }
 }

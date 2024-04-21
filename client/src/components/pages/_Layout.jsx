@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import _LayoutNav from "../custom/_LayoutNav";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
+import _LayoutNav from "../custom/_LayoutNav";
 
 const _Layout = () => {
   return (

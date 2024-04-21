@@ -5,7 +5,8 @@
 }
 
 .home-showcase-category > header {
-  font-size: vars.$font-subheading-sm-1;
+  font-size: vars.$font--home-showcase-category-sm;
+  font-weight: 500;
 
   margin-bottom: 1.5rem;
 }
@@ -20,6 +21,10 @@
 }
 
 @media (min-width: 769px) {
+  .home-showcase-category > header {
+    font-size: vars.$font--home-showcase-category-lg;
+  }
+
   .home-showcase-category--items {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: unset;

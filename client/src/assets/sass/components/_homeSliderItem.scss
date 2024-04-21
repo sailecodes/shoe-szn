@@ -35,7 +35,7 @@
 .home-slider-item--header {
   color: vars.$color-primary;
 
-  font-size: vars.$font-heading-sm-1;
+  font-size: vars.$font--home-header-sm;
   font-weight: 600;
   text-align: center;
   line-height: 40px;
@@ -46,7 +46,7 @@
 .home-slider-item--tag {
   color: vars.$color-primary;
 
-  font-size: vars.$font-subheading-sm-1;
+  font-size: vars.$font--home-header-subtext-sm;
 
   margin-bottom: 2rem;
 }
@@ -55,7 +55,7 @@
   background-color: vars.$color-primary;
   color: vars.$color-white;
 
-  font-size: vars.$font-regular-sm-2;
+  font-size: vars.$font--home-header-btn-sm;
 
   padding: 1rem 2rem;
 }
@@ -73,9 +73,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    padding: 0 4rem;
   }
 
   .home-slider-item > div:nth-child(2) {
     display: none;
+  }
+
+  .home-slider-item--header {
+    font-size: vars.$font--home-header-lg;
+  }
+
+  .home-slider-item--tag {
+    font-size: vars.$font--home-header-subtext-lg;
+  }
+
+  .home-slider-item--link {
+    font-size: vars.$font--home-header-btn-lg;
   }
 }

@@ -10,7 +10,7 @@
   display: grid;
   place-items: center;
 
-  height: 8.5rem;
+  height: 8rem;
 
   padding: 0 2rem;
   border-bottom: 1px solid vars.$color-gray-layout;
@@ -29,18 +29,20 @@
   color: vars.$color-primary;
 
   font-family: "Rubik Glitch", system-ui;
-  font-size: vars.$font-subheading-md-2;
+  font-size: vars.$font--logo-sm;
 }
 
 .layout-nav--links {
   display: none;
 }
 
+/////////////////////////////////////////////////////////////////
+
 .layout-nav--hamburger-menu {
   display: grid;
   place-items: center;
 
-  width: 3.2rem;
+  width: 3rem;
 }
 
 .layout-nav--hamburger-menu svg {
@@ -69,13 +71,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1rem;
+  gap: 1.5rem;
 
   position: fixed;
   right: -100%;
 
   height: 100vh;
-  width: 25rem;
+  width: 28rem;
 
   padding: 2rem;
 }
@@ -94,14 +96,14 @@
 .layout-nav--sidebar-back-btn svg {
   stroke: vars.$color-primary;
 
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .layout-nav--sidebar a {
   color: vars.$color-primary;
 
-  font-size: vars.$font-regular-sm-2;
+  font-size: vars.$font--main-nav-link-sm;
 }
 
 .layout-nav--sidebar a.active {
@@ -144,7 +146,7 @@
 
 @media (min-width: 769px) {
   .layout-nav--logo {
-    font-size: vars.$font-subheading-lg-2;
+    font-size: vars.$font--logo-lg;
   }
 
   .layout-nav--links {
@@ -160,7 +162,7 @@
   .layout-nav--links a {
     color: vars.$color-primary;
 
-    font-size: vars.$font-regular-md-2;
+    font-size: vars.$font--main-nav-link-sm;
   }
 
   .layout-nav--sidebar-container {
