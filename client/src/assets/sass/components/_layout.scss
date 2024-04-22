@@ -70,6 +70,8 @@
 }
 
 .layout--subscribe input {
+  width: 20rem;
+
   border: 1px solid vars.$color-primary;
 }
 
@@ -109,6 +111,10 @@
   .layout--footer {
     padding: 0 4rem;
   }
+
+  .layout--subscribe input {
+    width: unset;
+  }
 }
 
 @media (min-width: 769px) {
@@ -130,6 +136,10 @@
     height: 4rem;
 
     font-size: vars.$font--home-subheading-btn-lg;
+  }
+
+  .layout--subscribe input {
+    width: 35rem;
   }
 
   .layout--footer a svg {
