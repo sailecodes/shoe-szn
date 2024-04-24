@@ -196,6 +196,10 @@
     display: none;
   }
 
+  .home--hero a {
+    font-size: vars.$font--home-header-btn-lg;
+  }
+
   .home--team-header {
     font-size: vars.$font--home-subheading-lg;
   }
@@ -211,7 +215,7 @@
   }
 
   .home--categories-item > a {
-    font-size: vars.$font--home-subheading-subtext-lg;
+    font-size: 1.7rem;
   }
 
   .home--sponsors > div {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
+import { CgWebsite, CgProfile, CgShoppingCart } from "react-icons/cg";
 import HamburgerMenuIcon from "./icons/HamburgerMenuIcon";
 import LeftArrowIcon from "./icons/LeftArrowIcon";
 
@@ -19,6 +19,12 @@ const _LayoutNav = () => {
           <NavLink to="/streetwear">Streetwear</NavLink>
           <NavLink to="/comfy">Comfy</NavLink>
           <NavLink to="/community-picks">Community Picks</NavLink>
+          <NavLink to="/cart">
+            <CgShoppingCart />
+          </NavLink>
+          <NavLink to="/profile">
+            <CgProfile />
+          </NavLink>
         </div>
         {/* <LayoutNavSidebar /> */}
         <div className="layout-nav--sidebar-container">
