@@ -2,6 +2,14 @@
 
 An e-commerce shoe store by the community, for the community.
 
+## _**Table of Contents**_
+
+1. [Tech Stack](https://github.com/sailecodes/shoe-szn?tab=readme-ov-file#tech-stack)
+2. [Overview](https://github.com/sailecodes/shoe-szn?tab=readme-ov-file#tech-stack)
+   - [Client](https://github.com/sailecodes/shoe-szn?tab=readme-ov-file#tech-stack)
+   - [Server](https://github.com/sailecodes/shoe-szn?tab=readme-ov-file#tech-stack)
+3. [Deployment](https://github.com/sailecodes/shoe-szn?tab=readme-ov-file#tech-stack)
+
 ## _**Tech Stack**_
 
 ### Top-level
