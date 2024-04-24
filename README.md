@@ -20,7 +20,7 @@ An e-commerce shoe store by the community, for the community.
 
 ### Bottom-level
 
-The frontend relies on a `React` framework powered by `Vite`. Moreover, multiple packages support the frontend, including `@tanstack/react-query`, `react-router-dom`, `apollo-client`, and `sass`. In addition, `Apollo Client` handles all client to server interactions in order to communicate with the `GraphQL API` that sits within the `Express` backend...
+The frontend relies on a `React` framework powered by `Vite`. Moreover, multiple packages support the frontend, including `@tanstack/react-query`, `react-router-dom`, `apollo-client`, and `sass`. In addition, the client delegates all client-server interactions to `Apollo Client` in order to communicate with the `GraphQL API` embedded within the `Express` backend.
 
 ## _**Overview**_
 

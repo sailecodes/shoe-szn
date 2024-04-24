@@ -1,13 +1,13 @@
 @use "../base/variables" as vars;
 
-.layout-nav-sidebar--btn {
+.layout-nav-sidebar--icon {
   display: grid;
   place-items: center;
 
-  width: 3.2rem;
+  width: 3rem;
 }
 
-.layout-nav-sidebar--btn svg {
+.layout-nav-sidebar--icon svg {
   stroke: vars.$color-primary;
 }
 
@@ -27,56 +27,56 @@
   bottom: 0;
 }
 
-.layout-nav-sidebar {
+.layout-nav-sidebar--window {
   background-color: vars.$color-white;
 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1rem;
+  gap: 1.5rem;
 
   position: fixed;
   right: -100%;
 
   height: 100vh;
-  width: 25rem;
+  width: 28rem;
 
   padding: 2rem;
 }
 
-.layout-nav-sidebar.active {
+.layout-nav-sidebar--window.active {
   right: 0;
 }
 
-.layout-nav-sidebar--back-btn {
+.layout-nav-sidebar--window-back-btn {
   display: grid;
   place-items: center;
 
   margin-bottom: 2rem;
 }
 
-.layout-nav-sidebar--back-btn svg {
+.layout-nav-sidebar--window-back-btn svg {
   stroke: vars.$color-primary;
 
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3rem;
+  height: 3rem;
 }
 
-.layout-nav-sidebar a {
+.layout-nav-sidebar--window a {
   color: vars.$color-primary;
 
-  font-size: vars.$font-regular-sm-2;
+  font-size: vars.$font--main-nav-link-sm;
 }
 
-.layout-nav-sidebar a.active {
+.layout-nav-sidebar--window a.active {
   font-weight: 600;
 }
 
-.layout-nav-sidebar a:hover {
+.layout-nav-sidebar--window a:hover {
   text-decoration: underline;
 }
 
-.layout-nav-sidebar--footer {
+.layout-nav-sidebar--window-footer {
   align-self: center;
 
   display: flex;
@@ -88,12 +88,12 @@
   margin-top: auto;
 }
 
-.layout-nav-sidebar--footer a {
+.layout-nav-sidebar--window-footer a {
   display: grid;
   place-items: center;
 }
 
-.layout-nav-sidebar--footer a svg {
+.layout-nav-sidebar--window-footer a svg {
   color: vars.$color-primary;
 
   width: 2.4rem;
