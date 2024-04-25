@@ -1,72 +1,50 @@
 import "express-async-errors";
 import * as dotenv from "dotenv";
 import express from "express";
-import url from "url";
-import path from "path";
-import mongoose from "mongoose";
-import morgan from "morgan";
-import cookieParser from "cookie-parser";
 import cors from "cors";
 import helmet from "helmet";
-import ExpressMongoSanitize from "express-mongo-sanitize";
-import { StatusCodes } from "http-status-codes";
-import { dirname } from "path";
-
-import errorMiddleware from "./middleware/errorMiddleware.js";
-import authRouter from "./routers/authRouter.js";
-import itemRouter from "./routers/itemRouter.js";
-import { validateUser } from "./middleware/validationMiddleware.js";
+import cookieParser from "cookie-parser";
+import { readFile } from "node:fs/promises";
+import { expressMiddleware } from "@apollo/server/express4";
+import { ApolloServer } from "@apollo/server";
+import { resolvers } from "./graphql/resolvers/resolvers.js";
 
 // ==============================================
 // Initialization
 // ==============================================
 
 dotenv.config();
-
 const app = express();
 const port = process.env.PORT || 5100;
-const __dirname = dirname(url.fileURLToPath(import.meta.url));
+const typeDefs = await readFile("./graphql/schemas/schema.graphql", "utf-8");
+const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
 // ==============================================
 // Middleware
 // ==============================================
 
-if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
-
-app.use(express.static(path.resolve(__dirname, "./public")));
-app.use(express.json());
-app.use(cookieParser());
-app.use(cors());
-app.use(helmet());
-app.use(ExpressMongoSanitize());
+app.use(
+  express.json(),
+  cookieParser(),
+  helmet(),
+  cors({
+    origin: ["https://studio.apollographql.com", "http://localhost:5173"],
+    credentials: true,
+  })
+);
 
 // ==============================================
 // Routes
 // ==============================================
 
 app.get("/", (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: "(Server message) Server is properly functioning" });
+  res.status(200).json({ msg: "[Server message] Server is properly functioning" });
 });
 
-app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/item", validateUser, itemRouter); // Note: Restricted route
+// ==============================================
+// Port information
+// ==============================================
 
-app.use("*", (req, res) => {
-  res.status(StatusCodes.NOT_FOUND).json({ msg: "(Server message) Route does not exist" });
+app.listen(port, () => {
+  console.log(`[Server message] Server is listening on port ${port}`);
 });
-
-app.use(errorMiddleware); // Executes for any error that occurs during a route
-
-// ==============================================
-// Server initialization
-// ==============================================
-
-try {
-  await mongoose.connect(process.env.MONGO_URI);
-  app.listen(port, () => {
-    console.log(`(Server message) Server is listening on port ${port}`);
-  });
-} catch (error) {
-  console.error(error);
-  process.exit(1);
-}

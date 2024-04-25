@@ -21,7 +21,7 @@ const _Item = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
             <option value="9.5">9.5</option>
             <option value="12">12</option>
           </select>
-          <Link to="">See item</Link>
+          <Link to="/item">See item</Link>
           <button>Add to cart</button>
         </div>
       )}

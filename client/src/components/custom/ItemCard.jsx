@@ -107,24 +107,17 @@ const ItemCard = ({ isHomeCard, name, price, img, options }) => {
 
   return (
     <ItemCardWrapper>
-      <img
-        src={img}
-        alt=""
-      />
+      <img src={img} alt="" />
       <div>
         <p>{name}</p>
         <p>{price} USD</p>
       </div>
       {!isHomeCard && (
         <form onSubmit={handleSubmit}>
-          <select
-            id="size"
-            name="size">
+          <select id="size" name="size">
             <option selected="selected">Size</option>
             {options.map((option) => (
-              <option
-                key={"option" + name}
-                value={option}>
+              <option key={"option" + name} value={option}>
                 {option}
               </option>
             ))}
