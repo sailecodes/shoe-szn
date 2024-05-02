@@ -12,6 +12,7 @@ import Profile from "./components/pages/Profile";
 import Cart from "./components/pages/Cart";
 import Item from "./components/pages/Item";
 import _Layout from "./components/pages/_Layout";
+import _Item from "./components/pages/_Item";
 
 import "./assets/sass/style.scss";
 
@@ -59,8 +60,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/item",
-        element: <Item />,
+        element: <_Item />,
       },
+      // {
+      //   path: "/item",
+      //   element: <Item />,
+      // },
     ],
   },
 ]);
