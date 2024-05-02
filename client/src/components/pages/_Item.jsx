@@ -26,9 +26,18 @@ const _Item = () => {
           <button>Add to cart</button>
         </form>
         <div className="itemm--details-highlights">
-          <p className="itemm--details-highlights-highlight">Eco-friendly</p>
-          <p className="itemm--details-highlights-highlight">Uniquely produced</p>
-          <p className="itemm--details-highlights-highlight">Long-lasting</p>
+          <div>
+            <header>Eco-friendly</header>
+            <p>The fabric is reusable.</p>
+          </div>
+          <div>
+            <header>Uniquely produced</header>
+            <p>We have dedicated, friendly work areas with well-trained staff.</p>
+          </div>
+          <div>
+            <header>Long-lasting</header>
+            <p>Very durable.</p>
+          </div>
         </div>
       </div>
     </section>
