@@ -1,8 +1,9 @@
 type Query {
   helloWorld: String!
   getAllItems: [Item!]!
-  getAllItemsFromCategory(category: String!): [Item!]!
-  getItem(id: ID!): Item!
+  getAllItemsFromCategory(itemCategory: String!): [Item!]!
+  getItem(itemId: ID!): Item!
+  getUserItems(userEmail: String!): [Item!]!
 }
 
 type User {
