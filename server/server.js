@@ -9,8 +9,6 @@ import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServer } from "@apollo/server";
 import { resolvers } from "./graphql/resolvers/resolvers.js";
 
-import { db } from "./db/index.js";
-
 // ===============================================================================================
 // Initialization
 // ===============================================================================================
@@ -46,9 +44,6 @@ app.use(
 // ===============================================================================================
 
 app.get("/", async (req, res) => {
-  const results = await db.query("select * from users");
-  console.log(results.rows);
-
   res.status(200).json({ msg: "[Server message] Server is properly functioning" });
 });
 
