@@ -1,0 +1,55 @@
+@use "../base/variables" as vars;
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 1rem;
+}
+
+.cart-item > img {
+  grid-row: 1 / -1;
+
+  width: 100%;
+  height: auto;
+}
+
+.cart-item--information {
+  grid-column: 2 / -1;
+}
+
+.cart-item--information-name {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.cart-item--information-price,
+.cart-item--information-size {
+  font-size: 1.4rem;
+}
+
+.cart-item--btns {
+  grid-column: 2 / -1;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item--btns a {
+  background-color: vars.$color-primary;
+  color: vars.$color-white;
+
+  font-size: 1rem;
+
+  padding: 1rem 1.5rem;
+}
+
+.cart-item--btns button {
+  background-color: vars.$color-red;
+  color: vars.$color-white;
+
+  font-size: 1rem;
+
+  padding: 1rem 1.5rem;
+}

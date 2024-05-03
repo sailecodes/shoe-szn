@@ -3,6 +3,15 @@ import { FaRegGem } from "react-icons/fa";
 import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
 
 const _Item = () => {
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    if (Object.keys(data).length === 0) return;
+  };
+
   return (
     <section className="itemm">
       <div className="itemm--imgs">
@@ -22,8 +31,8 @@ const _Item = () => {
           Experience the perfect fusion of style and functionality with our pair of shoes – a wardrobe staple that's as
           reliable as it is stylish.
         </p>
-        <form>
-          <select>
+        <form onSubmit={handleAddToCart}>
+          <select name="shoe-size">
             <option value="" selected disabled hidden>
               Size
             </option>
