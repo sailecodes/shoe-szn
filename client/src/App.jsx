@@ -1,8 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import Layout from "./components/pages/Layout";
-import Home from "./components/pages/Home";
 import _Home from "./components/pages/_Home";
 import Casual from "./components/pages/Casual";
 import Streetwear from "./components/pages/Streetwear";
@@ -10,7 +8,6 @@ import Comfy from "./components/pages/Comfy";
 import CommunityPicks from "./components/pages/CommunityPicks";
 import Profile from "./components/pages/Profile";
 import Cart from "./components/pages/Cart";
-import Item from "./components/pages/Item";
 import _Layout from "./components/pages/_Layout";
 import _Item from "./components/pages/_Item";
 
@@ -62,10 +59,6 @@ const router = createBrowserRouter([
         path: "/item",
         element: <_Item />,
       },
-      // {
-      //   path: "/item",
-      //   element: <Item />,
-      // },
     ],
   },
 ]);
