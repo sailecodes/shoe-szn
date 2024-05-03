@@ -60,13 +60,13 @@ CREATE TABLE items(
   item_category VARCHAR(20) NOT NULL,
   item_name VARCHAR(50) UNIQUE NOT NULL,
   item_price VARCHAR(10) NOT NULL,
-  item_description VARCHAR NOT NULL,
-  item_ratings INT,
-  item_sizes INT [] NOT NULL
+  item_description VARCHAR(500) NOT NULL,
+  item_sizes INT [] NOT NULL,
+  item_attributes TEXT [] NOT NULL
 );
 
 -- insert into item table
-INSERT INTO items (item_name, item_price, item_description, item_sizes)
+INSERT INTO items (item_category, item_name, item_price, item_description, item_sizes, item_attributes)
 VALUES (
   ...
 );
@@ -86,8 +86,8 @@ SELECT
   item_name,
   item_price,
   item_description,
-  item_ratings,
-  item_sizes
+  item_sizes,
+  item_attributes
 FROM items;
 
 ------------------------------------------------
