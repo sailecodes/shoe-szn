@@ -2,6 +2,7 @@ type Query {
   helloWorld: String!
   getAllItems: [Item!]!
   getAllItemsFromCategory(category: String!): [Item!]!
+  getItem(id: ID!): Item!
 }
 
 type User {

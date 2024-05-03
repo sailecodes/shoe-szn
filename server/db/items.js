@@ -11,3 +11,9 @@ export const getAllItemsFromCategory = async (category) => {
 
   return rows;
 };
+
+export const getItem = async (id) => {
+  const { rows } = await db.query("SELECT * FROM items where item_id = $1", [id]);
+
+  return rows[0];
+};
