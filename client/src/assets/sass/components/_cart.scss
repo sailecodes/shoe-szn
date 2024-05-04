@@ -1,22 +1,97 @@
+@use "../base/variables" as vars;
+
 .cart {
   padding: 4rem 2rem;
 }
 
 .cart--container {
+  display: flex;
+  flex-direction: column;
+
   max-width: 150rem;
 
   margin: 0 auto;
 }
 
-.cart header {
+.cart--container > header {
   font-size: 2.5rem;
   font-weight: 500;
 
   margin-bottom: 2rem;
 }
 
+.cart--subheaders {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.1rem;
+
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.cart--subheaders > p:nth-child(2) {
+  display: none;
+}
+
 .cart--items {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.cart--subtotal {
+  display: flex;
+  justify-content: flex-end;
+
+  padding-top: 0.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid black;
+}
+
+.cart--subtotal > p {
+  font-size: 1.4rem;
+}
+
+.cart--container > button {
+  align-self: center;
+
+  background-color: vars.$color-primary;
+  color: vars.$color-white;
+
+  font-size: 1.5rem;
+
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 426px) {
+  .cart {
+    padding: 4rem 4rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .cart--subheaders {
+    display: grid;
+    grid-template-columns: 25% 1fr 30% 10%;
+    column-gap: 1.5rem;
+  }
+
+  .cart--subheaders > p:nth-child(2) {
+    grid-column: 3;
+    justify-self: flex-end;
+
+    display: unset;
+
+    width: 14rem;
+  }
+
+  .cart--subheaders > p:nth-child(3) {
+    justify-self: flex-end;
+
+    width: 3.1rem;
+  }
 }
