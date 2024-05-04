@@ -34,10 +34,12 @@ const CartItem = () => {
 
   return (
     <div className="cart-item">
-      <img src={banana} alt="" />
-      <div className="cart-item--information">
-        <div>
-          <p className="cart-item--information-name">Nike Green II</p>
+      <div>
+        <img src={banana} alt="" />
+        <div className="cart-item--information">
+          <Link to="/item" className="cart-item--information-name">
+            Nike Green II
+          </Link>
           <p className="cart-item--information-price">$129</p>
           <p className="cart-item--information-size">Size: 8</p>
         </div>
