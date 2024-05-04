@@ -98,6 +98,7 @@ FROM items;
 CREATE TABLE users_items(
   r_user_email TEXT NOT NULL,
   r_item_id SERIAL NOT NULL,
+  r_item_quantity INT NOT NULL
   PRIMARY KEY(r_user_email, r_item_id)
 );
 

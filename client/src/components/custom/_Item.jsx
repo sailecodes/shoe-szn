@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
-import bg from "../../assets/imgs/gray-bg.jpg";
+import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
 
 const _Item = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
   return (
-    <div className="item">
-      <img src={bg} alt="" />
-      <div>
-        <p>{itemName}</p>
+    <div className="item-card">
+      <img src={banana} alt="" />
+      <div className="item-card--information">
+        <Link to="/item">{itemName}</Link>
         <p>{itemPrice}</p>
       </div>
-      {!isCategoryItem && <Link to="">See item</Link>}
       {isCategoryItem && (
-        <div>
-          <select name="item--category-size" id="">
+        <div className="item-card--sizes">
+          <select name="category-size">
             <option value="" selected disabled hidden>
               Size
             </option>
@@ -21,7 +20,6 @@ const _Item = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
             <option value="9.5">9.5</option>
             <option value="12">12</option>
           </select>
-          <Link to="/item">See item</Link>
           <button>Add to cart</button>
         </div>
       )}

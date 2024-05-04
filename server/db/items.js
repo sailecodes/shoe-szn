@@ -19,7 +19,7 @@ export const getItem = async (itemId) => {
   return rows[0];
 };
 
-export const getUserItems = async (userEmail) => {
+export const getUserCartItems = async (userEmail) => {
   const { rows } = await db.query(
     `
       SELECT *
@@ -32,4 +32,18 @@ export const getUserItems = async (userEmail) => {
   );
 
   return rows;
+};
+
+export const addItemToUserCart = async (userEmail, itemId, itemQuantity) => {
+  await db.query(
+    `
+      INSERT INTO users_items
+      (r_user_email, r_item_id, r_item_quantity)
+      VALUES
+      ($1, $2, $3)
+    `,
+    [userEmail, itemId, itemQuantity]
+  );
+
+  return true;
 };

@@ -1,86 +1,67 @@
 @use "../base/variables" as vars;
 
-.item {
+.item-card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.item > img {
+.item-card > img {
   width: 100%;
   height: auto;
 }
 
-.item p {
+.item-card--information a,
+.item-card--information p {
   color: vars.$color-primary;
 
-  font-size: vars.$font--home-showcase-category-subtext-sm;
-}
-
-.item > a {
-  font-size: vars.$font--home-showcase-category-btn-sm;
-  font-weight: 500;
-  text-align: center;
-
-  padding: 0.5rem 2rem;
-  border: 1px solid vars.$color-primary;
-
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.item > a:hover {
-  background-color: vars.$color-primary;
-  color: vars.$color-white;
-}
-
-.item--category-size {
-  width: 100%;
-}
-
-.item > div:last-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.item > div:last-child select,
-.item > div:last-child a,
-.item > div:last-child button {
   font-size: 1.5rem;
 }
 
-.item > div:last-child select {
+.item-card--information a {
+  font-weight: 500;
+}
+
+.item-card--information a:hover {
+  text-decoration: underline;
+}
+
+.item-card--category-size {
   width: 100%;
 }
 
-.item > div:last-child a,
-.item > div:last-child button {
-  display: grid;
-  place-items: center;
+.item-card--sizes select,
+.item-card--sizes button {
+  font-size: 1.4rem;
+}
 
+.item-card--sizes select {
   width: 100%;
 
-  font-weight: 500;
+  padding: 1rem 2rem;
+  margin-bottom: 0.5rem;
+}
 
-  padding: 0.5rem 2rem;
+.item-card--sizes button {
+  width: 100%;
+
+  padding: 1rem 2rem;
   border: 1px solid vars.$color-primary;
 
   transition: background-color 0.3s, color 0.3s;
 }
 
-.item > div:last-child a:hover,
-.item > div:last-child button:hover {
+.item-card--sizes button:hover {
   background-color: vars.$color-primary;
   color: vars.$color-white;
 }
 
 @media (min-width: 769px) {
-  .item p {
+  .item-card p {
     font-size: vars.$font--home-showcase-category-subtext-lg;
   }
 
-  .item > a {
+  .item-card > a {
     font-size: vars.$font--home-showcase-category-btn-lg;
   }
 }

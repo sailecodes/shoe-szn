@@ -3,7 +3,11 @@ type Query {
   getAllItems: [Item!]!
   getAllItemsFromCategory(itemCategory: String!): [Item!]!
   getItem(itemId: ID!): Item!
-  getUserItems(userEmail: String!): [Item!]!
+  getUserCartItems(userEmail: String!): [CartItem!]!
+}
+
+type Mutation {
+  addItemToUserCart(userEmail: String!, itemId: ID!, itemQuantity: Int!): Boolean!
 }
 
 type User {
@@ -20,4 +24,10 @@ type Item {
   item_description: String!
   item_sizes: [Int!]!
   item_attributes: [String!]!
+}
+
+type CartItem {
+  item_name: String!
+  item_price: String!
+  item_quantity: Int!
 }

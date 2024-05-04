@@ -7,7 +7,7 @@ const _Category = ({ categoryName }) => {
       <div className="category--backdrop">Casual.</div>
       <div className="category--filters">
         <p>4 products</p>
-        <select name="category--filters-sort" id="category--filters-sort">
+        <select name="category--filters-sort">
           <option value="" selected disabled hidden>
             Sort by
           </option>
