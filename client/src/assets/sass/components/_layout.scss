@@ -60,13 +60,15 @@
   margin-bottom: 1rem;
 }
 
+.layout--subscribe > div {
+  display: flex;
+}
+
 .layout--subscribe input,
 .layout--subscribe button {
-  height: 3.3rem;
-
   font-size: vars.$font--home-subheading-btn-sm;
 
-  padding: 0 2rem;
+  padding: 1rem 2rem;
 }
 
 .layout--subscribe input {
