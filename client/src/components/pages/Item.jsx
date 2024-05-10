@@ -14,7 +14,7 @@ const ItemWrapper = styled.section`
     flex-direction: column;
     gap: 2rem;
 
-    max-width: 150rem;
+    max-width: 110rem;
   }
 
   .item--images img {
@@ -169,10 +169,7 @@ const Item = () => {
     <ItemWrapper>
       <div className="item--container">
         <div className="item--images">
-          <img
-            src={ph1000}
-            alt=""
-          />
+          <img src={ph1000} alt="" />
         </div>
         <div className="item--information">
           <p className="item--name">Nike Earths</p>
@@ -193,9 +190,7 @@ const Item = () => {
               <select>
                 <option selected="selected">Size</option>
                 {sizes.map((size) => (
-                  <option
-                    key={"item--sizes-" + size + "-Nike Earths"}
-                    className="item--size">
+                  <option key={"item--sizes-" + size + "-Nike Earths"} className="item--size">
                     {size}
                   </option>
                 ))}

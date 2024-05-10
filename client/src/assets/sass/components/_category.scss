@@ -1,7 +1,14 @@
 @use "../base/variables" as vars;
 
 .category {
+  padding: 0 2rem;
   margin-bottom: 4rem;
+}
+
+.category > div {
+  max-width: 110rem;
+
+  margin: 0 auto;
 }
 
 .category--backdrop {
@@ -22,7 +29,7 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 4rem 2rem;
+  padding: 4rem 0;
 }
 
 .category--filters > p,
@@ -40,6 +47,16 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem 0.5rem;
+}
 
-  padding: 0 2rem;
+@media (min-width: 426px) {
+  .category {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .category--items {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

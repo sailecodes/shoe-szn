@@ -17,14 +17,10 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem 0.5rem;
 
-  max-width: 150rem;
+  max-width: 110rem;
 }
 
 @media (min-width: 769px) {
-  .home-showcase-category > header {
-    font-size: vars.$font--home-showcase-category-lg;
-  }
-
   .home-showcase-category--items {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: unset;

@@ -80,16 +80,4 @@
   .home-slider-item > div:nth-child(2) {
     display: none;
   }
-
-  .home-slider-item--header {
-    font-size: vars.$font--home-header-lg;
-  }
-
-  .home-slider-item--tag {
-    font-size: vars.$font--home-header-subtext-lg;
-  }
-
-  .home-slider-item--link {
-    font-size: vars.$font--home-header-btn-lg;
-  }
 }

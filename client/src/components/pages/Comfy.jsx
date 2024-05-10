@@ -1,7 +1,6 @@
-import Category from "../custom/Category";
-import { data } from "../../data/data";
+import _Category from "../custom/_Category";
 
 const Comfy = () => {
-  return <Category {...data.categories.comfy} />;
+  return <_Category />;
 };
 export default Comfy;
