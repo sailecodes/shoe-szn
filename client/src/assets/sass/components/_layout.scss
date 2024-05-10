@@ -45,7 +45,7 @@
 .layout--subscribe-header {
   color: vars.$color-primary;
 
-  font-size: vars.$font--home-subheading-sm;
+  font-size: 2.4rem;
   font-weight: 500;
   text-align: center;
   line-height: 40px;
@@ -60,13 +60,15 @@
   margin-bottom: 1rem;
 }
 
+.layout--subscribe > div {
+  display: flex;
+}
+
 .layout--subscribe input,
 .layout--subscribe button {
-  height: 3.3rem;
-
   font-size: vars.$font--home-subheading-btn-sm;
 
-  padding: 0 2rem;
+  padding: 1rem 2rem;
 }
 
 .layout--subscribe input {
@@ -84,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 3rem;
 
   background-color: vars.$color-primary;
 
@@ -101,8 +103,8 @@
 .layout--footer a svg {
   color: vars.$color-white;
 
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 
 @media (min-width: 426px) {

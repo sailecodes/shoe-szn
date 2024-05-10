@@ -33,22 +33,22 @@
 }
 
 .home-slider--nav-btn:nth-child(1) {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .home-slider--nav-btn:last-child {
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 .home-slider--nav-btn svg {
   fill: vars.$color-primary;
 
-  height: 1.5rem;
+  height: 1.8rem;
 }
 
 .home-slider--nav-marker {
-  height: 1rem;
-  width: 1rem;
+  height: 1.1rem;
+  width: 1.1rem;
 
   border: 1px solid vars.$color-primary-layout-text;
   border-radius: 50%;

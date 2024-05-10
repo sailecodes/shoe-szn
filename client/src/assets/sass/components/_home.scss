@@ -34,7 +34,7 @@
 }
 
 .home--hero-header {
-  font-size: vars.$font--home-header-sm;
+  font-size: 3rem;
   font-weight: 600;
   line-height: 40px;
 
@@ -44,7 +44,7 @@
 .home--hero-tag {
   max-width: 150rem;
 
-  font-size: vars.$font--home-header-subtext-sm;
+  font-size: 1.8rem;
 
   margin-bottom: 2rem;
 }
@@ -53,7 +53,7 @@
   background-color: vars.$color-primary;
   color: vars.$color-white;
 
-  font-size: vars.$font--home-header-btn-sm;
+  font-size: 1.6rem;
   text-align: center;
 
   padding: 1rem 2rem;
@@ -85,7 +85,7 @@
 .home--team-header {
   color: vars.$color-white;
 
-  font-size: vars.$font--home-subheading-sm;
+  font-size: 2.4rem;
   font-weight: 500;
 }
 
