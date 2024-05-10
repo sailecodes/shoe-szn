@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "react-icons/io5";
-import bg from "../../assets/imgs/gray-bg.jpg";
+import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
 import _HomeShowcase from "../custom/_HomeShowcase";
 import _HomeSlider from "../custom/_HomeSlider";
 
@@ -41,19 +41,19 @@ const _Home = () => {
       <section className="home--categories">
         <div>
           <div className="home--categories-item">
-            <img src={bg} alt="" />
+            <img src={banana} alt="" />
             <Link to="">Casual</Link>
           </div>
           <div className="home--categories-item">
-            <img src={bg} alt="" />
+            <img src={banana} alt="" />
             <Link to="">Streetwear</Link>
           </div>
           <div className="home--categories-item">
-            <img src={bg} alt="" />
+            <img src={banana} alt="" />
             <Link to="">Comfy</Link>
           </div>
           <div className="home--categories-item">
-            <img src={bg} alt="" />
+            <img src={banana} alt="" />
             <Link to="">Community Picks</Link>
           </div>
         </div>
