@@ -1,4 +1,4 @@
-import _Item from "./_Item";
+import _ItemCard from "./_ItemCard";
 import bg from "../../assets/imgs/gray-bg.jpg";
 
 const _Category = ({ categoryName }) => {
@@ -19,10 +19,10 @@ const _Category = ({ categoryName }) => {
           </select>
         </div>
         <div className="category--items">
-          <_Item itemImg={bg} itemName="Bee1" itemPrice="$99.99" isCategoryItem />
-          <_Item itemImg={bg} itemName="Bee2" itemPrice="$99.99" isCategoryItem />
-          <_Item itemImg={bg} itemName="Bee3" itemPrice="$99.99" isCategoryItem />
-          <_Item itemImg={bg} itemName="Bee4" itemPrice="$99.99" isCategoryItem />
+          <_ItemCard itemImg={bg} itemName="Bee1" itemPrice="$99.99" isCategoryItem />
+          <_ItemCard itemImg={bg} itemName="Bee2" itemPrice="$99.99" isCategoryItem />
+          <_ItemCard itemImg={bg} itemName="Bee3" itemPrice="$99.99" isCategoryItem />
+          <_ItemCard itemImg={bg} itemName="Bee4" itemPrice="$99.99" isCategoryItem />
         </div>
       </div>
     </main>

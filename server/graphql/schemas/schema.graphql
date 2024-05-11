@@ -1,7 +1,7 @@
 type Query {
   helloWorld: String!
   getAllItems: [Item!]!
-  getAllItemsFromCategory(itemCategory: String!): [Item!]!
+  getAllItemsFromCategory(itemCategory: String!, pageNumber: Int!): [Item!]!
   getItem(itemId: ID!): Item!
   getUserCartItems(userEmail: String!): [CartItem!]!
 }

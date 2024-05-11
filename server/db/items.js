@@ -1,4 +1,4 @@
-import { db } from "./dbConnection.js";
+import { db } from "./connectDB.js";
 
 export const getAllItems = async () => {
   const { rows } = await db.query("SELECT * FROM items");
@@ -6,8 +6,15 @@ export const getAllItems = async () => {
   return rows;
 };
 
-export const getAllItemsFromCategory = async (itemCategory) => {
-  const { rows } = await db.query("SELECT * FROM items where item_category = $1", [itemCategory]);
+export const getAllItemsFromCategory = async (itemCategory, pageNumber) => {
+  const { rows } = await db.query(
+    `
+      SELECT * FROM items where item_category = $1
+      LIMIT 4
+      OFFSET $2
+    `,
+    [itemCategory, pageNumber * 4]
+  );
 
   return rows;
 };
@@ -15,6 +22,8 @@ export const getAllItemsFromCategory = async (itemCategory) => {
 // TODO: Check if item with `itemId` exists
 export const getItem = async (itemId) => {
   const { rows } = await db.query("SELECT * FROM items where item_id = $1", [itemId]);
+
+  // if (!rows[0]) throw ...
 
   return rows[0];
 };

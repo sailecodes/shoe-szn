@@ -1,4 +1,4 @@
-import _Item from "./_Item";
+import _Item from "./_ItemCard";
 
 const _HomeShowcaseCategory = ({ headerText }) => {
   return (
