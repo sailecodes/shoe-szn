@@ -6,7 +6,7 @@ export const getAllItems = async () => {
   return rows;
 };
 
-export const getTopItemsFromCategory = async (itemCategory) => {
+export const getShowcaseItemsFromCategory = async (itemCategory) => {
   const { rows } = await db.query(
     `
       SELECT
@@ -15,6 +15,7 @@ export const getTopItemsFromCategory = async (itemCategory) => {
         item_price
       FROM items
       WHERE item_category = $1
+      LIMIT 4
     `,
     [itemCategory]
   );

@@ -1,4 +1,11 @@
-import { getAllItems, getAllItemsFromCategory, getItem, getUserCartItems } from "../../db/items.js";
+import {
+  addItemToUserCart,
+  getAllItems,
+  getAllItemsFromCategory,
+  getItem,
+  getShowcaseItemsFromCategory,
+  getUserCartItems,
+} from "../../db/items.js";
 
 export const resolvers = {
   Query: {
@@ -7,6 +14,9 @@ export const resolvers = {
     },
     getAllItems: async (_parent, _args, _context) => {
       return await getAllItems();
+    },
+    getShowcaseItemsFromCategory: async (_parent, { itemCategory }, _context) => {
+      return await getShowcaseItemsFromCategory(itemCategory);
     },
     getAllItemsFromCategory: async (_parent, { itemCategory, pageNumber }, _context) => {
       return await getAllItemsFromCategory(itemCategory, pageNumber);
@@ -18,6 +28,4 @@ export const resolvers = {
       return await getUserCartItems(userEmail);
     },
   },
-  User: {},
-  Item: {},
 };

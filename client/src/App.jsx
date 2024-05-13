@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+import "./assets/sass/style.scss";
 import _Home from "./components/pages/_Home";
 import Casual from "./components/pages/Casual";
 import Streetwear from "./components/pages/Streetwear";
@@ -11,9 +12,12 @@ import Cart from "./components/pages/Cart";
 import _Layout from "./components/pages/_Layout";
 import _Item from "./components/pages/_Item";
 
-import "./assets/sass/style.scss";
-
-const queryClient = new QueryClient();
+const apolloClient = new ApolloClient({
+  uri: "http://localhost:5200/graphql",
+  cache: new InMemoryCache(),
+  credentials: "include",
+  connectToDevTools: true,
+});
 
 const router = createBrowserRouter([
   {
@@ -58,9 +62,9 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
+    <ApolloProvider client={apolloClient}>
       <RouterProvider router={router} />
-    </QueryClientProvider>
+    </ApolloProvider>
   );
 };
 

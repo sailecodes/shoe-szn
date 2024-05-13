@@ -4,8 +4,8 @@ import _HomeShowcaseCategory from "./_HomeShowcaseCategory";
 const _HomeShowcase = () => {
   return (
     <section className="home-showcase">
-      <_HomeShowcaseCategory headerText="Popular Community Picks" />
-      <_HomeShowcaseCategory headerText="Best Streetwear" />
+      <_HomeShowcaseCategory category="Popular Community Picks" />
+      <_HomeShowcaseCategory category="Best Streetwear" />
     </section>
   );
 };

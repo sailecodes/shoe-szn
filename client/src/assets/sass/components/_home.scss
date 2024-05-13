@@ -7,7 +7,8 @@
 }
 
 .home--hero > div:nth-child(1) {
-  background-color: vars.$temporary-image; // FIXME: Temporary, add picture
+  background-position: center;
+  background-size: cover;
 
   height: 35rem;
 }
@@ -182,6 +183,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .home--hero-header,
+  .home--hero-tag {
+    color: vars.$color-white;
   }
 
   .home--hero > div:nth-child(2) {

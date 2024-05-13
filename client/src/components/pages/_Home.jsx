@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "react-icons/io5";
 import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
+import heroBg from "../../assets/imgs/kobe.jpg";
 import _HomeShowcase from "../custom/_HomeShowcase";
 import _HomeSlider from "../custom/_HomeSlider";
 
@@ -8,7 +9,7 @@ const _Home = () => {
   return (
     <section className="home">
       <section className="home--hero">
-        <div>
+        <div style={{ backgroundImage: `url(${heroBg})` }}>
           <div>
             <p className="home--hero-header">Shoes by the community, for the community</p>
             <p className="home--hero-tag">
