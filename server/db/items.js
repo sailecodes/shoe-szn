@@ -6,10 +6,32 @@ export const getAllItems = async () => {
   return rows;
 };
 
+export const getTopItemsFromCategory = async (itemCategory) => {
+  const { rows } = await db.query(
+    `
+      SELECT
+        item_id,
+        item_name,
+        item_price
+      FROM items
+      WHERE item_category = $1
+    `,
+    [itemCategory]
+  );
+
+  return rows;
+};
+
 export const getAllItemsFromCategory = async (itemCategory, pageNumber) => {
   const { rows } = await db.query(
     `
-      SELECT * FROM items where item_category = $1
+      SELECT
+        item_id,
+        item_name,
+        item_price,
+        item_sizes
+      FROM items
+      WHERE item_category = $1
       LIMIT 4
       OFFSET $2
     `,
@@ -21,7 +43,20 @@ export const getAllItemsFromCategory = async (itemCategory, pageNumber) => {
 
 // TODO: Check if item with `itemId` exists
 export const getItem = async (itemId) => {
-  const { rows } = await db.query("SELECT * FROM items where item_id = $1", [itemId]);
+  const { rows } = await db.query(
+    `
+      SELECT
+        item_id,
+        item_name,
+        item_price,
+        item_description,
+        item_sizes,
+        item_attributes
+      FROM items
+      WHERE item_id = $1
+    `,
+    [itemId]
+  );
 
   // if (!rows[0]) throw ...
 
@@ -31,7 +66,11 @@ export const getItem = async (itemId) => {
 export const getUserCartItems = async (userEmail) => {
   const { rows } = await db.query(
     `
-      SELECT *
+      SELECT
+        item_id,
+        item_name,
+        item_price,
+        r_item_quantity
       FROM users AS u
       JOIN users_items AS ui ON u.user_email = ui.r_user_email
       JOIN items AS i ON ui.r_item_id = i.item_id
@@ -47,9 +86,9 @@ export const addItemToUserCart = async (userEmail, itemId, itemQuantity) => {
   await db.query(
     `
       INSERT INTO users_items
-      (r_user_email, r_item_id, r_item_quantity)
+        (r_user_email, r_item_id, r_item_quantity)
       VALUES
-      ($1, $2, $3)
+        ($1, $2, $3)
     `,
     [userEmail, itemId, itemQuantity]
   );

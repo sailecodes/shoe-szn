@@ -26,8 +26,10 @@ type Item {
   item_attributes: [String!]!
 }
 
+# Corresponds to table `users_items`
 type CartItem {
+  item_id: ID!
   item_name: String!
   item_price: String!
-  item_quantity: Int!
+  r_item_quantity: Int!
 }
