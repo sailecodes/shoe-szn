@@ -1,0 +1,26 @@
+@use "../base/variables" as vars;
+
+.home-categories-item {
+}
+
+.home-categories-item > div {
+  display: inline-grid;
+  overflow: hidden;
+}
+
+.home-categories-item > div > img {
+  width: 100%;
+  height: auto;
+
+  transition: transform 0.3s;
+}
+
+.home-categories-item:hover > div > img {
+  transform: scale(1.2);
+}
+
+.home-categories-item > p {
+  color: vars.$color-primary;
+
+  font-size: vars.$font--home-subheading-subtext-sm;
+}

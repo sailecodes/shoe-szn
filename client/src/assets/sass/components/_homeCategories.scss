@@ -1,0 +1,29 @@
+.home-categories {
+  display: grid;
+  place-items: center;
+
+  padding: 0 2rem;
+  margin-bottom: 10rem;
+}
+
+.home-categories > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem 0.5rem;
+
+  max-width: 110rem;
+}
+
+@media (min-width: 426px) {
+  .home-categories {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .home-categories > div {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: unset;
+  }
+}

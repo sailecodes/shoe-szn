@@ -3,6 +3,7 @@ import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "rea
 import categoryBg from "../../assets/imgs/sneakers.jpg";
 import heroBg from "../../assets/imgs/kobe-2.png";
 import _HomeShowcase from "../custom/_HomeShowcase";
+import _HomeCategories from "../custom/_HomeCategories";
 import _HomeSlider from "../custom/_HomeSlider";
 
 const _Home = () => {
@@ -39,7 +40,8 @@ const _Home = () => {
           Email us at <span>team@shoeszn.com</span>.
         </p>
       </section>
-      <section className="home--categories">
+      <_HomeCategories />
+      {/* <section className="home--categories">
         <div>
           <Link className="home--categories-item">
             <div className="home--categories-item-img-container">
@@ -66,7 +68,7 @@ const _Home = () => {
             <p>Community Picks</p>
           </Link>
         </div>
-      </section>
+      </section> */}
       <_HomeSlider />
       <section className="home--sponsors">
         <div>

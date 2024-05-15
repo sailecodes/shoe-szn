@@ -34,7 +34,7 @@
 }
 
 .home-slider-item--header {
-  color: vars.$color-white;
+  color: vars.$color-primary;
 
   font-size: 3rem;
   font-weight: 600;
@@ -45,7 +45,7 @@
 }
 
 .home-slider-item--tag {
-  color: vars.$color-white;
+  color: vars.$color-primary;
 
   font-size: 1.8rem;
 
@@ -80,5 +80,13 @@
 
   .home-slider-item > div:nth-child(2) {
     display: none;
+  }
+
+  .home-slider-item--header {
+    color: vars.$color-white;
+  }
+
+  .home-slider-item--tag {
+    color: vars.$color-white;
   }
 }
