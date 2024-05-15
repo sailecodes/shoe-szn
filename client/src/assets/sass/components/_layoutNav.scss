@@ -32,7 +32,8 @@
   font-size: 2.5rem;
 }
 
-.layout-nav--links {
+.layout-nav--links,
+.layout-nav--btns {
   display: none;
 }
 
@@ -43,14 +44,16 @@
 }
 
 @media (min-width: 769px) {
+  .layout-nav > div > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
   .layout-nav--links {
     display: flex;
     align-items: center;
     gap: 2rem;
-  }
-
-  .layout-nav--links a.active {
-    font-weight: 600;
   }
 
   .layout-nav--links a {
@@ -62,7 +65,19 @@
     font-size: 1.5rem;
   }
 
-  .layout-nav--links svg {
+  .layout-nav--links a.active {
+    font-weight: 600;
+  }
+
+  .layout-nav--btns {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .layout-nav--btns svg {
     color: vars.$color-primary;
+
+    font-size: 2.3rem;
   }
 }

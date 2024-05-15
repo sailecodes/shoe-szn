@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "react-icons/io5";
 import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
-import heroBg from "../../assets/imgs/kobe.jpg";
+import categoryBg from "../../assets/imgs/sneakers.jpg";
+import heroBg from "../../assets/imgs/kobe-2.png";
 import _HomeShowcase from "../custom/_HomeShowcase";
 import _HomeSlider from "../custom/_HomeSlider";
 
@@ -42,19 +43,19 @@ const _Home = () => {
       <section className="home--categories">
         <div>
           <div className="home--categories-item">
-            <img src={banana} alt="" />
+            <img src={categoryBg} alt="" />
             <Link to="">Casual</Link>
           </div>
           <div className="home--categories-item">
-            <img src={banana} alt="" />
+            <img src={categoryBg} alt="" />
             <Link to="">Streetwear</Link>
           </div>
           <div className="home--categories-item">
-            <img src={banana} alt="" />
+            <img src={categoryBg} alt="" />
             <Link to="">Comfy</Link>
           </div>
           <div className="home--categories-item">
-            <img src={banana} alt="" />
+            <img src={categoryBg} alt="" />
             <Link to="">Community Picks</Link>
           </div>
         </div>
