@@ -10,7 +10,8 @@
 }
 
 .home-slider-item--img {
-  background-color: vars.$temporary-image;
+  background-position: center;
+  background-size: cover;
 
   height: 35rem;
 }
@@ -33,7 +34,7 @@
 }
 
 .home-slider-item--header {
-  color: vars.$color-primary;
+  color: vars.$color-white;
 
   font-size: 3rem;
   font-weight: 600;
@@ -44,7 +45,7 @@
 }
 
 .home-slider-item--tag {
-  color: vars.$color-primary;
+  color: vars.$color-white;
 
   font-size: 1.8rem;
 

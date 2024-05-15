@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "react-icons/io5";
-import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
 import categoryBg from "../../assets/imgs/sneakers.jpg";
 import heroBg from "../../assets/imgs/kobe-2.png";
 import _HomeShowcase from "../custom/_HomeShowcase";
@@ -42,22 +41,30 @@ const _Home = () => {
       </section>
       <section className="home--categories">
         <div>
-          <div className="home--categories-item">
-            <img src={categoryBg} alt="" />
-            <Link to="">Casual</Link>
-          </div>
-          <div className="home--categories-item">
-            <img src={categoryBg} alt="" />
-            <Link to="">Streetwear</Link>
-          </div>
-          <div className="home--categories-item">
-            <img src={categoryBg} alt="" />
-            <Link to="">Comfy</Link>
-          </div>
-          <div className="home--categories-item">
-            <img src={categoryBg} alt="" />
-            <Link to="">Community Picks</Link>
-          </div>
+          <Link className="home--categories-item">
+            <div className="home--categories-item-img-container">
+              <img src={categoryBg} alt="" />
+            </div>
+            <p>Casual</p>
+          </Link>
+          <Link className="home--categories-item">
+            <div className="home--categories-item-img-container">
+              <img src={categoryBg} alt="" />
+            </div>
+            <p>Streetwear</p>
+          </Link>
+          <Link className="home--categories-item">
+            <div className="home--categories-item-img-container">
+              <img src={categoryBg} alt="" />
+            </div>
+            <p>Comfy</p>
+          </Link>
+          <Link className="home--categories-item">
+            <div className="home--categories-item-img-container">
+              <img src={categoryBg} alt="" />
+            </div>
+            <p>Community Picks</p>
+          </Link>
         </div>
       </section>
       <_HomeSlider />

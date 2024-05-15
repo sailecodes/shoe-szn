@@ -118,19 +118,26 @@
   max-width: 110rem;
 }
 
-.home--categories-item > img {
-  width: 100%;
-  height: auto;
+.home--categories-item-img-container {
+  display: inline-grid;
+  overflow: hidden;
 }
 
-.home--categories-item > a {
+.home--categories-item-img-container > img {
+  width: 100%;
+  height: auto;
+
+  transition: transform 0.3s;
+}
+
+.home--categories-item:hover .home--categories-item-img-container > img {
+  transform: scale(1.2);
+}
+
+.home--categories-item > p {
   color: vars.$color-primary;
 
   font-size: vars.$font--home-subheading-subtext-sm;
-}
-
-.home--categories-item > a:hover {
-  text-decoration: underline;
 }
 
 .home--sponsors {

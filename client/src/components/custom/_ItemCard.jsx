@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
 import itemCardBg from "../../assets/imgs/sneakers.jpg";
 
 const _Item = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
   return (
-    <div className="item-card">
-      <img src={itemCardBg} alt="" />
+    <Link className="item-card" to="/item">
+      <div className="item-card--img-container">
+        <img src={itemCardBg} alt="" />
+      </div>
       <div className="item-card--information">
-        <Link to="/item">{itemName}</Link>
+        <p>{itemName}</p>
         <p>{itemPrice}</p>
       </div>
       {isCategoryItem && (
@@ -24,7 +25,7 @@ const _Item = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
           <button>Add to cart</button>
         </div>
       )}
-    </div>
+    </Link>
   );
 };
 

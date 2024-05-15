@@ -6,12 +6,23 @@
   gap: 1rem;
 }
 
-.item-card > img {
-  width: 100%;
-  height: auto;
+.item-card--img-container {
+  display: inline-grid;
+  overflow: hidden;
 }
 
-.item-card--information a {
+.item-card--img-container > img {
+  width: 100%;
+  height: auto;
+
+  transition: transform 0.3s;
+}
+
+.item-card:hover .item-card--img-container > img {
+  transform: scale(1.2);
+}
+
+.item-card--information p:first-child {
   color: vars.$color-primary;
 
   font-size: 1.5rem;
@@ -20,10 +31,6 @@
 
 .item-card--information p {
   font-size: 1.4rem;
-}
-
-.item-card--information a:hover {
-  text-decoration: underline;
 }
 
 .item-card--category-size {
