@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
 import HamburgerMenuIcon from "./icons/HamburgerMenuIcon";
 import LeftArrowIcon from "./icons/LeftArrowIcon";
-import { CgWebsite } from "react-icons/cg";
 
-const _LayoutNavSidebar = () => {
+const LayoutNavSidebar = () => {
   const [sidebarActive, setSidebarActive] = useState(false);
 
   return (
@@ -56,4 +56,4 @@ const _LayoutNavSidebar = () => {
   );
 };
 
-export default _LayoutNavSidebar;
+export default LayoutNavSidebar;

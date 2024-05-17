@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import heroBg from "../../assets/imgs/basketball.png";
 
-const _HomeSliderItem = ({ headerText, tagText }) => {
+const HomeSliderItem = ({ headerText, tagText }) => {
   return (
     <div className="home-slider-item">
       <div className="home-slider-item--img" style={{ backgroundImage: `url(${heroBg})` }}>
@@ -24,4 +24,4 @@ const _HomeSliderItem = ({ headerText, tagText }) => {
   );
 };
 
-export default _HomeSliderItem;
+export default HomeSliderItem;

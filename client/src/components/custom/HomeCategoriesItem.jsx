@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import categoryBg from "../../assets/imgs/sneakers.jpg";
 
-const _HomeCategoriesItem = ({ category }) => {
+const HomeCategoriesItem = ({ category }) => {
   return (
     <Link className="home-categories-item">
       <div className="home--categories-item-img-container">
@@ -11,4 +11,4 @@ const _HomeCategoriesItem = ({ category }) => {
     </Link>
   );
 };
-export default _HomeCategoriesItem;
+export default HomeCategoriesItem;

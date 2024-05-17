@@ -1,6 +1,6 @@
-import _Category from "../custom/_Category";
+import Category from "../custom/Category";
 
 const CommunityPicks = () => {
-  return <_Category />;
+  return <Category />;
 };
 export default CommunityPicks;

@@ -1,7 +1,7 @@
-import _ItemCard from "./_ItemCard";
+import ItemCard from "./ItemCard";
 import bg from "../../assets/imgs/gray-bg.jpg";
 
-const _Category = ({ categoryName }) => {
+const Category = ({ categoryName }) => {
   return (
     <main className="category">
       <div>
@@ -19,14 +19,14 @@ const _Category = ({ categoryName }) => {
           </select>
         </div>
         <div className="category--items">
-          <_ItemCard itemImg={bg} itemName="Bee1" itemPrice="$99.99" isCategoryItem />
-          <_ItemCard itemImg={bg} itemName="Bee2" itemPrice="$99.99" isCategoryItem />
-          <_ItemCard itemImg={bg} itemName="Bee3" itemPrice="$99.99" isCategoryItem />
-          <_ItemCard itemImg={bg} itemName="Bee4" itemPrice="$99.99" isCategoryItem />
+          <ItemCard itemImg={bg} itemName="Bee1" itemPrice="$99.99" isCategoryItem />
+          <ItemCard itemImg={bg} itemName="Bee2" itemPrice="$99.99" isCategoryItem />
+          <ItemCard itemImg={bg} itemName="Bee3" itemPrice="$99.99" isCategoryItem />
+          <ItemCard itemImg={bg} itemName="Bee4" itemPrice="$99.99" isCategoryItem />
         </div>
       </div>
     </main>
   );
 };
 
-export default _Category;
+export default Category;

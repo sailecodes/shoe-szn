@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import itemCardBg from "../../assets/imgs/sneakers.jpg";
 
-const _Item = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
+const ItemCard = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
   return (
-    <Link className="item-card" to="/item">
-      <div className="item-card--img-container">
-        <img src={itemCardBg} alt="" />
-      </div>
-      <div className="item-card--information">
-        <p>{itemName}</p>
-        <p>{itemPrice}</p>
-      </div>
+    <div className="item-card">
+      <Link to="/item">
+        <div className="item-card--img-container">
+          <img src={itemCardBg} alt="" />
+        </div>
+        <div className="item-card--meta">
+          <p>{itemName}</p>
+          <p>{itemPrice}</p>
+        </div>
+      </Link>
       {isCategoryItem && (
         <div className="item-card--sizes">
           <select name="category-size">
@@ -25,8 +27,8 @@ const _Item = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
           <button>Add to cart</button>
         </div>
       )}
-    </Link>
+    </div>
   );
 };
 
-export default _Item;
+export default ItemCard;

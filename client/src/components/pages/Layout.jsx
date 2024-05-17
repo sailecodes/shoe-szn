@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
-import _LayoutNav from "../custom/_LayoutNav";
+import LayoutNav from "../custom/LayoutNav";
 
-const _Layout = () => {
+const Layout = () => {
   return (
     <main className="layout">
       <section className="layout--announcement">Free shipping for first-time buyers.</section>
-      <_LayoutNav />
+      <LayoutNav />
       <Outlet />
       <section className="layout--subscribe">
         <p className="layout--subscribe-header">Let&apos;s stay in touch</p>
@@ -35,4 +35,4 @@ const _Layout = () => {
   );
 };
 
-export default _Layout;
+export default Layout;

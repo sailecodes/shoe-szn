@@ -1,6 +1,6 @@
-import _Category from "../custom/_Category";
+import Category from "../custom/Category";
 
 const Casual = () => {
-  return <_Category />;
+  return <Category />;
 };
 export default Casual;

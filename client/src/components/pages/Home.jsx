@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { IoLogoGoogle, IoLogoFirebase, IoLogoGitlab, IoLogoInstagram } from "react-icons/io5";
-import categoryBg from "../../assets/imgs/sneakers.jpg";
-import heroBg from "../../assets/imgs/kobe-2.png";
-import _HomeShowcase from "../custom/_HomeShowcase";
-import _HomeCategories from "../custom/_HomeCategories";
-import _HomeSlider from "../custom/_HomeSlider";
+import heroBg from "../../assets/imgs/hero1.png";
+import HomeShowcase from "../custom/HomeShowcase";
+import HomeCategories from "../custom/HomeCategories";
+import HomeSlider from "../custom/HomeSlider";
 
-const _Home = () => {
+const Home = () => {
   return (
     <section className="home">
       <section className="home--hero">
@@ -29,7 +28,7 @@ const _Home = () => {
           <Link to="">See our community picks</Link>
         </div>
       </section>
-      <_HomeShowcase />
+      <HomeShowcase />
       <section className="home--team">
         <p className="home--team-header">Want to be a part of our team?</p>
         <p className="home--team-tag">
@@ -40,36 +39,8 @@ const _Home = () => {
           Email us at <span>team@shoeszn.com</span>.
         </p>
       </section>
-      <_HomeCategories />
-      {/* <section className="home--categories">
-        <div>
-          <Link className="home--categories-item">
-            <div className="home--categories-item-img-container">
-              <img src={categoryBg} alt="" />
-            </div>
-            <p>Casual</p>
-          </Link>
-          <Link className="home--categories-item">
-            <div className="home--categories-item-img-container">
-              <img src={categoryBg} alt="" />
-            </div>
-            <p>Streetwear</p>
-          </Link>
-          <Link className="home--categories-item">
-            <div className="home--categories-item-img-container">
-              <img src={categoryBg} alt="" />
-            </div>
-            <p>Comfy</p>
-          </Link>
-          <Link className="home--categories-item">
-            <div className="home--categories-item-img-container">
-              <img src={categoryBg} alt="" />
-            </div>
-            <p>Community Picks</p>
-          </Link>
-        </div>
-      </section> */}
-      <_HomeSlider />
+      <HomeCategories />
+      <HomeSlider />
       <section className="home--sponsors">
         <div>
           <IoLogoGoogle />
@@ -82,4 +53,4 @@ const _Home = () => {
   );
 };
 
-export default _Home;
+export default Home;

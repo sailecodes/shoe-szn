@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { CgProfile, CgShoppingCart } from "react-icons/cg";
-import _LayoutNavSidebar from "./_LayoutNavSidebar";
+import LayoutNavSidebar from "./LayoutNavSidebar";
 
-const _LayoutNav = () => {
+const LayoutNav = () => {
   return (
     <nav className="layout-nav">
       <div>
@@ -25,10 +25,10 @@ const _LayoutNav = () => {
             <CgProfile />
           </NavLink>
         </div>
-        <_LayoutNavSidebar />
+        <LayoutNavSidebar />
       </div>
     </nav>
   );
 };
 
-export default _LayoutNav;
+export default LayoutNav;

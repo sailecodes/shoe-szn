@@ -2,7 +2,7 @@ import { PiPlantFill, PiHourglassHighFill } from "react-icons/pi";
 import { FaRegGem } from "react-icons/fa";
 import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
 
-const _Item = () => {
+const Item = () => {
   const handleAddToCart = (e) => {
     e.preventDefault();
 
@@ -13,17 +13,17 @@ const _Item = () => {
   };
 
   return (
-    <section className="itemm">
-      <div className="itemm--imgs">
+    <section className="item">
+      <div className="item--imgs">
         <img src={banana} alt="" />
         <img src={banana} alt="" />
         <img src={banana} alt="" />
         <img src={banana} alt="" />
       </div>
-      <div className="itemm--details">
-        <p className="itemm--details-name">Nike Earths</p>
-        <p className="itemm--details-price">$99.99</p>
-        <p className="itemm--details-description">
+      <div className="item--details">
+        <p className="item--details-name">Nike Earths</p>
+        <p className="item--details-price">$99.99</p>
+        <p className="item--details-description">
           Crafted with precision and attention to detail, these shoes are designed to elevate every step of your
           journey, whether you're navigating city streets or exploring the great outdoors. The premium materials used in
           construction ensure durability and longevity, while innovative cushioning technology provides all-day comfort
@@ -43,9 +43,9 @@ const _Item = () => {
           </select>
           <button>Add to cart</button>
         </form>
-        <div className="itemm--details-attrs">
+        <div className="item--details-attrs">
           <div>
-            <div className="itemm--details-attr-header">
+            <div className="item--details-attr-header">
               <FaRegGem />
               <header>One-of-a-kind</header>
             </div>
@@ -55,7 +55,7 @@ const _Item = () => {
             </p>
           </div>
           <div>
-            <div className="itemm--details-attr-header">
+            <div className="item--details-attr-header">
               <PiPlantFill />
               <header>Eco-friendly</header>
             </div>
@@ -65,7 +65,7 @@ const _Item = () => {
             </p>
           </div>
           <div>
-            <div className="itemm--details-attr-header">
+            <div className="item--details-attr-header">
               <PiHourglassHighFill />
               <header>Long-lasting</header>
             </div>
@@ -80,4 +80,4 @@ const _Item = () => {
   );
 };
 
-export default _Item;
+export default Item;

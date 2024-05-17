@@ -1,9 +1,9 @@
 import { useState } from "react";
 import LeftArrowIcon from "./icons/LeftArrowIcon";
 import RightArrowIcon from "./icons/RightArrowIcon";
-import _HomeSliderItem from "./_HomeSliderItem";
+import HomeSliderItem from "./HomeSliderItem";
 
-const _HomeSlider = () => {
+const HomeSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const updateIndex = (newIndex) => {
@@ -16,9 +16,9 @@ const _HomeSlider = () => {
   return (
     <section className="home-slider">
       <div className="home-slider--slider" style={{ transform: `translate(-${activeIndex * 100}%)` }}>
-        <_HomeSliderItem headerText="Lowkey. Low maintenance. Low price." tagText="Be comfortable in style." />
-        <_HomeSliderItem headerText="Sporty. Springy. Smooth." tagText="Redefine sports shoes." />
-        <_HomeSliderItem headerText="Compact. Reinforced. Made to last." tagText="Rely on the reliable." />
+        <HomeSliderItem headerText="Lowkey. Low maintenance. Low price." tagText="Be comfortable in style." />
+        <HomeSliderItem headerText="Sporty. Springy. Smooth." tagText="Redefine sports shoes." />
+        <HomeSliderItem headerText="Compact. Reinforced. Made to last." tagText="Rely on the reliable." />
       </div>
       <nav className="home-slider--nav">
         <button className="home-slider--nav-btn" onClick={() => updateIndex(activeIndex - 1)}>
@@ -35,4 +35,4 @@ const _HomeSlider = () => {
   );
 };
 
-export default _HomeSlider;
+export default HomeSlider;
