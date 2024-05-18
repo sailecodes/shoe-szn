@@ -81,10 +81,6 @@
   gap: 1rem;
 }
 
-.item--details-attrs > div {
-  color: vars.$color-primary;
-}
-
 .item--details-attr-header {
   display: flex;
   align-items: center;
@@ -92,17 +88,60 @@
 }
 
 .item--details-attr-header svg {
-  font-size: 2rem;
   color: vars.$color-primary;
+
+  font-size: 2rem;
 }
+
+.item--details-attr-header-btn {
+  display: grid;
+  place-items: center;
+
+  margin-left: 2rem;
+}
+
+// .item--details-attr-header-btn svg {
+//   color: vars.$color-primary;
+
+//   font-size: 2.2rem;
+
+//   transition: transform 0.3s;
+// }
+
+// .item--details-attr-header-btn.active > svg {
+//   transform: rotate(180deg);
+// }
 
 .item--details-attr-header header {
   font-size: 1.8rem;
 }
 
-.item--details-attrs > div p {
+.item--details-attr-description > p {
+  color: vars.$color-primary;
+
   font-size: 1.5rem;
+
+  overflow: hidden;
 }
+
+// .item--details-attr-description {
+//   display: grid;
+//   grid-template-rows: 0fr;
+
+//   transition: grid-template-rows 0.3s;
+// }
+
+// .item--details-attr-description.active {
+//   grid-template-rows: 1fr;
+// }
+
+// .item--details-attr-description > p {
+//   color: vars.$color-primary;
+
+//   font-size: 1.5rem;
+
+//   overflow: hidden;
+// }
 
 @media (min-width: 426px) {
   .item {
@@ -120,6 +159,6 @@
   }
 
   .item--details {
-    flex-shrink: 1.15;
+    flex-shrink: 1.5;
   }
 }

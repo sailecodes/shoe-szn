@@ -1,8 +1,14 @@
+import { motion, useAnimationControls } from "framer-motion";
 import { PiPlantFill, PiHourglassHighFill } from "react-icons/pi";
 import { FaRegGem } from "react-icons/fa";
-import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import tmpImg from "../../assets/imgs/sneakers.jpg";
+import { useState } from "react";
 
 const Item = () => {
+  const controls = useAnimationControls();
+  const [bool, setBool] = useState(false);
+
   const handleAddToCart = (e) => {
     e.preventDefault();
 
@@ -12,24 +18,24 @@ const Item = () => {
     if (Object.keys(data).length === 0) return;
   };
 
+  const handleAttrClick = () => {
+    controls.start("active");
+  };
+
   return (
     <section className="item">
       <div className="item--imgs">
-        <img src={banana} alt="" />
-        <img src={banana} alt="" />
-        <img src={banana} alt="" />
-        <img src={banana} alt="" />
+        <img src={tmpImg} alt="" />
+        <img src={tmpImg} alt="" />
+        <img src={tmpImg} alt="" />
+        <img src={tmpImg} alt="" />
       </div>
       <div className="item--details">
         <p className="item--details-name">Nike Earths</p>
         <p className="item--details-price">$99.99</p>
         <p className="item--details-description">
           Crafted with precision and attention to detail, these shoes are designed to elevate every step of your
-          journey, whether you're navigating city streets or exploring the great outdoors. The premium materials used in
-          construction ensure durability and longevity, while innovative cushioning technology provides all-day comfort
-          and support. <br />
-          Experience the perfect fusion of style and functionality with our pair of shoes – a wardrobe staple that's as
-          reliable as it is stylish.
+          journey, whether you&apos;re navigating city streets or exploring the great outdoors.
         </p>
         <form onSubmit={handleAddToCart}>
           <select name="shoe-size">
@@ -48,21 +54,64 @@ const Item = () => {
             <div className="item--details-attr-header">
               <FaRegGem />
               <header>One-of-a-kind</header>
+              <motion.button
+                style={{
+                  display: "grid",
+                  placeItems: "center",
+                  marginLeft: "2rem",
+                }}
+                variants={{
+                  initial: {
+                    rotate: "0deg",
+                  },
+                  active: {
+                    rotate: "180deg",
+                  },
+                }}
+                initial="initial"
+                animate={controls}
+                onClick={handleAttrClick}>
+                <MdKeyboardArrowDown />
+              </motion.button>
             </div>
-            <p>
-              We&apos;ve pushed the boundaries of traditional shoemaking, experimenting with unconventional materials,
-              intricate patterns, and avant-garde designs to create something truly extraordinary.
-            </p>
+            <motion.div
+              className="item--details-attr-description"
+              style={{
+                display: "grid",
+                gridTemplateRows: "0fr",
+              }}
+              variants={{
+                initial: {
+                  gridTemplateRows: "0fr",
+                },
+                active: {
+                  gridTemplateRows: "1fr",
+                },
+              }}
+              initial="initial"
+              animate={controls}>
+              <p>
+                We&apos;ve pushed the boundaries of traditional shoemaking, experimenting with unconventional materials,
+                intricate patterns, and avant-garde designs to create something truly extraordinary.
+              </p>
+            </motion.div>
           </div>
           <div>
             <div className="item--details-attr-header">
               <PiPlantFill />
               <header>Eco-friendly</header>
+              <button
+                className={`item--details-attr-header-btn ${bool ? "active" : ""}`}
+                onClick={() => setBool(!bool)}>
+                <MdKeyboardArrowDown />
+              </button>
             </div>
-            <p>
-              Step into the future with our eco-conscious footwear, designed to minimize environmental impact without
-              compromising on comfort or performance.
-            </p>
+            <div className={`item--details-attr-description ${bool ? "active" : ""}`}>
+              <p>
+                Step into the future with our eco-conscious footwear, designed to minimize environmental impact without
+                compromising on comfort or performance.
+              </p>
+            </div>
           </div>
           <div>
             <div className="item--details-attr-header">

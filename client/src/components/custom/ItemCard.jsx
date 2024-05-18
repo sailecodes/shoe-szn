@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import itemCardBg from "../../assets/imgs/sneakers.jpg";
 
-const ItemCard = ({ itemImg, itemName, itemPrice, isCategoryItem }) => {
+const ItemCard = ({ itemId, itemImg, itemName, itemPrice, isCategoryItem }) => {
   return (
     <div className="item-card">
-      <Link to="/item">
+      <Link to={`/item/${itemId ? itemId : "FIXME"}`}>
         <div className="item-card--img-container">
           <img src={itemCardBg} alt="" />
         </div>

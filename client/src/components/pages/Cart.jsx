@@ -34,25 +34,25 @@ const CartItem = () => {
 
   return (
     <div className="cart-item">
-      <div>
-        <img src={banana} alt="" />
-        <div className="cart-item--information">
-          <Link to="/item" className="cart-item--information-name">
-            Nike Green II
-          </Link>
-          <p className="cart-item--information-price">$129</p>
-          <p className="cart-item--information-size">Size: 8</p>
-        </div>
+      <img src={banana} alt="" />
+      <div className="cart-item--information">
+        <Link to="/item/1" className="cart-item--information-name">
+          Nike Green II
+        </Link>
+        <p className="cart-item--information-price">$129</p>
+        <p className="cart-item--information-size">Size: 8</p>
       </div>
       <div className="cart-item--modifiers">
-        <div className="cart-item--quantity">
-          <button onClick={() => setQuantity(quantity === 1 ? 1 : quantity - 1)}>-</button>
-          <p>{quantity}</p>
-          <button onClick={() => setQuantity(quantity + 1)}>+</button>
+        <div>
+          <div className="cart-item--quantity">
+            <button onClick={() => setQuantity(quantity === 1 ? 1 : quantity - 1)}>-</button>
+            <p>{quantity}</p>
+            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+          </div>
+          <button>
+            <FaRegTrashAlt />
+          </button>
         </div>
-        <button>
-          <FaRegTrashAlt />
-        </button>
       </div>
       <p className="cart-item--total">$129</p>
     </div>

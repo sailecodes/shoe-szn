@@ -2,15 +2,15 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import "./assets/sass/style.scss";
+import Layout from "./components/pages/Layout";
 import Home from "./components/pages/Home";
 import Casual from "./components/pages/Casual";
 import Streetwear from "./components/pages/Streetwear";
 import Comfy from "./components/pages/Comfy";
 import CommunityPicks from "./components/pages/CommunityPicks";
-import Profile from "./components/pages/Profile";
-import Cart from "./components/pages/Cart";
-import Layout from "./components/pages/Layout";
 import Item from "./components/pages/Item";
+import Cart from "./components/pages/Cart";
+import Profile from "./components/pages/Profile";
 
 const apolloClient = new ApolloClient({
   uri: "http://localhost:5200/graphql",
@@ -49,12 +49,12 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: "/cart",
-        element: <Cart />,
+        path: "/item/:id",
+        element: <Item />,
       },
       {
-        path: "/item",
-        element: <Item />,
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
