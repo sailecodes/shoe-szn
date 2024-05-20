@@ -61,6 +61,12 @@
   padding: 1rem 2rem;
 }
 
+@media (min-width: 426px) {
+  .home-slider-item > div:nth-child(2) {
+    padding: 4.5rem 4rem;
+  }
+}
+
 @media (min-width: 769px) {
   .home-slider-item--img {
     display: grid;

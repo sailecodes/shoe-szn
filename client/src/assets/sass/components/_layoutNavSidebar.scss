@@ -97,6 +97,12 @@
   height: 2.4rem;
 }
 
+@media (min-width: 426px) {
+  .layout-nav-sidebar--window {
+    padding: 2rem 2.5rem;
+  }
+}
+
 @media (min-width: 769px) {
   .layout-nav-sidebar {
     display: none;
