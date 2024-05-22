@@ -3,13 +3,14 @@ import { gql, useQuery } from "@apollo/client";
 import ItemCard from "./ItemCard";
 import categoryBg from "../../assets/imgs/categoryBG1.jpg";
 import { sortItems } from "../../util/utilities";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
 const Category = ({ categoryName }) => {
   const [sortMethod, setSortMethod] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [data, setData] = useState([]);
 
-  let { loading, error } = useQuery(
+  let { loading, error, refetch } = useQuery(
     gql`
       query GetAllItemsFromCategory($itemCategory: String!, $pageNumber: Int!) {
         data: getAllItemsFromCategory(itemCategory: $itemCategory, pageNumber: $pageNumber) {
@@ -32,6 +33,14 @@ const Category = ({ categoryName }) => {
   const handleSortChange = (e) => {
     setSortMethod(e.target.value);
     setData(sortItems(data, e.target.value));
+  };
+
+  const handlePageChange = (newPageNumber) => {
+    if (newPageNumber < 0) return;
+    else if (newPageNumber > 999) return; // FIXME:
+
+    setPageNumber(newPageNumber);
+    refetch({ pageNumber: newPageNumber });
   };
 
   if (loading) console.log("loading");
@@ -61,6 +70,14 @@ const Category = ({ categoryName }) => {
               <ItemCard key={item.item_id} itemName={item.item_name} itemPrice={item.item_price} isCategoryItem />
             ))}
           </div>
+          <nav className="category--pages">
+            <button onClick={() => handlePageChange(pageNumber - 1)} disabled={pageNumber === 0 ? true : false}>
+              <RiArrowLeftSLine />
+            </button>
+            <button onClick={() => handlePageChange(pageNumber + 1)}>
+              <RiArrowRightSLine />
+            </button>
+          </nav>
         </div>
       </div>
     </main>

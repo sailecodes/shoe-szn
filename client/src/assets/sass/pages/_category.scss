@@ -51,6 +51,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem 0.5rem;
+
+  margin-bottom: 2rem;
+}
+
+.category--pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.category--pages button {
+  display: grid;
+  place-items: center;
+}
+
+.category--pages button svg {
+  color: vars.$color-primary;
+
+  font-size: 4rem;
 }
 
 @media (min-width: 426px) {

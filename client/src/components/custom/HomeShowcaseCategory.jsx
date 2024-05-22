@@ -21,7 +21,6 @@ const HomeShowcaseCategory = ({ category }) => {
 
   if (loading) console.log("loading");
   else if (error) console.log("error");
-  else console.log(data.data);
 
   return (
     <div className="home-showcase-category">
