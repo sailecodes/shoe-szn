@@ -1,6 +1,6 @@
 import Category from "../custom/Category";
 
 const Streetwear = () => {
-  return <Category />;
+  return <Category categoryName="Streetwear" />;
 };
 export default Streetwear;

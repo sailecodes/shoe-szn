@@ -4,7 +4,7 @@ import itemCardBg from "../../assets/imgs/sneakers.jpg";
 const ItemCard = ({ itemId, itemImg, itemName, itemPrice, isCategoryItem }) => {
   return (
     <div className="item-card">
-      <Link to={`/item/${itemId ? itemId : "FIXME"}`}>
+      <Link to={`/item/${itemId}`}>
         <div className="item-card--img-container">
           <img src={itemCardBg} alt="" />
         </div>

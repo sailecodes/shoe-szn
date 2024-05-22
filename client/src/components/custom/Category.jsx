@@ -36,8 +36,7 @@ const Category = ({ categoryName }) => {
   };
 
   const handlePageChange = (newPageNumber) => {
-    if (newPageNumber < 0) return;
-    else if (newPageNumber > 999) return; // FIXME:
+    if (newPageNumber < 0 && newPageNumber > 1) return; // FIXME:
 
     setPageNumber(newPageNumber);
     refetch({ pageNumber: newPageNumber });
@@ -67,7 +66,13 @@ const Category = ({ categoryName }) => {
           </div>
           <div className="category--items">
             {data.map((item) => (
-              <ItemCard key={item.item_id} itemName={item.item_name} itemPrice={item.item_price} isCategoryItem />
+              <ItemCard
+                key={item.item_id}
+                itemId={item.item_id}
+                itemName={item.item_name}
+                itemPrice={item.item_price}
+                isCategoryItem
+              />
             ))}
           </div>
           <nav className="category--pages">

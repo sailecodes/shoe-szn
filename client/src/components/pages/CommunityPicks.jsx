@@ -1,6 +1,6 @@
 import Category from "../custom/Category";
 
 const CommunityPicks = () => {
-  return <Category />;
+  return <Category categoryName="Community Picks" />;
 };
 export default CommunityPicks;
