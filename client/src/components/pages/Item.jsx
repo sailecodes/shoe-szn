@@ -40,32 +40,34 @@ const Item = () => {
 
   return (
     <section className="item">
-      <div className="item--imgs">
-        <img src={tmpImg} alt="" />
-        <img src={tmpImg} alt="" />
-        <img src={tmpImg} alt="" />
-        <img src={tmpImg} alt="" />
-      </div>
-      <div className="item--details">
-        <p className="item--details-name">Nike Earths</p>
-        <p className="item--details-price">$99.99</p>
-        <p className="item--details-description">
-          Crafted with precision and attention to detail, these shoes are designed to elevate every step of your
-          journey, whether you&apos;re navigating city streets or exploring the great outdoors.
-        </p>
-        <form onSubmit={handleAddToCart}>
-          <select name="shoe-size">
-            <option value="" selected disabled hidden>
-              Size
-            </option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9.5">9.5</option>
-            <option value="12">12</option>
-          </select>
-          <button>Add to cart</button>
-        </form>
-        <ItemAttributes itemAttributes={data?.data ? data.data.item_attributes : []} />
+      <div>
+        <div className="item--imgs">
+          <img src={tmpImg} alt="" />
+          <img src={tmpImg} alt="" />
+          <img src={tmpImg} alt="" />
+          <img src={tmpImg} alt="" />
+        </div>
+        <div className="item--details">
+          <p className="item--details-name">Nike Earths</p>
+          <p className="item--details-price">$99.99</p>
+          <p className="item--details-description">
+            Crafted with precision and attention to detail, these shoes are designed to elevate every step of your
+            journey, whether you&apos;re navigating city streets or exploring the great outdoors.
+          </p>
+          <form onSubmit={handleAddToCart}>
+            <select name="shoe-size">
+              <option value="" selected disabled hidden>
+                Size
+              </option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9.5">9.5</option>
+              <option value="12">12</option>
+            </select>
+            <button>Add to cart</button>
+          </form>
+          <ItemAttributes itemAttributes={data?.data ? data.data.item_attributes : []} />
+        </div>
       </div>
     </section>
   );

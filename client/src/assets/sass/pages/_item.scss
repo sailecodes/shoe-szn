@@ -2,8 +2,11 @@
 
 .item {
   padding: 4rem 2rem;
+}
 
+.item > div {
   max-width: 110rem;
+  margin: 0 auto;
 }
 
 .item--imgs {
@@ -82,12 +85,10 @@
 }
 
 @media (min-width: 769px) {
-  .item {
+  .item > div {
     display: flex;
     align-items: flex-start;
     gap: 4rem;
-
-    margin: 0 auto;
   }
 
   .item--details {
