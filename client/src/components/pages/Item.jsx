@@ -42,10 +42,18 @@ const Item = () => {
     <section className="item">
       <div>
         <div className="item--imgs">
-          <img src={tmpImg} alt="" />
-          <img src={tmpImg} alt="" />
-          <img src={tmpImg} alt="" />
-          <img src={tmpImg} alt="" />
+          <div className="item--imgs-img-container">
+            <img src={tmpImg} alt="" />
+          </div>
+          <div className="item--imgs-img-container">
+            <img src={tmpImg} alt="" />
+          </div>
+          <div className="item--imgs-img-container">
+            <img src={tmpImg} alt="" />
+          </div>
+          <div className="item--imgs-img-container">
+            <img src={tmpImg} alt="" />
+          </div>
         </div>
         <div className="item--details">
           <p className="item--details-name">Nike Earths</p>
