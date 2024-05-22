@@ -1,0 +1,55 @@
+@use "../base/variables" as vars;
+
+.item-attribute--header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-attribute--header svg {
+  color: vars.$color-primary;
+
+  font-size: 1.6rem;
+}
+
+.item-attribute--header-btn {
+  display: grid;
+  place-items: center;
+
+  margin-left: 2rem;
+}
+
+.item-attribute--header-btn svg {
+  color: vars.$color-primary;
+
+  font-size: 2.2rem;
+
+  transition: transform 0.3s;
+}
+
+.item-attribute--header-btn.active > svg {
+  transform: rotate(180deg);
+}
+
+.item-attribute--header header {
+  font-size: 1.6rem;
+}
+
+.item-attribute--description {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  transition: grid-template-rows 0.3s;
+}
+
+.item-attribute--description.active {
+  grid-template-rows: 1fr;
+}
+
+.item-attribute--description > p {
+  color: vars.$color-primary;
+
+  font-size: 1.5rem;
+
+  overflow: hidden;
+}

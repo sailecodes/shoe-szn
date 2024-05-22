@@ -1,18 +1,10 @@
-import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { motion, useAnimationControls } from "framer-motion";
-import { PiPlantFill, PiHourglassHighFill } from "react-icons/pi";
-import { FaRegGem } from "react-icons/fa";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import tmpImg from "../../assets/imgs/sneakers.jpg";
+import ItemAttributes from "../custom/ItemAttributes";
 
 const Item = () => {
   const { id } = useParams();
-  const [attrBools, setAttrBools] = useState([]);
-  const [bool, setBool] = useState(false);
-
-  console.log(id);
 
   const { loading, error, data } = useQuery(
     gql`
@@ -31,10 +23,6 @@ const Item = () => {
       variables: {
         itemId: id,
       },
-      onCompleted: ({ data }) => {
-        let arr = [];
-        console.log(data.item_attributes);
-      },
     }
   );
 
@@ -47,15 +35,8 @@ const Item = () => {
     if (Object.keys(data).length === 0) return;
   };
 
-  const controls = useAnimationControls();
-  const handleAttrClick = () => {
-    controls.start("active");
-  };
-
-  if (loading) console.log("loading");
-  else if (error) console.log("error");
-
-  console.log(data?.data);
+  if (loading) console.log("[Item.jsx] Loading data...");
+  else if (error) console.log("[Item.jsx] Error...");
 
   return (
     <section className="item">
@@ -84,81 +65,7 @@ const Item = () => {
           </select>
           <button>Add to cart</button>
         </form>
-        <div className="item--details-attrs">
-          {/* <div>
-            <div className="item--details-attr-header">
-              <FaRegGem />
-              <header>One-of-a-kind</header>
-              <motion.button
-                style={{
-                  display: "grid",
-                  placeItems: "center",
-                  marginLeft: "2rem",
-                }}
-                variants={{
-                  initial: {
-                    rotate: "0deg",
-                  },
-                  active: {
-                    rotate: "180deg",
-                  },
-                }}
-                initial="initial"
-                animate={controls}
-                onClick={handleAttrClick}>
-                <MdKeyboardArrowDown />
-              </motion.button>
-            </div>
-            <motion.div
-              className="item--details-attr-description"
-              style={{
-                display: "grid",
-                gridTemplateRows: "0fr",
-              }}
-              variants={{
-                initial: {
-                  gridTemplateRows: "0fr",
-                },
-                active: {
-                  gridTemplateRows: "1fr",
-                },
-              }}
-              initial="initial"
-              animate={controls}>
-              <p>
-                We&apos;ve pushed the boundaries of traditional shoemaking, experimenting with unconventional materials,
-                intricate patterns, and avant-garde designs to create something truly extraordinary.
-              </p>
-            </motion.div>
-          </div> */}
-          <div>
-            <div className="item--details-attr-header">
-              <PiPlantFill />
-              <header>Eco-friendly</header>
-              <button
-                className={`item--details-attr-header-btn ${bool ? "active" : ""}`}
-                onClick={() => setBool(!bool)}>
-                <MdKeyboardArrowDown />
-              </button>
-            </div>
-            <div className={`item--details-attr-description ${bool ? "active" : ""}`}>
-              <p>
-                Step into the future with our eco-conscious footwear, designed to minimize environmental impact without
-                compromising on comfort or performance.
-              </p>
-            </div>
-          </div>
-          {/* <div>
-            <div className="item--details-attr-header">
-              <PiHourglassHighFill />
-              <header>Long-lasting</header>
-            </div>
-            <p>
-              Crafted with precision and engineered to withstand the tests of time, our long-lasting shoes redefine the
-              standards of durability in footwear.
-            </p>
-          </div> */}
-        </div>
+        <ItemAttributes itemAttributes={data?.data ? data.data.item_attributes : []} />
       </div>
     </section>
   );
