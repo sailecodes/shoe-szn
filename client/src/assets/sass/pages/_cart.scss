@@ -39,7 +39,7 @@
 .cart--items {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .cart--subtotal {
@@ -75,29 +75,20 @@
 
 @media (min-width: 600px) {
   .cart--subheaders {
-    // display: grid;
-    // grid-template-columns: 25% 1fr 30% 10%;
-    // column-gap: 1.5rem;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 80px) 3.5fr 1fr;
   }
 
   .cart--subheaders > p:nth-child(2) {
-    // grid-column: 3;
-    // justify-self: flex-end;
-
-    // display: unset;
-
-    // width: 14rem;
+    justify-self: flex-end;
+    grid-column: 3;
 
     display: unset;
 
-    margin-left: 25%;
+    padding-right: 9.4rem;
   }
 
   .cart--subheaders > p:nth-child(3) {
-    // justify-self: flex-end;
-
-    // width: 3.1rem;
+    justify-self: flex-end;
   }
 }

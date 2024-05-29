@@ -21,9 +21,6 @@ const LayoutNav = () => {
           <NavLink to="/cart">
             <CgShoppingCart />
           </NavLink>
-          <NavLink to="/profile">
-            <CgProfile />
-          </NavLink>
         </div>
         <LayoutNavSidebar />
       </div>

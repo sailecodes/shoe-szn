@@ -7,7 +7,7 @@ const ItemAttribute = ({ header }) => {
   const [attrFlag, setAttrFlag] = useState(false);
 
   return (
-    <div>
+    <div className="item-attribute">
       <div className="item-attribute--header">
         {header === "One-of-a-kind" && <FaRegGem />}
         {header === "Eco-friendly" && <PiPlantFill />}

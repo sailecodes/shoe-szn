@@ -36,9 +36,6 @@ const LayoutNavSidebar = () => {
           <NavLink to="/cart" onClick={() => setSidebarActive(false)}>
             Cart
           </NavLink>
-          <NavLink to="/profile" onClick={() => setSidebarActive(false)}>
-            Profile
-          </NavLink>
           <footer className="layout-nav-sidebar--window-footer">
             <a href="https://github.com/sailecodes" target="_blank" rel="noopener noreferrer">
               <FaGithubSquare />

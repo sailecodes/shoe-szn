@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-import banana from "../../assets/imgs/VU-Banana-1000x1000.png";
+import cartImg from "../../assets/imgs/sneakers.jpg";
 import { useState } from "react";
 
 const Cart = () => {
@@ -34,7 +34,7 @@ const CartItem = () => {
 
   return (
     <div className="cart-item">
-      <img src={banana} alt="" />
+      <img src={cartImg} alt="" />
       <div className="cart-item--information">
         <Link to="/item/1" className="cart-item--information-name">
           Nike Green II
