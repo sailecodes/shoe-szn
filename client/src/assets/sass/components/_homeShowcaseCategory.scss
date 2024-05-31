@@ -5,7 +5,9 @@
 }
 
 .home-showcase-category > header {
-  font-size: 1.8rem;
+  color: vars.$color-primary;
+
+  font-size: vars.$font--home-showcase-category-header;
   font-weight: 500;
 
   margin-bottom: 1.5rem;

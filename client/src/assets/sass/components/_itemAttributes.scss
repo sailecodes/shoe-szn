@@ -6,14 +6,14 @@
 }
 
 .item-attributes > div {
-  padding: 0.6rem 0;
+  padding: 0.8rem 0;
 }
 
 .item-attributes > div:not(:last-child) {
-  border-top: 1px solid vars.$color-gray;
+  border-top: 1px solid vars.$color-gray-attribute-border;
 }
 
 .item-attributes > div:last-child {
-  border-top: 1px solid vars.$color-gray;
-  border-bottom: 1px solid vars.$color-gray;
+  border-top: 1px solid vars.$color-gray-attribute-border;
+  border-bottom: 1px solid vars.$color-gray-attribute-border;
 }

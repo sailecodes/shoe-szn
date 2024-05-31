@@ -62,12 +62,14 @@
 }
 
 .layout-nav-sidebar--window a {
-  color: vars.$color-primary;
+  color: vars.$color-primary-light;
 
-  font-size: 1.5rem;
+  font-size: vars.$font--layout-nav-link;
 }
 
 .layout-nav-sidebar--window a.active {
+  color: vars.$color-primary;
+
   font-weight: 600;
 }
 

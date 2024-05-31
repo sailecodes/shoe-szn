@@ -75,14 +75,14 @@ const Category = ({ categoryName }) => {
               />
             ))}
           </div>
-          <nav className="category--pages">
+          {/* <nav className="category--pages">
             <button onClick={() => handlePageChange(pageNumber - 1)} disabled={pageNumber === 0 ? true : false}>
               <RiArrowLeftSLine />
             </button>
             <button onClick={() => handlePageChange(pageNumber + 1)}>
               <RiArrowRightSLine />
             </button>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </main>

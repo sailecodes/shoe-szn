@@ -15,7 +15,7 @@
 
   height: 5rem;
 
-  font-size: vars.$font--footer-sm;
+  font-size: vars.$font--layout-announcement-text;
   font-weight: 600;
   text-align: center;
   letter-spacing: 0.5px;
@@ -45,7 +45,7 @@
 .layout--subscribe-header {
   color: vars.$color-primary;
 
-  font-size: 2.4rem;
+  font-size: vars.$font--layout-subscribe-header;
   font-weight: 500;
   text-align: center;
   line-height: 40px;
@@ -54,7 +54,7 @@
 .layout--subscribe-tag {
   color: vars.$color-gray-layout-text;
 
-  font-size: vars.$font--home-subheading-subtext-sm;
+  font-size: vars.$font--layout-subscribe-tag;
   text-align: center;
 
   margin-bottom: 1rem;
@@ -66,15 +66,21 @@
 
 .layout--subscribe input,
 .layout--subscribe button {
-  font-size: vars.$font--home-subheading-btn-sm;
+  font-size: vars.$font--layout-subscribe-btn-text;
 
   padding: 1rem 2rem;
 }
 
 .layout--subscribe input {
+  background-color: vars.$color-white;
+
   width: 20rem;
 
   border: 1px solid vars.$color-primary;
+}
+
+.layout--subscribe input::placeholder {
+  color: vars.$color-gray-layout-text;
 }
 
 .layout--subscribe button {

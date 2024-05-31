@@ -21,7 +21,7 @@
 }
 
 .cart-item--information-name {
-  font-size: 1.5rem;
+  font-size: vars.$font--cart-item-name;
   font-weight: 500;
 }
 
@@ -31,13 +31,19 @@
 
 .cart-item--information-price,
 .cart-item--information-size {
-  font-size: 1.4rem;
+  color: vars.$color-primary-light;
+
+  font-size: vars.$font--cart-item-price;
 }
 
 .cart-item--quantity {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
+
+  max-width: 11.3rem;
+  width: 11.3rem;
 
   padding: 1rem 2rem;
   border: 1px solid vars.$color-primary;
@@ -45,6 +51,8 @@
 
 .cart-item--quantity button,
 .cart-item--quantity p {
+  color: vars.$color-primary;
+
   font-size: 1.3rem;
 }
 
@@ -63,6 +71,8 @@
   display: grid;
   place-items: center;
 
+  color: vars.$color-primary;
+
   font-size: 1.5rem;
 }
 
@@ -71,13 +81,15 @@
   grid-column: 4;
   justify-self: flex-end;
 
-  font-size: 1.5rem;
+  color: vars.$color-primary;
+
+  font-size: vars.$font--cart-item-total;
 }
 
 @media (min-width: 600px) {
   .cart-item {
     display: grid;
-    grid-template-columns: repeat(2, 80px) 3.5fr 1fr;
+    grid-template-columns: repeat(2, 80px) 3.68fr 1fr;
     gap: unset;
   }
 

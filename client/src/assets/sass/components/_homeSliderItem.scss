@@ -36,7 +36,7 @@
 .home-slider-item--header {
   color: vars.$color-primary;
 
-  font-size: 3rem;
+  font-size: vars.$font--home-slider-item-header;
   font-weight: 600;
   text-align: center;
   line-height: 40px;
@@ -47,7 +47,7 @@
 .home-slider-item--tag {
   color: vars.$color-primary;
 
-  font-size: 1.8rem;
+  font-size: vars.$font--home-slider-item-tag;
 
   margin-bottom: 2rem;
 }
@@ -56,7 +56,7 @@
   background-color: vars.$color-primary;
   color: vars.$color-white;
 
-  font-size: 1.6rem;
+  font-size: vars.$font--home-slider-item-link;
 
   padding: 1rem 2rem;
 }
