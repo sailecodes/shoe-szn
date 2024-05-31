@@ -35,7 +35,7 @@ const Item = () => {
     if (Object.keys(data).length === 0) return;
   };
 
-  if (loading) console.log("[Item.jsx] Loading data...");
+  if (loading || !data) console.log("[Item.jsx] Loading data...");
   else if (error) console.log("[Item.jsx] Error...");
 
   return (
@@ -56,21 +56,19 @@ const Item = () => {
           </div>
         </div>
         <div className="item--details">
-          <p className="item--details-name">Nike Earths</p>
-          <p className="item--details-price">$99.99</p>
-          <p className="item--details-description">
-            Crafted with precision and attention to detail, these shoes are designed to elevate every step of your
-            journey, whether you&apos;re navigating city streets or exploring the great outdoors.
-          </p>
+          <p className="item--details-name">{data?.data.item_name}</p>
+          <p className="item--details-price">{data?.data.item_price}</p>
+          <p className="item--details-description">{data?.data.item_description}</p>
           <form onSubmit={handleAddToCart}>
             <select name="shoe-size">
               <option value="" selected disabled hidden>
                 Size
               </option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9.5">9.5</option>
-              <option value="12">12</option>
+              {data?.data.item_sizes.map((size, ind) => (
+                <option key={ind} value={size}>
+                  {size}
+                </option>
+              ))}
             </select>
             <button>Add to cart</button>
           </form>
