@@ -8,6 +8,8 @@ type Query {
 }
 
 type Mutation {
+  login(email: String!, password: String!): Boolean!
+  signup(email: String!, password: String!, username: String!): Boolean!
   addItemToUserCart(userEmail: String!, itemId: ID!, itemQuantity: Int!): Boolean!
 }
 

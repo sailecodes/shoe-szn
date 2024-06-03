@@ -1,0 +1,109 @@
+@use "../base/variables" as vars;
+
+.login-popup--bg {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  display: grid;
+  place-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login-popup--bg.inactive {
+  display: none;
+}
+
+.login-popup {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  background-color: vars.$color-white;
+
+  width: 50rem;
+  height: 50rem;
+
+  padding: 4rem;
+}
+
+.login-popup > svg {
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  z-index: 200;
+
+  color: vars.$color-primary;
+
+  font-size: 2.8rem;
+}
+
+.login-popup > svg:hover {
+  cursor: pointer;
+}
+
+.login-popup > div > p {
+  color: vars.$color-primary;
+
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 35px;
+
+  margin-bottom: 1.8rem;
+}
+
+.login-popup--form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-popup--form.inactive {
+  display: none;
+}
+
+.login-popup--form > input {
+  background-color: vars.$color-white;
+
+  padding: 1rem 2rem;
+
+  border: 1px solid vars.$color-primary-layout-text;
+}
+
+.login-popup--form > input {
+  font-size: 1.5rem;
+}
+
+.login-popup--form > input:last-of-type {
+  margin-bottom: 0.8rem;
+}
+
+.login-popup--form > button {
+  background-color: vars.$color-primary;
+  color: vars.$color-white;
+
+  font-size: 1.3rem;
+
+  padding: 1rem 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-popup--form > p {
+  color: vars.$color-primary;
+
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.login-popup--form > p:hover {
+  cursor: pointer;
+}
+
+.login-popup--form > p > span {
+  text-decoration: underline;
+}

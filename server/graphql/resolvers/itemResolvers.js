@@ -1,4 +1,4 @@
-import { db } from "./connectDB.js";
+import { db } from "../../db/connectDB.js";
 
 export const getAllItems = async () => {
   const { rows } = await db.query("SELECT * FROM items");

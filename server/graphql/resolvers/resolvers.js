@@ -1,11 +1,11 @@
 import {
-  addItemToUserCart,
   getAllItems,
   getAllItemsFromCategory,
   getItem,
   getShowcaseItemsFromCategory,
   getUserCartItems,
-} from "../../db/items.js";
+  addItemToUserCart,
+} from "./itemResolvers.js";
 
 export const resolvers = {
   Query: {
@@ -26,6 +26,14 @@ export const resolvers = {
     },
     getUserCartItems: async (_parent, { userEmail }, _context) => {
       return await getUserCartItems(userEmail);
+    },
+  },
+  Mutation: {
+    signup: (_parent, { email, password, username }, _context) => {
+      return signup(email, password, username);
+    },
+    login: (_parent, { email, password }, { res }) => {
+      return login(email, password, res);
     },
   },
 };

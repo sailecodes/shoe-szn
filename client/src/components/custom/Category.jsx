@@ -8,8 +8,9 @@ import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 const Category = ({ categoryName }) => {
   const [sortMethod, setSortMethod] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
+  const [data, setData] = useState([]);
 
-  let { loading, error, data, refetch } = useQuery(
+  let { loading, error, refetch } = useQuery(
     gql`
       query GetAllItemsFromCategory($itemCategory: String!, $pageNumber: Int!) {
         data: getAllItemsFromCategory(itemCategory: $itemCategory, pageNumber: $pageNumber) {
@@ -25,11 +26,13 @@ const Category = ({ categoryName }) => {
         itemCategory: categoryName,
         pageNumber: pageNumber,
       },
+      onCompleted: ({ data }) => setData(data),
     }
   );
 
   const handleSortChange = (e) => {
     setSortMethod(e.target.value);
+    setData(sortItems(data, e.target.value));
   };
 
   // const handlePageChange = (newPageNumber) => {
@@ -41,8 +44,6 @@ const Category = ({ categoryName }) => {
 
   if (loading || !data) console.log("loading");
   else if (error) console.log("error");
-
-  console.log(data);
 
   return (
     <main className="category">
@@ -64,7 +65,7 @@ const Category = ({ categoryName }) => {
             </select>
           </div>
           <div className="category--items">
-            {data?.data.map((item) => (
+            {data.map((item) => (
               <ItemCard
                 key={item.item_id}
                 itemId={item.item_id}
