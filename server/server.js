@@ -1,6 +1,7 @@
 import "express-async-errors";
 import * as dotenv from "dotenv";
 import express from "express";
+import url from "url";
 import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
@@ -8,6 +9,7 @@ import { readFile } from "node:fs/promises";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServer } from "@apollo/server";
 import { resolvers } from "./graphql/resolvers/resolvers.js";
+import { dirname } from "node:path";
 
 // ===============================================================================================
 // Initialization
@@ -17,6 +19,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5100;
+const __dirname = dirname(url.fileURLToPath(import.meta.url));
 const typeDefs = await readFile("./graphql/schemas/schema.graphql", "utf-8");
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
@@ -26,6 +29,7 @@ await apolloServer.start();
 // Middleware
 // ===============================================================================================
 
+app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(
   express.json(),
   cookieParser(),
