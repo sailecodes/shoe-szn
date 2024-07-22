@@ -50,7 +50,7 @@ app.get("/", async (req, res) => {
 app.use(
   "/graphql",
   expressMiddleware(apolloServer, {
-    context: (req, res) => ({ req, res }),
+    context: ({ req, res }) => ({ req, res }),
   })
 );
 

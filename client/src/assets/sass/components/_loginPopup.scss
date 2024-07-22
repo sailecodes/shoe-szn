@@ -12,6 +12,8 @@
   place-items: center;
 
   background-color: rgba(0, 0, 0, 0.5);
+
+  padding: 4rem;
 }
 
 .login-popup--bg.inactive {
@@ -26,8 +28,8 @@
 
   background-color: vars.$color-white;
 
-  width: 50rem;
-  height: 50rem;
+  max-width: 50rem;
+  height: 48rem;
 
   padding: 4rem;
 }
@@ -50,7 +52,7 @@
 .login-popup > div > p {
   color: vars.$color-primary;
 
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   font-weight: 500;
   line-height: 35px;
 
@@ -106,4 +108,10 @@
 
 .login-popup--form > p > span {
   text-decoration: underline;
+}
+
+@media (min-width: 426px) {
+  .login-popup > div > p {
+    font-size: 2.6rem;
+  }
 }

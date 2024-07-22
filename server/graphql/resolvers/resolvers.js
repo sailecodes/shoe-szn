@@ -6,10 +6,20 @@ import {
   getUserCartItems,
   addItemToUserCart,
 } from "./itemResolvers.js";
+import { signup, login } from "./authResolvers.js";
+import { verifyAuthentication } from "../../utils/authUtils.js";
 
 export const resolvers = {
   Query: {
-    helloWorld: (_parent, _args, _context) => {
+    helloWorld: (_parent, _args, { req }) => {
+      console.log(req.cookies);
+
+      // const { cookies } = req;
+
+      // console.log(cookies);
+
+      // verifyAuthentication(token);
+
       return "Hello World!";
     },
     getAllItems: async (_parent, _args, _context) => {
@@ -34,6 +44,13 @@ export const resolvers = {
     },
     login: (_parent, { email, password }, { res }) => {
       return login(email, password, res);
+    },
+    test: (_parent, _args, { req: { cookies } }) => {
+      const { token } = cookies;
+
+      verifyAuthentication(token);
+
+      return "Hello World!";
     },
   },
 };

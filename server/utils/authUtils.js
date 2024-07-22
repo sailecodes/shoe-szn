@@ -8,10 +8,12 @@ export const generateHashedPassword = async (password) => {
   return await bcrypt.hash(password, salt);
 };
 
-export const generateJwtCookie = (id, res) => {
-  const token = jwt.sign({ userId: id }, process.env.JWT_SECRET, {
+export const generateJwtCookie = (userEmail, res) => {
+  const token = jwt.sign({ userEmail: userEmail }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRATION,
   });
+
+  console.log(res);
 
   res.cookie("token", token, {
     httpOnly: true,
@@ -19,6 +21,8 @@ export const generateJwtCookie = (id, res) => {
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
     secure: process.env.NODE_ENV === "production",
   });
+
+  console.log("made cookie");
 };
 
 export const verifyAuthentication = (token) => {
