@@ -9,18 +9,12 @@ import {
 import { signup, login } from "./authResolvers.js";
 import { verifyAuthentication } from "../../utils/authUtils.js";
 
+import { db } from "../../db/connectDB.js";
+
 export const resolvers = {
   Query: {
-    helloWorld: (_parent, _args, { req }) => {
-      console.log(req.cookies);
-
-      // const { cookies } = req;
-
-      // console.log(cookies);
-
-      // verifyAuthentication(token);
-
-      return "Hello World!";
+    test: async (_parent, _args, _context) => {
+      return await db.query("SELECT * FROM test");
     },
     getAllItems: async (_parent, _args, _context) => {
       return await getAllItems();

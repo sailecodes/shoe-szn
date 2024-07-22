@@ -5,7 +5,21 @@ import LayoutNav from "../custom/LayoutNav";
 import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
+import { gql, useQuery } from "@apollo/client";
+
 const Layout = () => {
+  // if (!loading && !error && data) console.log(data);
+
+  const { loading, error, data } = useQuery(gql`
+    {
+      test {
+        test
+      }
+    }
+  `);
+
+  console.log(data);
+
   return (
     <main className="layout">
       <LoginPopup />
@@ -19,18 +33,30 @@ const Layout = () => {
           releases.
         </p>
         <div>
-          <input type="text" placeholder="Enter email" />
+          <input
+            type="text"
+            placeholder="Enter email"
+          />
           <button>Subscribe</button>
         </div>
       </section>
       <footer className="layout--footer">
-        <a href="https://github.com/sailecodes" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/sailecodes"
+          target="_blank"
+          rel="noopener noreferrer">
           <FaGithubSquare />
         </a>
-        <a href="https://www.linkedin.com/in/elias-iv-roman/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.linkedin.com/in/elias-iv-roman/"
+          target="_blank"
+          rel="noopener noreferrer">
           <FaLinkedin />
         </a>
-        <a href="https://eliasiv-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://eliasiv-portfolio.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer">
           <CgWebsite />
         </a>
       </footer>
@@ -49,17 +75,32 @@ const LoginPopup = () => {
         <div>
           <p>Seems you are not logged in. Please sign in or consider joining us!</p>
           <form className={`login-popup--form ${!formInactive ? "inactive" : ""}`}>
-            <input type="text" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="text"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+            />
             <button>Sign in</button>
             <p onClick={() => setFormInactive(!formInactive)}>
               Not a member? <span>Register</span>
             </p>
           </form>
           <form className={`login-popup--form ${formInactive ? "inactive" : ""}`}>
-            <input type="text" placeholder="Username" />
-            <input type="text" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="text"
+              placeholder="Username"
+            />
+            <input
+              type="text"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+            />
             <button>Register</button>
             <p onClick={() => setFormInactive(!formInactive)}>
               Already a member? <span>Log in</span>
