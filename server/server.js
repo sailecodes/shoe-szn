@@ -2,14 +2,15 @@ import "express-async-errors";
 import * as dotenv from "dotenv";
 import express from "express";
 import url from "url";
+import path from "path";
 import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
+import { dirname } from "path";
 import { readFile } from "node:fs/promises";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServer } from "@apollo/server";
 import { resolvers } from "./graphql/resolvers/resolvers.js";
-import { dirname } from "node:path";
 
 // ===============================================================================================
 // Initialization
