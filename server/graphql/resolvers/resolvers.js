@@ -7,10 +7,12 @@ import {
   addItemToUserCart,
 } from "./itemResolvers.js";
 
+import { db } from "../../db/connectDB.js";
+
 export const resolvers = {
   Query: {
-    helloWorld: (_parent, _args, _context) => {
-      return "Hello World!";
+    test: async (_parent, _args, _context) => {
+      return await db.query("SELECT * FROM test");
     },
     getAllItems: async (_parent, _args, _context) => {
       return await getAllItems();
