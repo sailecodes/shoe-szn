@@ -19,15 +19,20 @@ const HomeShowcaseCategory = ({ category }) => {
     }
   );
 
-  if (loading) console.log("loading");
-  else if (error) console.log("error");
+  // if (loading) console.log("loading");
+  // else if (error) console.log("error");
 
   return (
     <div className="home-showcase-category">
       <header>{category}</header>
       <div className="home-showcase-category--items">
         {data?.data.map((item) => (
-          <ItemCard key={item.item_id} itemId={item.item_id} itemName={item.item_name} itemPrice={item.item_price} />
+          <ItemCard
+            key={item.item_id}
+            itemId={item.item_id}
+            itemName={item.item_name}
+            itemPrice={item.item_price}
+          />
         ))}
       </div>
     </div>

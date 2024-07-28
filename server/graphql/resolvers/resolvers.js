@@ -12,7 +12,7 @@ import { db } from "../../db/connectDB.js";
 export const resolvers = {
   Query: {
     test: async (_parent, _args, _context) => {
-      return await db.query("SELECT * FROM test");
+      return "GQL Test";
     },
     getAllItems: async (_parent, _args, _context) => {
       return await getAllItems();

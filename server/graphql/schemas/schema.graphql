@@ -1,14 +1,10 @@
 type Query {
-  test: [Test!]!
+  test: String!
   getAllItems: [Item!]!
   getShowcaseItemsFromCategory(itemCategory: String!): [Item!]!
   getAllItemsFromCategory(itemCategory: String!, pageNumber: Int!): [Item!]!
   getItem(itemId: ID!): Item!
   getUserCartItems(userEmail: String!): [CartItem!]!
-}
-
-type Test {
-  test: String!
 }
 
 type Mutation {

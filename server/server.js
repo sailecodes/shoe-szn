@@ -1,16 +1,17 @@
 import "express-async-errors";
 import * as dotenv from "dotenv";
 import express from "express";
+import cors from "cors";
 import url from "url";
 import path from "path";
-import cors from "cors";
-import helmet from "helmet";
+import http from "http";
 import cookieParser from "cookie-parser";
 import { dirname } from "path";
-import { readFile } from "node:fs/promises";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServer } from "@apollo/server";
+import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
 import { resolvers } from "./graphql/resolvers/resolvers.js";
+import { typeDefs } from "./graphql/schemas/schema.js";
 
 // ===============================================================================================
 // Initialization
@@ -19,41 +20,40 @@ import { resolvers } from "./graphql/resolvers/resolvers.js";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5100;
+const port = process.env.PORT || 5300;
 const __dirname = dirname(url.fileURLToPath(import.meta.url));
-const typeDefs = await readFile("./graphql/schemas/schema.graphql", "utf-8");
-const apolloServer = new ApolloServer({ typeDefs, resolvers });
+
+const httpServer = http.createServer(app);
+const apolloServer = new ApolloServer({
+  typeDefs,
+  resolvers,
+  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+});
 
 await apolloServer.start();
 
 // ===============================================================================================
-// Middleware
+// General middleware
 // ===============================================================================================
 
 app.use(express.static(path.resolve(__dirname, "./public")));
-app.use(
-  express.json(),
-  cookieParser(),
-  helmet({
-    crossOriginEmbedderPolicy: process.env.NODE_ENV !== "development",
-    contentSecurityPolicy: process.env.NODE_ENV !== "development",
-  }),
-  cors({
-    origin: ["https://studio.apollographql.com", "http://localhost:5173"],
-    credentials: true,
-  })
-);
 
 // ===============================================================================================
 // Routes
 // ===============================================================================================
 
 app.get("/", async (req, res) => {
-  res.status(200).json({ msg: "[Server message] Server is properly functioning" });
+  res.status(200).json({ data: "[Server message] Server is properly functioning" });
 });
 
 app.use(
   "/graphql",
+  express.json(),
+  cookieParser(),
+  cors({
+    origin: ["http://localhost:5200", "http://localhost:5173"],
+    credentials: true,
+  }),
   expressMiddleware(apolloServer, {
     context: (req, res) => ({ req, res }),
   })
@@ -63,7 +63,5 @@ app.use(
 // Port information
 // ===============================================================================================
 
-app.listen(port, () => {
-  console.log(`[Server message] Server is listening on port ${port}`);
-  console.log(`[Server message] GraphQL endpoint http://localhost:${port}/graphql`);
-});
+await new Promise((resolve) => httpServer.listen({ port }, resolve));
+console.log(`[Server message] Server is listening on port ${port}`);

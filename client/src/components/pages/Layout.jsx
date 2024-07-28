@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+3;
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 import LayoutNav from "../custom/LayoutNav";
@@ -10,15 +11,16 @@ import { gql, useQuery } from "@apollo/client";
 const Layout = () => {
   // if (!loading && !error && data) console.log(data);
 
-  const { loading, error, data } = useQuery(gql`
-    {
-      test {
+  const { loading, error, data } = useQuery(
+    gql`
+      query {
         test
       }
+    `,
+    {
+      onCompleted: (data) => console.log(data),
     }
-  `);
-
-  console.log(data);
+  );
 
   return (
     <main className="layout">

@@ -16,7 +16,6 @@ const apolloClient = new ApolloClient({
   uri: "http://localhost:5200/graphql",
   cache: new InMemoryCache(),
   credentials: "include",
-  connectToDevTools: true,
 });
 
 const router = createBrowserRouter([
