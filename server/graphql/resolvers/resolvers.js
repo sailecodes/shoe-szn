@@ -6,6 +6,8 @@ import {
   getUserCartItems,
   addItemToUserCart,
 } from "./itemResolvers.js";
+import { signup, login } from "./authResolvers.js";
+import { verifyAuthentication } from "../../utils/authUtils.js";
 
 import { db } from "../../db/connectDB.js";
 
@@ -36,6 +38,13 @@ export const resolvers = {
     },
     login: (_parent, { email, password }, { res }) => {
       return login(email, password, res);
+    },
+    test: (_parent, _args, { req: { cookies } }) => {
+      const { token } = cookies;
+
+      verifyAuthentication(token);
+
+      return "Hello World!";
     },
   },
 };

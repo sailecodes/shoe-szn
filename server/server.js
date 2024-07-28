@@ -55,7 +55,7 @@ app.use(
     credentials: true,
   }),
   expressMiddleware(apolloServer, {
-    context: (req, res) => ({ req, res }),
+    context: ({ req, res }) => ({ req, res }),
   })
 );
 

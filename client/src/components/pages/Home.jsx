@@ -16,7 +16,7 @@ const Home = () => {
               Every pair is chosen by a community of individuals who love and are passionate about shoes. Not a big shoe
               lover? No worries. You&apos;ve still come to the right place.
             </p>
-            <Link to="">See our community picks</Link>
+            <Link to="community-picks">See our community picks</Link>
           </div>
         </div>
         <div>
