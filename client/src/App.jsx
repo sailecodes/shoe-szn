@@ -13,7 +13,7 @@ import Cart from "./components/pages/Cart";
 import Profile from "./components/pages/Profile";
 
 const apolloClient = new ApolloClient({
-  uri: "http://localhost:5200/graphql",
+  uri: "https://shoeszn.up.railway.app/graphql",
   cache: new InMemoryCache(),
   credentials: "include",
 });
