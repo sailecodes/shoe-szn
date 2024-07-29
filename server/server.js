@@ -63,5 +63,5 @@ app.use(
 // Port information
 // ===============================================================================================
 
-await new Promise((resolve) => httpServer.listen({ port }, resolve));
+await new Promise((res) => httpServer.listen({ port }, res));
 console.log(`[Server message] Server is listening on port ${port}`);

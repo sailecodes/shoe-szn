@@ -39,12 +39,5 @@ export const resolvers = {
     login: (_parent, { email, password }, { res }) => {
       return login(email, password, res);
     },
-    test: (_parent, _args, { req: { cookies } }) => {
-      const { token } = cookies;
-
-      verifyAuthentication(token);
-
-      return "Hello World!";
-    },
   },
 };
