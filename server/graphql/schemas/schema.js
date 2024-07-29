@@ -1,6 +1,5 @@
 export const typeDefs = `#graphql
   type Query {
-    test: String!
     getAllItems: [Item!]!
     getShowcaseItemsFromCategory(itemCategory: String!): [Item!]!
     getAllItemsFromCategory(itemCategory: String!, pageNumber: Int!): [Item!]!

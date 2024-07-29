@@ -7,15 +7,9 @@ import {
   addItemToUserCart,
 } from "./itemResolvers.js";
 import { signup, login } from "./authResolvers.js";
-import { verifyAuthentication } from "../../utils/authUtils.js";
-
-import { db } from "../../db/connectDB.js";
 
 export const resolvers = {
   Query: {
-    test: async (_parent, _args, _context) => {
-      return "GQL Test";
-    },
     getAllItems: async (_parent, _args, _context) => {
       return await getAllItems();
     },

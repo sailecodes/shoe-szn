@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import itemCardBg from "../../assets/imgs/sneakers.jpg";
 
 const ItemCard = ({ itemId, itemImg, itemName, itemPrice, itemSizes, isCategoryItem }) => {
+  console.log(itemSizes);
+
   return (
     <div className="item-card">
       <Link to={`/item/${itemId}`}>

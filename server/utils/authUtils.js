@@ -13,16 +13,12 @@ export const generateJwtCookie = (userEmail, res) => {
     expiresIn: process.env.JWT_EXPIRATION,
   });
 
-  console.log(res);
-
   res.cookie("token", token, {
     httpOnly: true,
     sameSite: true,
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
     secure: process.env.NODE_ENV === "production",
   });
-
-  console.log("made cookie");
 };
 
 export const verifyAuthentication = (token) => {

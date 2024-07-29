@@ -14,6 +14,7 @@ import Profile from "./components/pages/Profile";
 
 const apolloClient = new ApolloClient({
   uri: "https://shoeszn.up.railway.app/graphql",
+  // uri: "http://localhost:5200/graphql",
   cache: new InMemoryCache(),
   credentials: "include",
 });
