@@ -26,7 +26,10 @@ const Category = ({ categoryName }) => {
         itemCategory: categoryName,
         pageNumber: pageNumber,
       },
-      onCompleted: ({ data }) => setData(data),
+      onCompleted: ({ data }) => {
+        console.log(data); // FIXME: delete
+        setData(data);
+      },
     }
   );
 
@@ -43,7 +46,7 @@ const Category = ({ categoryName }) => {
   // };
 
   if (loading || !data) console.log("loading");
-  else if (error) console.log("error");
+  else if (error) console.error(error);
 
   return (
     <main className="category">
