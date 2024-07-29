@@ -51,7 +51,7 @@ app.use(
   express.json(),
   cookieParser(),
   cors({
-    origin: ["http://localhost:5200", "http://localhost:5173"],
+    origin: ["https://shoeszn.up.railway.app", "http://localhost:5173"],
     credentials: true,
   }),
   expressMiddleware(apolloServer, {
